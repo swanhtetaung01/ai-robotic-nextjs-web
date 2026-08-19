@@ -15,7 +15,12 @@ import s5 from "@/public/robots/fleet/s5.webp";
 
    Real machine heights sit within 9% of each other (990–1075 mm), so a
    uniform render height is visually honest as well as tidier. */
+/* The floor line is svh-based so it tracks the plate, but the copy block
+   below it is content-sized in px. On a short viewport svh shrinks while the
+   text does not, and the machines land on the paragraph — hence the px floor.
+   MIN_BASE ≈ the copy block at its tallest (subcopy + CTAs + scroll + pad). */
 const LINE_BASE = 32; // svh up from the bottom of the hero — the floor line
+const MIN_BASE = 290; // px — never closer to the bottom than the copy block
 const LINE_HEIGHT = 18; // svh — identical for every machine
 
 const fleet: { slug: string; img: StaticImageData }[] = [
@@ -38,8 +43,8 @@ function cardAlign(i: number, total: number) {
 export function HeroFleet() {
   return (
     <div
-      className="pointer-events-none absolute inset-x-[5%] z-20 hidden items-end justify-between lg:flex"
-      style={{ bottom: `${LINE_BASE}svh` }}
+      className="pointer-events-none absolute inset-x-[5%] z-20 hidden items-end justify-between lg:flex [@media(max-height:640px)]:!hidden"
+      style={{ bottom: `max(${LINE_BASE}svh, ${MIN_BASE}px)` }}
     >
       {fleet.map((unit, i) => {
         const robot = getRobot(unit.slug);
