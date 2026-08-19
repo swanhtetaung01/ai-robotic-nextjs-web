@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getRobot, robots } from "@/lib/robots";
-import { homeHero, robotImages } from "@/lib/robot-images";
+import { robots } from "@/lib/robots";
+import { homeHero } from "@/lib/robot-images";
 import { RobotCard } from "@/components/robot-card";
 import { RobotSpotlight } from "@/components/robot-spotlight";
 import { HeroFleet } from "@/components/hero-fleet";
@@ -112,18 +112,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Fleet spotlight: animated L3 scanner stage ───────── */}
-      <RobotSpotlight
-        robot={getRobot("l3")!}
-        image={robotImages.l3.product!}
-        beacon={{ x: 55, y: 10 }}
-        callouts={[
-          { x: 80, y: 9, side: "right", value: "96-beam", label: "3D LiDAR array" },
-          { x: 10, y: 46, side: "left", value: "700 mm", label: "Passage width" },
-          { x: 55, y: 91, side: "right", value: "18 kg", label: "Brush pressure" },
-        ]}
-        index={1}
-        total={5}
-      />
+      <RobotSpotlight />
 
       {/* ── Proof band ───────────────────────────────────────── */}
       <section id="why" className="scroll-mt-16 border-y border-line bg-base">

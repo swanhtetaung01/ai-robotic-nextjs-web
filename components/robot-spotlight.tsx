@@ -2,19 +2,36 @@
 
 import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
-import type { Robot } from "@/lib/robots";
+import { robots } from "@/lib/robots";
 import { Eyebrow } from "@/components/ui";
 
-export type SpotlightCallout = {
-  /** anchor position, % of the robot image box */
-  x: number;
-  y: number;
-  /** which side the label chip sits on */
-  side: "left" | "right";
-  label: string;
-  value: string;
+import l3 from "@/public/robots/fleet/l3.webp";
+import l4 from "@/public/robots/fleet/l4.webp";
+import l50 from "@/public/robots/fleet/l50.webp";
+import c5 from "@/public/robots/fleet/c5.webp";
+import s5 from "@/public/robots/fleet/s5.webp";
+
+/* Front-facing trimmed cutouts, so every machine sits at a predictable scale
+   as you flip through — mixed 3/4 views made the stage jump around. */
+const stage: Record<
+  string,
+  { img: StaticImageData; beacon: { x: number; y: number } }
+> = {
+  l3: { img: l3, beacon: { x: 33, y: 7 } },
+  l4: { img: l4, beacon: { x: 31, y: 8 } },
+  l50: { img: l50, beacon: { x: 50, y: 4 } },
+  c5: { img: c5, beacon: { x: 50, y: 3 } },
+  s5: { img: s5, beacon: { x: 30, y: 6 } },
 };
+
+/* Readouts sit at the edges of the stage, NOT tethered to parts of the machine.
+   An earlier pass drew a dot and leader line into the robot, which is the visual
+   language of a technical annotation and implied we knew which component each
+   figure belonged to. We don't — and most of these are performance rates
+   (coverage, runtime, charge time) that have no physical location at all. */
+const READOUTS = ["left-5 top-14", "left-5 bottom-16", "right-5 bottom-16"];
 
 /* Fixed point-cloud: deterministic positions so server and client agree. */
 const POINTS: ReadonlyArray<{ x: number; y: number; d: number; hot?: boolean }> = [
@@ -28,101 +45,121 @@ const POINTS: ReadonlyArray<{ x: number; y: number; d: number; hot?: boolean }> 
   { x: 78, y: 40, d: 1.0 },
 ];
 
-function CalloutTag({
-  callout,
-  index,
-  still,
-}: {
-  callout: SpotlightCallout;
-  index: number;
-  still: boolean;
-}) {
-  const left = callout.side === "left";
-  return (
-    <motion.div
-      className={`absolute z-20 hidden items-center sm:flex ${
-        left ? "flex-row-reverse" : ""
-      }`}
-      style={{
-        left: `${callout.x}%`,
-        top: `${callout.y}%`,
-        transform: left ? "translate(-100%, -50%)" : "translateY(-50%)",
-      }}
-      initial={still ? false : { opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ delay: 0.5 + index * 0.25, duration: 0.5 }}
-    >
-      {/* contact dot */}
-      <span className="relative flex h-3 w-3 shrink-0 items-center justify-center">
-        <span className="absolute h-full w-full rounded-full bg-amber/80" />
-        {!still && (
-          <motion.span
-            className="absolute h-full w-full rounded-full bg-amber"
-            animate={{ scale: [1, 2.4], opacity: [0.7, 0] }}
-            transition={{ duration: 1.8, repeat: Infinity, ease: "easeOut", delay: index * 0.5 }}
-          />
-        )}
-      </span>
-      {/* leader line */}
-      <span className="h-px w-10 bg-amber/50 lg:w-16" aria-hidden="true" />
-      {/* readout chip */}
-      <span
-        className={`border border-line bg-base/90 px-3 py-2 backdrop-blur-sm ${
-          left ? "text-right" : ""
-        }`}
-      >
-        <span className="block font-mono text-sm font-semibold tabular-nums text-snow">
-          {callout.value}
-        </span>
-        <span className="block font-mono text-[0.6rem] uppercase tracking-[0.14em] text-fog">
-          {callout.label}
-        </span>
-      </span>
-    </motion.div>
-  );
-}
+const CORNERS = [
+  "top-3 left-3 border-t-2 border-l-2",
+  "top-3 right-3 border-t-2 border-r-2",
+  "bottom-3 left-3 border-b-2 border-l-2",
+  "bottom-3 right-3 border-b-2 border-r-2",
+] as const;
 
-/** Animated robot showcase: a LiDAR-style sweep passes over the machine while
- *  spec callouts ping in like radar contacts. Everything animated is something
- *  the robot actually does — no decorative confetti. */
-export function RobotSpotlight({
-  robot,
-  image,
-  beacon,
-  callouts,
-  index = 1,
-  total = 5,
-}: {
-  robot: Robot;
-  image: StaticImageData;
-  /** amber beacon position, % of the robot image box */
-  beacon: { x: number; y: number };
-  callouts: SpotlightCallout[];
-  index?: number;
-  total?: number;
-}) {
+/** Machine finder. The selector is labelled by *situation* rather than model
+ *  number, because a first-time visitor knows their building, not our SKUs —
+ *  so the section answers "which one do I need?" instead of listing what we
+ *  happen to sell. Picking a situation names the machine and says why. */
+export function RobotSpotlight() {
+  const [active, setActive] = useState(0);
   const still = useReducedMotion() ?? false;
 
+  const robot = robots[active];
+  const { img, beacon } = stage[robot.slug];
+  const readouts = robot.heroStats.slice(0, 3).map((stat, i) => ({
+    pos: READOUTS[i],
+    value: stat.value,
+    unit: stat.unit,
+    label: stat.label,
+  }));
+
   return (
-    <section aria-labelledby="spotlight-title" className="border-b border-line bg-base">
+    <section
+      aria-labelledby="finder-title"
+      className="border-b border-line bg-base"
+    >
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:py-20 lg:grid-cols-[1fr_1.15fr]">
-        {/* ── Copy ── */}
-        <motion.div
-          initial={still ? false : { opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6 }}
-        >
-          <Eyebrow>Fleet spotlight</Eyebrow>
-          <h2 id="spotlight-title" className="display mt-5 text-6xl text-snow sm:text-7xl">
-            {robot.model}
+        {/* ── Finder ── */}
+        <div>
+          <Eyebrow>Find your machine</Eyebrow>
+          <h2
+            id="finder-title"
+            className="display mt-5 max-w-md text-3xl text-snow sm:text-4xl"
+          >
+            Which machine fits your floor?
           </h2>
-          <p className="display mt-2 max-w-md text-2xl text-amber sm:text-3xl">
-            {robot.tagline}
+          <p className="mt-4 max-w-md text-sm leading-relaxed text-fog">
+            Start with the kind of space you clean — we&rsquo;ll name the
+            machine built for it.
           </p>
-          <p className="mt-6 max-w-md leading-relaxed text-fog">{robot.pitch}</p>
-          <div className="mt-9 flex flex-wrap gap-4">
+
+          {/* Situation-led selector: what you have, not what we stock */}
+          <div
+            role="tablist"
+            aria-label="Choose the kind of space you clean"
+            className="mt-7 grid grid-cols-5 gap-px border border-line bg-line"
+          >
+            {robots.map((r, i) => (
+              <button
+                key={r.slug}
+                type="button"
+                role="tab"
+                aria-selected={i === active}
+                onClick={() => setActive(i)}
+                className={`px-2 py-3 text-center transition-colors ${
+                  i === active
+                    ? "bg-amber text-ink"
+                    : "bg-surface hover:bg-raise"
+                }`}
+              >
+                <span
+                  className={`block text-[0.7rem] font-semibold leading-tight ${
+                    i === active ? "text-ink" : "text-snow"
+                  }`}
+                >
+                  {r.bestFor}
+                </span>
+                <span
+                  className={`mt-1 block font-mono text-[0.65rem] uppercase tracking-[0.1em] ${
+                    i === active ? "text-ink/70" : "text-fog"
+                  }`}
+                >
+                  {r.model}
+                </span>
+              </button>
+            ))}
+          </div>
+
+          {/* The answer, keyed so it replays on every swap */}
+          <motion.div
+            key={robot.slug}
+            initial={still ? false : { opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="mt-8"
+          >
+            <p className="flex items-baseline gap-3">
+              <span className="display text-4xl text-snow sm:text-5xl">
+                {robot.model}
+              </span>
+              <span className="stencil text-fog">{robot.kind}</span>
+            </p>
+            <p className="mt-4 max-w-md leading-relaxed text-cloud">
+              {robot.pickIf}
+            </p>
+
+            <div className="mt-6">
+              <p className="stencil text-amber">Works in</p>
+              <ul className="mt-3 flex flex-wrap gap-2">
+                {robot.environments.map((env) => (
+                  <li
+                    key={env}
+                    className="border border-line px-2.5 py-1 font-mono text-[0.65rem] uppercase tracking-[0.1em] text-cloud"
+                  >
+                    {env}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+
+          <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href={`/robots/${robot.slug}`}
               className="stencil rounded-sm bg-amber px-7 py-4 text-ink transition-colors hover:bg-amber-hot"
@@ -130,19 +167,18 @@ export function RobotSpotlight({
               View the {robot.model}
             </Link>
             <Link
-              href={`/contact?robot=${robot.slug}`}
+              href="/robots"
               className="stencil rounded-sm border border-snow/40 px-7 py-4 text-snow transition-colors hover:border-snow hover:bg-snow/10"
             >
-              Get a quote
+              Compare all five
             </Link>
           </div>
-        </motion.div>
+        </div>
 
         {/* ── Scanner stage ── */}
         <div className="relative">
           <div className="grid-plate relative overflow-hidden border border-line bg-surface">
-            {/* viewfinder corners */}
-            {(["top-3 left-3 border-t-2 border-l-2", "top-3 right-3 border-t-2 border-r-2", "bottom-3 left-3 border-b-2 border-l-2", "bottom-3 right-3 border-b-2 border-r-2"] as const).map((pos) => (
+            {CORNERS.map((pos) => (
               <span
                 key={pos}
                 aria-hidden="true"
@@ -150,30 +186,36 @@ export function RobotSpotlight({
               />
             ))}
 
-            {/* fleet position readout */}
             <p className="absolute right-5 top-4 z-20 font-mono text-xs tabular-nums text-fog">
-              <span className="text-amber">{String(index).padStart(2, "0")}</span>
+              <span className="text-amber">
+                {String(active + 1).padStart(2, "0")}
+              </span>
               {" / "}
-              {String(total).padStart(2, "0")}
+              {String(robots.length).padStart(2, "0")}
             </p>
 
-            {/* point cloud */}
             {POINTS.map((p, i) => (
               <motion.span
                 key={i}
                 aria-hidden="true"
-                className={`absolute z-0 h-1 w-1 rounded-full ${p.hot ? "bg-amber" : "bg-fog"}`}
+                className={`absolute z-0 h-1 w-1 rounded-full ${
+                  p.hot ? "bg-amber" : "bg-fog"
+                }`}
                 style={{ left: `${p.x}%`, top: `${p.y}%` }}
                 animate={still ? { opacity: 0.3 } : { opacity: [0.08, 0.55, 0.08] }}
                 transition={
                   still
                     ? undefined
-                    : { duration: 3 + (i % 5) * 0.7, delay: p.d, repeat: Infinity, ease: "easeInOut" }
+                    : {
+                        duration: 3 + (i % 5) * 0.7,
+                        delay: p.d,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }
                 }
               />
             ))}
 
-            {/* sweep beam */}
             {!still && (
               <motion.div
                 aria-hidden="true"
@@ -188,23 +230,24 @@ export function RobotSpotlight({
               />
             )}
 
-            {/* the machine + anchored overlays */}
-            <div className="relative mx-auto my-10 w-[62%] max-w-xs sm:my-12">
+            {/* keyed on slug so swapping replays the machine entrance */}
+            <div
+              key={robot.slug}
+              className="relative mx-auto my-10 w-[52%] max-w-xs sm:my-12"
+            >
               <motion.div
-                initial={still ? false : { opacity: 0, y: 26 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.7, ease: "easeOut" }}
+                initial={still ? false : { opacity: 0, y: 18 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
               >
                 <Image
-                  src={image}
-                  alt={`${robot.model} ${robot.kind}, front three-quarter view`}
+                  src={img}
+                  alt={`${robot.model} ${robot.kind}, front view`}
                   className="relative z-[5] h-auto w-full"
-                  sizes="(min-width: 1024px) 340px, 62vw"
+                  sizes="(min-width: 1024px) 340px, 52vw"
                 />
               </motion.div>
 
-              {/* beacon glow — the robot's real amber beacon, breathing */}
               <motion.span
                 aria-hidden="true"
                 className="absolute z-[6] h-6 w-6 rounded-full bg-amber blur-md"
@@ -213,25 +256,66 @@ export function RobotSpotlight({
                   top: `${beacon.y}%`,
                   transform: "translate(-50%, -50%)",
                 }}
-                animate={still ? { opacity: 0.5 } : { opacity: [0.15, 0.7, 0.15], scale: [0.9, 1.15, 0.9] }}
-                transition={still ? undefined : { duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+                animate={
+                  still ? { opacity: 0.5 } : { opacity: [0.15, 0.7, 0.15] }
+                }
+                transition={
+                  still
+                    ? undefined
+                    : { duration: 2.4, repeat: Infinity, ease: "easeInOut" }
+                }
               />
-
-              {callouts.map((c, i) => (
-                <CalloutTag key={c.label} callout={c} index={i} still={still} />
-              ))}
             </div>
+
+            {/* ── Edge readouts: figures about the machine, not labels of parts ── */}
+            {readouts.map((r, i) => (
+              <motion.div
+                key={`${robot.slug}-${r.label}`}
+                className={`absolute z-20 hidden w-32 border border-line bg-base/90 px-3 py-2 backdrop-blur-sm sm:block ${r.pos}`}
+                initial={still ? false : { opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.35 + i * 0.18, duration: 0.4 }}
+              >
+                <span className="flex items-center gap-2">
+                  <motion.span
+                    aria-hidden="true"
+                    className="block h-1.5 w-1.5 shrink-0 bg-amber"
+                    animate={still ? { opacity: 0.8 } : { opacity: [0.35, 1, 0.35] }}
+                    transition={
+                      still
+                        ? undefined
+                        : {
+                            duration: 2.2,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                            delay: i * 0.5,
+                          }
+                    }
+                  />
+                  <span className="font-mono text-sm font-semibold tabular-nums text-snow">
+                    {r.value}
+                    <span className="ml-0.5 text-xs font-normal text-fog">
+                      {r.unit}
+                    </span>
+                  </span>
+                </span>
+                <span className="mt-1 block font-mono text-[0.6rem] uppercase tracking-[0.14em] text-fog">
+                  {r.label}
+                </span>
+              </motion.div>
+            ))}
           </div>
 
-          {/* mobile fallback for the hidden callouts */}
+          {/* mobile fallback for the hidden readouts */}
           <dl className="mt-4 grid grid-cols-3 gap-px border border-line bg-line sm:hidden">
-            {callouts.map((c) => (
-              <div key={c.label} className="bg-surface p-3">
+            {readouts.map((r) => (
+              <div key={r.label} className="bg-surface p-3">
                 <dt className="font-mono text-[0.55rem] uppercase tracking-[0.12em] text-fog">
-                  {c.label}
+                  {r.label}
                 </dt>
                 <dd className="mt-1 font-mono text-sm font-semibold tabular-nums text-snow">
-                  {c.value}
+                  {r.value}
+                  <span className="ml-0.5 text-xs text-fog">{r.unit}</span>
                 </dd>
               </div>
             ))}
