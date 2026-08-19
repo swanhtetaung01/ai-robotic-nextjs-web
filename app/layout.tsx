@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Archivo, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Saira, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 
-const archivo = Archivo({
-  variable: "--font-archivo",
+const saira = Saira({
+  variable: "--font-saira",
   subsets: ["latin"],
   axes: ["wdth"],
 });
@@ -36,7 +36,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${archivo.variable} ${plexSans.variable} ${plexMono.variable} h-full antialiased`}
+      className={`${saira.variable} ${plexSans.variable} ${plexMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <SiteHeader />

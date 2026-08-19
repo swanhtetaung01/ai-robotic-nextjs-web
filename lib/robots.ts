@@ -29,8 +29,10 @@ export type Robot = {
   model: string;
   kind: string;
   tagline: string;
-  /** one-sentence positioning used on cards and metadata */
+  /** one-sentence positioning used on metadata and the contact page */
   pitch: string;
+  /** short benefit phrases for the lineup cards — scannable, not prose */
+  highlights: string[];
   intro: string;
   heroStats: HeroStat[];
   features: Feature[];
@@ -48,6 +50,11 @@ export const robots: Robot[] = [
     tagline: "Fits where the others can't.",
     pitch:
       "Compact AI floor scrubber that passes through 700 mm gaps — built for hospitals, schools and tight retail floors.",
+    highlights: [
+      "Passes through 700 mm gaps",
+      "Hands-free voice control",
+      "Spots cables and loose mats",
+    ],
     intro:
       "The L3 carries a 100 TOPS NVIDIA AI platform and a 96-beam 3D LiDAR in a body narrow enough for a hospital corridor at visiting hours. It plans its own routes, avoids what people leave in them, and answers to plain voice commands.",
     heroStats: [
@@ -158,6 +165,11 @@ export const robots: Robot[] = [
     tagline: "Balanced size. High productivity.",
     pitch:
       "The volume workhorse for retail and hospitality — fits a standard doorway and scrubs to within 3 cm of the wall.",
+    highlights: [
+      "Clears a standard doorway",
+      "Scrubs to 3 cm from the wall",
+      "Runs 24/7 with its workstation",
+    ],
     intro:
       "At 810 mm passage width the L4 goes through a standard door frame, then cleans to within 3 cm of the skirting board. Stain-perception AI adjusts water, pressure and speed to what it actually sees on the floor.",
     heroStats: [
@@ -263,6 +275,11 @@ export const robots: Robot[] = [
     tagline: "Sixty thousand square feet. One charge.",
     pitch:
       "The warehouse workhorse — 55 L tank, 6-hour runtime, and 40–60,000 ft² covered without a refill.",
+    highlights: [
+      "40–60,000 ft² on one charge",
+      "Six-hour runtime",
+      "Sees 150 m down the aisle",
+    ],
     intro:
       "Built for warehouses, logistics hubs and big-box floors: a 55-litre solution tank, 25 kg of brush pressure for epoxy floors, and a battery that runs a full shift. It covers 40–60,000 square feet on a single charge without asking for anything.",
     heroStats: [
@@ -348,6 +365,11 @@ export const robots: Robot[] = [
     tagline: "Three jobs. One pass.",
     pitch:
       "Sweeps, scrubs and dust mops in a single pass — with a 90-litre tank and a workstation that refills and cleans itself.",
+    highlights: [
+      "Sweeps, scrubs and mops in one pass",
+      "90 L tank — largest in the fleet",
+      "Self-cleans its tank in 4 min",
+    ],
     intro:
       "Most floors need three machines and three passes. The C5 needs one. It sweeps debris, scrubs the floor and dust mops behind itself in a single run, carries 90 litres of water to do it, and returns to a workstation that refills, drains and flushes its own sewage tank in four minutes.",
     heroStats: [
@@ -468,6 +490,11 @@ export const robots: Robot[] = [
     tagline: "Dry debris. Wholesale.",
     pitch:
       "AI-driven industrial sweeper for dry debris — 27,000 ft²/h, and it works in coordinated fleets.",
+    highlights: [
+      "Handles dust to dropped bolts",
+      "Works in coordinated fleets",
+      "Yields to forklifts and AGVs",
+    ],
     intro:
       "From fine dust to wood chips, packaging film, bottles and screws — the S5 sweeps the dry side of industrial floors at 27,000 ft²/h. TeamClean lets several units carve up a warehouse together, and vehicle recognition keeps them clear of your forklifts.",
     heroStats: [

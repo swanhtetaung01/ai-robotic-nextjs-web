@@ -75,7 +75,7 @@ export default function HomePage() {
             <p className="stencil text-amber">
               AI Robotic · Autonomous cleaning fleet
             </p>
-            <h1 className="display mx-auto mt-5 max-w-2xl text-4xl text-snow sm:text-5xl lg:text-6xl">
+            <h1 className="display mx-auto mt-5 max-w-4xl text-4xl text-snow sm:text-5xl lg:text-6xl">
               The night shift that never calls in sick
             </h1>
           </div>

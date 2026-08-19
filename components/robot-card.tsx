@@ -42,7 +42,17 @@ export function RobotCard({ robot }: { robot: Robot }) {
         <p className="display text-xl text-snow sm:min-h-[3.5rem]">
           {robot.tagline}
         </p>
-        <p className="text-sm leading-relaxed text-fog">{robot.pitch}</p>
+        <ul className="space-y-1.5">
+          {robot.highlights.map((h) => (
+            <li key={h} className="flex gap-2.5 text-sm leading-snug text-fog">
+              <span
+                className="mt-1.5 h-1 w-1 shrink-0 bg-amber"
+                aria-hidden="true"
+              />
+              {h}
+            </li>
+          ))}
+        </ul>
         <div className="mt-auto flex items-center justify-between border-t border-line pt-4">
           <span className="font-mono text-sm text-snow">
             {lead.value}

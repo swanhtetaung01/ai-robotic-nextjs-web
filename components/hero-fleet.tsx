@@ -73,10 +73,17 @@ export function HeroFleet() {
               />
             </span>
 
+            {/* Hover affordance: a pinging marker above the machine. Retreats
+                as soon as the pointer arrives and the card takes over. */}
+            <span className="absolute bottom-full left-1/2 mb-3 block h-2.5 w-2.5 -translate-x-1/2 transition-opacity duration-200 group-hover:opacity-0 group-focus-visible:opacity-0">
+              <span className="hotspot-ring absolute inset-0 block rounded-full border border-amber" />
+              <span className="absolute inset-0 block rounded-full bg-amber/80" />
+            </span>
+
             <Image
               src={unit.img}
               alt=""
-              className="relative w-auto transition-transform duration-300 group-hover:scale-105"
+              className="relative w-auto transition-transform duration-300 ease-out group-hover:-translate-y-1.5 group-hover:scale-[1.07]"
               style={{ height: `${LINE_HEIGHT}svh` }}
               sizes="14vw"
             />
