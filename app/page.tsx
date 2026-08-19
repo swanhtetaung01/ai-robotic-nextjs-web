@@ -54,27 +54,37 @@ export default function HomePage() {
           alt="AI Robotic L3 autonomous scrubber on a dramatic lunar set beneath a rising dome"
           priority
           placeholder="blur"
-          className="absolute inset-0 -z-10 h-full w-full object-cover object-center"
+          className="absolute inset-0 -z-10 h-full w-full object-cover object-[center_30%] sm:object-center"
           sizes="100vw"
         />
+        {/* darker sky for the headline, clear middle for the machine,
+            solid ground for the actions */}
         <div
-          className="absolute inset-0 -z-10 bg-gradient-to-b from-ink/70 via-transparent to-base"
+          className="absolute inset-0 -z-10 bg-gradient-to-b from-ink/80 via-ink/5 via-45% to-base"
           aria-hidden="true"
         />
-        <div className="mx-auto flex min-h-[88svh] max-w-6xl flex-col items-center justify-between px-5 pb-14 pt-20 text-center sm:pt-24">
-          <div className="max-w-3xl">
+        <div className="mx-auto flex min-h-[92svh] max-w-6xl flex-col items-center justify-between px-5 pb-10 pt-16 text-center sm:pt-20">
+          {/* headline in the sky, above the machine */}
+          <div>
             <p className="stencil text-amber">
               AI Robotic · Autonomous cleaning fleet
             </p>
-            <h1 className="display mt-6 text-4xl text-snow sm:text-6xl lg:text-7xl">
+            <h1 className="display mx-auto mt-5 max-w-2xl text-4xl text-snow sm:text-5xl lg:text-6xl">
               The night shift that never calls in sick
             </h1>
-            <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-cloud sm:text-lg">
-              AI Robotic puts autonomous floor-cleaning robots into hospitals,
-              warehouses, retail and schools — machines that map your building,
-              plan their own routes, and clean every night to the same standard.
+          </div>
+
+          {/* the machine stands here, unobstructed */}
+          <div className="min-h-[24svh] flex-1" aria-hidden="true" />
+
+          {/* subcopy and actions on the ground, below the machine */}
+          <div className="max-w-2xl">
+            <p className="mx-auto max-w-xl text-base leading-relaxed text-cloud sm:text-lg">
+              Autonomous floor-cleaning robots for hospitals, warehouses,
+              retail and schools — machines that map your building, plan their
+              own routes, and clean every night to the same standard.
             </p>
-            <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
+            <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/robots"
                 className="stencil rounded-sm bg-amber px-7 py-4 text-ink transition-colors hover:bg-amber-hot"
@@ -88,10 +98,10 @@ export default function HomePage() {
                 Request a quote
               </Link>
             </div>
+            <p className="stencil mt-9 animate-pulse text-fog" aria-hidden="true">
+              ▼ Scroll
+            </p>
           </div>
-          <p className="stencil mt-16 animate-pulse text-fog" aria-hidden="true">
-            ▼ Scroll
-          </p>
         </div>
       </section>
 
@@ -106,7 +116,7 @@ export default function HomePage() {
           { x: 55, y: 91, side: "right", value: "18 kg", label: "Brush pressure" },
         ]}
         index={1}
-        total={4}
+        total={5}
       />
 
       {/* ── Proof band ───────────────────────────────────────── */}
@@ -145,16 +155,16 @@ export default function HomePage() {
             <div>
               <Eyebrow>The fleet</Eyebrow>
               <h2 className="display mt-4 text-3xl text-snow sm:text-4xl">
-                Four machines. Every floor covered.
+                Five machines. Every floor covered.
               </h2>
             </div>
             <Link href="/robots" className="stencil text-amber hover:text-amber-hot">
               Compare all models →
             </Link>
           </Reveal>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {robots.map((robot, i) => (
-              <Reveal key={robot.slug} delay={(i % 2) * 80}>
+              <Reveal key={robot.slug} delay={(i % 3) * 80} className="h-full">
                 <RobotCard robot={robot} />
               </Reveal>
             ))}

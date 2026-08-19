@@ -13,6 +13,11 @@ export function generateStaticParams() {
   return robots.map((r) => ({ slug: r.slug }));
 }
 
+/** Taller than it is wide — needs height-capped, centred treatment. */
+function isPortrait(img: { width: number; height: number }) {
+  return img.height > img.width;
+}
+
 export async function generateMetadata({
   params,
 }: PageProps<"/robots/[slug]">): Promise<Metadata> {
@@ -61,7 +66,10 @@ export default async function RobotPage({ params }: PageProps<"/robots/[slug]">)
         )}
         {images?.heroForeground && (
           <div
-            className="pointer-events-none absolute bottom-0 right-2 z-0 hidden w-2/5 max-w-sm sm:block lg:right-16 lg:max-w-md"
+            className={
+              images.heroForegroundClass ??
+              "pointer-events-none absolute bottom-0 right-2 z-0 hidden w-2/5 max-w-sm sm:block lg:right-16 lg:max-w-md"
+            }
             aria-hidden="true"
           >
             <Image
@@ -165,12 +173,24 @@ export default async function RobotPage({ params }: PageProps<"/robots/[slug]">)
                       i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
                     }`}
                   >
-                    <div className="overflow-hidden border border-cloud">
+                    {/* Portrait shots would tower over the column at full width,
+                        so they sit centred at a capped height instead. */}
+                    <div
+                      className={`overflow-hidden border border-cloud ${
+                        isPortrait(img.src)
+                          ? "flex justify-center bg-paper-dim py-8"
+                          : ""
+                      }`}
+                    >
                       <Image
                         src={img.src}
                         alt={img.alt}
                         placeholder="blur"
-                        className="h-auto w-full object-cover"
+                        className={
+                          isPortrait(img.src)
+                            ? "h-auto max-h-[24rem] w-auto max-w-full object-contain"
+                            : "h-auto w-full object-cover"
+                        }
                         sizes="(min-width: 1024px) 560px, 92vw"
                       />
                     </div>

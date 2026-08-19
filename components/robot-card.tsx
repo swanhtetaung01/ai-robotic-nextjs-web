@@ -13,7 +13,7 @@ export function RobotCard({ robot }: { robot: Robot }) {
   return (
     <Link
       href={`/robots/${robot.slug}`}
-      className="group flex flex-col border border-line bg-surface transition-colors hover:border-amber/60"
+      className="group flex h-full flex-col border border-line bg-surface transition-colors hover:border-amber/60"
     >
       <div className="relative flex h-56 items-center justify-center overflow-hidden bg-raise">
         {product ? (
@@ -38,7 +38,10 @@ export function RobotCard({ robot }: { robot: Robot }) {
 
       <div className="flex flex-1 flex-col gap-3 p-6">
         <p className="stencil text-fog">{robot.kind}</p>
-        <p className="display text-xl text-snow">{robot.tagline}</p>
+        {/* two-line slot keeps the pitch starting at the same baseline on every card */}
+        <p className="display text-xl text-snow sm:min-h-[3.5rem]">
+          {robot.tagline}
+        </p>
         <p className="text-sm leading-relaxed text-fog">{robot.pitch}</p>
         <div className="mt-auto flex items-center justify-between border-t border-line pt-4">
           <span className="font-mono text-sm text-snow">

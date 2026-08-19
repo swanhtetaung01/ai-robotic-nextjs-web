@@ -339,7 +339,127 @@ export const robots: Robot[] = [
       },
     ],
     environments: ["Warehouses", "Logistics", "Manufacturing", "Big-box retail"],
-    compare: ["s5", "l4"],
+    compare: ["c5", "s5"],
+  },
+  {
+    slug: "c5",
+    model: "C5",
+    kind: "3-in-1 cleaning machine",
+    tagline: "Three jobs. One pass.",
+    pitch:
+      "Sweeps, scrubs and dust mops in a single pass — with a 90-litre tank and a workstation that refills and cleans itself.",
+    intro:
+      "Most floors need three machines and three passes. The C5 needs one. It sweeps debris, scrubs the floor and dust mops behind itself in a single run, carries 90 litres of water to do it, and returns to a workstation that refills, drains and flushes its own sewage tank in four minutes.",
+    heroStats: [
+      { value: "1,980", unit: "m²/h", label: "max cleaning rate" },
+      { value: "90", unit: "L", label: "water tank" },
+      { value: "550", unit: "mm", label: "cleaning width" },
+      { value: "95", unit: "%", label: "debris removal" },
+    ],
+    features: [
+      {
+        eyebrow: "Professional cleaning",
+        title: "Sweep, scrub and mop — in one run",
+        body: "Dual side brushes pull debris in from the edges, the roller brush and 25 kg of scrubbing pressure take the floor down to clean, and the dust mop finishes behind. Heavily soiled floors come back in a single pass instead of three.",
+        bullets: [
+          "Sweeping, scrubbing and dust mopping combined",
+          "Over 95% debris removal",
+          "Zero-distance side-brush edge cleaning",
+        ],
+      },
+      {
+        eyebrow: "Positioning",
+        title: "Laser and vision, fused",
+        body: "Laser-vision fusion positioning keeps the C5 located when either sensor alone would drift — through glass atriums, past mirrored shopfronts, across the wide open floors that defeat pure-LiDAR machines.",
+        bullets: [
+          "Laser-vision fusion positioning",
+          "Visual and point-cloud fusion perception",
+          "Over 90% self-diagnostic coverage",
+        ],
+      },
+      {
+        eyebrow: "Self-maintenance",
+        title: "It cleans its own tank",
+        body: "The dirtiest job on any scrubber is the sewage tank, and it is the one people skip. The C5 flushes its own in four minutes at the workstation — then refills, charges and goes back out.",
+        bullets: [
+          "Four-minute sewage tank self-clean",
+          "Automatic charging and water management",
+          "Closed-loop cleaning re-covers any missed area",
+        ],
+      },
+      {
+        eyebrow: "Control",
+        title: "On the machine, on your phone, in the cloud",
+        body: "Start a job from the robot's own screen, dispatch it from your phone, or schedule the whole week from the cloud console — with job reports waiting for you either way.",
+        bullets: [
+          "Triple-platform control: robot, mobile and cloud",
+          "Autonomous boundary recognition and map updates",
+          "Automatic scheduling and job reporting",
+        ],
+      },
+      {
+        eyebrow: "Workstation",
+        title: "The dock does the dirty work",
+        body: "A compact station that fills at up to 10 litres a minute, drains at up to 15, and runs the tank self-clean cycle. Where there is no plumbing, a mobile tank configuration does the same job.",
+        imageKey: "workstation",
+        bullets: [
+          "Automatic fill, drain and sewage self-clean",
+          "8 L onboard tank, 1,800 W peak draw",
+          "Mobile tank option for sites without plumbing",
+        ],
+      },
+    ],
+    specGroups: [
+      {
+        title: "Performance",
+        specs: [
+          { label: "Max cleaning rate", metric: "1,980 m²/h", imperial: "21,313 ft²/h" },
+          { label: "Cleaning width", metric: "550 mm", imperial: "21.7 in" },
+          { label: "Scrubbing pressure", metric: "25 kg", imperial: "55.1 lbs" },
+          { label: "Water tank", metric: "90 L", imperial: "23.8 gal" },
+          { label: "Debris removal", metric: ">95%" },
+          { label: "Scrubbing endurance", metric: "3 h" },
+        ],
+      },
+      {
+        title: "Intelligence & safety",
+        specs: [
+          { label: "Positioning", metric: "Laser-vision fusion" },
+          { label: "Perception", metric: "Visual + point cloud" },
+          { label: "Self-diagnostic coverage", metric: ">90%" },
+          { label: "Boundary recognition", metric: "Autonomous" },
+        ],
+      },
+      {
+        title: "Durability & upkeep",
+        specs: [
+          { label: "Sewage tank self-clean", metric: "4 min" },
+          { label: "Fan lifespan", metric: "10,000 h" },
+          { label: "Cleaning modes", metric: "Sweep · scrub · dust mop" },
+        ],
+      },
+      {
+        title: "Workstation",
+        specs: [
+          { label: "Dimensions (L×W×H)", metric: "520 × 310 × 1,038 mm", imperial: "20.5 × 12.2 × 40.9 in" },
+          { label: "Water tank", metric: "8 L", imperial: "2.1 gal" },
+          { label: "Fill rate", metric: "7–10 L/min", imperial: "1.8–2.6 gal/min" },
+          { label: "Drainage rate", metric: "10–15 L/min", imperial: "2.6–4.0 gal/min" },
+          { label: "Max power", metric: "1,800 W" },
+        ],
+      },
+    ],
+    environments: [
+      "Shopping malls",
+      "Airports",
+      "Transport hubs",
+      "Factories",
+      "Hospitals",
+      "Supermarkets",
+      "Office buildings",
+      "Hotels",
+    ],
+    compare: ["l50", "s5"],
   },
   {
     slug: "s5",
@@ -418,7 +538,7 @@ export const robots: Robot[] = [
       },
     ],
     environments: ["Warehouses", "Manufacturing", "Parking garages", "Logistics"],
-    compare: ["l50", "l4"],
+    compare: ["l50", "c5"],
   },
 ];
 

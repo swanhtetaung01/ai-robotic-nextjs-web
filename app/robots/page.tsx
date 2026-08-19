@@ -8,7 +8,7 @@ import { Eyebrow, QuoteBand } from "@/components/ui";
 export const metadata: Metadata = {
   title: "The fleet",
   description:
-    "Compare the AI Robotic fleet: L3 and L4 autonomous scrubbers, the L50 industrial workhorse and the S5 industrial sweeper.",
+    "Compare the AI Robotic fleet: L3 and L4 autonomous scrubbers, the L50 industrial workhorse, the C5 3-in-1 cleaning machine and the S5 industrial sweeper.",
 };
 
 /** slug → row value */
@@ -21,6 +21,7 @@ const compareRows: CompareRow[] = [
       l3: "Scrub · tight spaces",
       l4: "Scrub · retail & hospitality",
       l50: "Scrub · warehouse scale",
+      c5: "Sweep + scrub + mop",
       s5: "Sweep · dry debris",
     },
   },
@@ -30,6 +31,7 @@ const compareRows: CompareRow[] = [
       l3: "21,674 ft²/h",
       l4: "20,925 ft²/h",
       l50: "23,713 ft²/h",
+      c5: "21,313 ft²/h",
       s5: "27,000 ft²/h",
     },
   },
@@ -39,6 +41,7 @@ const compareRows: CompareRow[] = [
       l3: "700 mm / 27.6 in",
       l4: "810 mm / 31.9 in",
       l50: "—",
+      c5: "—",
       s5: "—",
     },
   },
@@ -48,6 +51,7 @@ const compareRows: CompareRow[] = [
       l3: "25 L solution",
       l4: "38 L solution",
       l50: "55 L solution",
+      c5: "90 L solution",
       s5: "50 L hopper",
     },
   },
@@ -57,6 +61,7 @@ const compareRows: CompareRow[] = [
       l3: "100 TOPS",
       l4: "32 TOPS",
       l50: "NVIDIA AI",
+      c5: "Laser-vision fusion",
       s5: "100 TOPS",
     },
   },
@@ -66,6 +71,7 @@ const compareRows: CompareRow[] = [
       l3: "96-beam 3D",
       l4: "32-beam 3D",
       l50: "150 m range",
+      c5: "Laser + vision fusion",
       s5: "32-beam 3D",
     },
   },
@@ -75,6 +81,7 @@ const compareRows: CompareRow[] = [
       l3: "Extended (WT3)",
       l4: "24/7 with dock",
       l50: "Up to 6 h",
+      c5: "3 h scrubbing",
       s5: "2 h fast charge",
     },
   },
@@ -84,6 +91,7 @@ const compareRows: CompareRow[] = [
       l3: "Hospitals, schools",
       l4: "Retail, hotels",
       l50: "Warehouses, logistics",
+      c5: "Malls, airports, factories",
       s5: "Industry, garages",
     },
   },
@@ -101,9 +109,9 @@ export default function FleetPage() {
             </h1>
             <p className="mt-6 max-w-2xl leading-relaxed text-fog">
               Two compact scrubbers for occupied buildings, an industrial
-              workhorse for warehouse floors, and a fleet-capable dry sweeper.
-              Every machine runs NVIDIA-powered perception and reports to the
-              same AI Robotic app.
+              workhorse for warehouse floors, a 3-in-1 machine that sweeps,
+              scrubs and mops in one pass, and a fleet-capable dry sweeper —
+              all reporting to the same AI Robotic app.
             </p>
           </Reveal>
         </div>
@@ -111,9 +119,9 @@ export default function FleetPage() {
 
       <section className="bg-base">
         <div className="mx-auto max-w-6xl px-5 py-14">
-          <div className="grid gap-6 sm:grid-cols-2">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {robots.map((robot, i) => (
-              <Reveal key={robot.slug} delay={(i % 2) * 80}>
+              <Reveal key={robot.slug} delay={(i % 3) * 80} className="h-full">
                 <RobotCard robot={robot} />
               </Reveal>
             ))}
@@ -132,7 +140,7 @@ export default function FleetPage() {
           </Reveal>
 
           <div className="mt-10 overflow-x-auto">
-            <table className="w-full min-w-[820px] border-collapse text-sm">
+            <table className="w-full min-w-[1000px] border-collapse text-sm">
               <thead>
                 <tr>
                   <th className="sr-only">Specification</th>

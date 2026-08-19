@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s · AI Robotic",
   },
   description:
-    "AI Robotic supplies autonomous floor-cleaning robots for hospitals, warehouses, retail and schools. Request a quote for the L3, L4 and L50 scrubbers or the S5 industrial sweeper.",
+    "AI Robotic supplies autonomous floor-cleaning robots for hospitals, warehouses, retail and schools. Request a quote for the L3, L4 and L50 scrubbers, the C5 3-in-1 machine or the S5 industrial sweeper.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

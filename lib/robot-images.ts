@@ -26,6 +26,10 @@ import l50SceneHospitals from "@/public/robots/l50/l50-scene-hospitals.jpg";
 import l50SceneHotels from "@/public/robots/l50/l50-scene-hotels.jpg";
 import l50SceneEducation from "@/public/robots/l50/l50-scene-education.jpg";
 
+import c5Pair from "@/public/robots/C5/c5-hero-pair.png";
+import c5Product from "@/public/robots/C5/c5-product.png";
+import c5Workstation from "@/public/robots/C5/c5-workstation.png";
+
 import s5Warehouse from "@/public/robots/s5/s5-hero-warehouse.webp";
 import s5HeroRobot from "@/public/robots/s5/s5-hero-robot.webp";
 import s5Product from "@/public/robots/s5/s5-product.webp";
@@ -42,6 +46,8 @@ export type RobotImages = {
   heroClass?: string;
   /** transparent cutout composited onto the hero (for background-only banners) */
   heroForeground?: { src: StaticImageData; alt: string };
+  /** positioning override for the hero cutout; defaults to a bottom-right portrait slot */
+  heroForegroundClass?: string;
   /** transparent product cut-out for cards and lineup */
   product?: StaticImageData;
   /** keyed feature-section imagery */
@@ -125,6 +131,23 @@ export const robotImages: Record<string, RobotImages> = {
       { src: l50SceneHotels, alt: "Hotel lobby", label: "Hotels" },
       { src: l50SceneEducation, alt: "University hallway", label: "Education" },
     ],
+  },
+
+  c5: {
+    // no wide banner shot — the cutout carries the hero against the graphite ground
+    heroForeground: {
+      src: c5Pair,
+      alt: "C5 3-in-1 cleaning machine beside its self-cleaning workstation",
+    },
+    heroForegroundClass:
+      "pointer-events-none absolute bottom-0 right-0 z-0 hidden w-[58%] max-w-2xl opacity-95 sm:block lg:right-4",
+    product: c5Product,
+    features: {
+      workstation: {
+        src: c5Workstation,
+        alt: "C5 workstation, which refills, drains and flushes the robot's sewage tank",
+      },
+    },
   },
 
   s5: {

@@ -8,7 +8,7 @@ export function SiteFooter() {
       <div className="hazard-thin" aria-hidden="true" />
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div className="space-y-4">
-          <Wordmark compact />
+          <Wordmark className="h-8 w-auto" />
           <p className="max-w-xs text-sm leading-relaxed text-fog">
             Autonomous cleaning robots for facilities that can&rsquo;t afford a
             missed night. Every machine is configured, delivered and supported
