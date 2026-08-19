@@ -1,0 +1,125 @@
+import Image, { type StaticImageData } from "next/image";
+import Link from "next/link";
+import { getRobot } from "@/lib/robots";
+
+import l3 from "@/public/robots/fleet/l3.webp";
+import l4 from "@/public/robots/fleet/l4.webp";
+import l50 from "@/public/robots/fleet/l50.webp";
+import c5 from "@/public/robots/fleet/c5.webp";
+import s5 from "@/public/robots/fleet/s5.webp";
+
+/* The fleet stands in a single line across the aisle, all at one depth.
+   `items-end` puts every machine's wheels on the same line — which works
+   because the cutouts are pre-trimmed (public/robots/fleet/), so the image
+   edge IS the machine's edge.
+
+   Real machine heights sit within 9% of each other (990–1075 mm), so a
+   uniform render height is visually honest as well as tidier. */
+const LINE_BASE = 32; // svh up from the bottom of the hero — the floor line
+const LINE_HEIGHT = 18; // svh — identical for every machine
+
+const fleet: { slug: string; img: StaticImageData }[] = [
+  { slug: "l3", img: l3 },
+  { slug: "l4", img: l4 },
+  { slug: "l50", img: l50 },
+  { slug: "c5", img: c5 },
+  { slug: "s5", img: s5 },
+];
+
+/** Keeps the card on screen for the machines at either end of the line. */
+function cardAlign(i: number, total: number) {
+  if (i === 0) return "left-0";
+  if (i === total - 1) return "right-0";
+  return "left-1/2 -translate-x-1/2";
+}
+
+/** The fleet lined up down the aisle behind the hero copy. Hovering or
+ *  focusing a machine opens its spec card; clicking opens its page. */
+export function HeroFleet() {
+  return (
+    <div
+      className="pointer-events-none absolute inset-x-[5%] z-20 hidden items-end justify-between lg:flex"
+      style={{ bottom: `${LINE_BASE}svh` }}
+    >
+      {fleet.map((unit, i) => {
+        const robot = getRobot(unit.slug);
+        if (!robot) return null;
+
+        return (
+          <Link
+            key={unit.slug}
+            href={`/robots/${unit.slug}`}
+            aria-label={`${robot.model} — ${robot.kind}`}
+            className="fleet-unit group pointer-events-auto relative block hover:z-30 focus-visible:z-30"
+            style={{ animationDelay: `${0.3 + i * 0.12}s` }}
+          >
+            {/* Light spilling from under the chassis onto the wet floor.
+                Sits behind the machine so the chassis stays crisp against it.
+                Positioning lives here; the child owns the animated transform. */}
+            <span
+              className="absolute bottom-0 left-1/2 block -translate-x-1/2 translate-y-[38%]"
+              style={{
+                width: "165%",
+                height: `calc(${LINE_HEIGHT}svh * 0.3)`,
+              }}
+            >
+              <span
+                className="fleet-glow block h-full w-full"
+                style={{
+                  background:
+                    "radial-gradient(ellipse at center, rgba(255,193,96,0.55) 0%, rgba(255,154,31,0.24) 42%, transparent 72%)",
+                  animationDelay: `${i * 0.53}s`,
+                }}
+              />
+            </span>
+
+            <Image
+              src={unit.img}
+              alt=""
+              className="relative w-auto transition-transform duration-300 group-hover:scale-105"
+              style={{ height: `${LINE_HEIGHT}svh` }}
+              sizes="14vw"
+            />
+
+            {/* Spec card — hidden until the machine is hovered or focused */}
+            <span
+              className={`invisible absolute bottom-full mb-5 block w-72 translate-y-2 border border-line bg-surface/95 p-5 opacity-0 shadow-2xl backdrop-blur-md transition-[opacity,transform,visibility] duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:visible group-focus-visible:translate-y-0 group-focus-visible:opacity-100 ${cardAlign(
+                i,
+                fleet.length
+              )}`}
+            >
+              <span className="block font-mono text-[0.6rem] uppercase tracking-[0.14em] text-fog">
+                {robot.kind}
+              </span>
+              <span className="display mt-1 block text-2xl text-snow">
+                {robot.model}
+              </span>
+              <span className="display mt-1 block text-sm text-amber">
+                {robot.tagline}
+              </span>
+
+              <span className="mt-4 block border-t border-line pt-3">
+                {robot.heroStats.slice(0, 3).map((stat) => (
+                  <span
+                    key={stat.label}
+                    className="flex items-baseline justify-between gap-3 py-1"
+                  >
+                    <span className="text-[0.7rem] text-fog">{stat.label}</span>
+                    <span className="font-mono text-xs tabular-nums text-snow">
+                      {stat.value}
+                      <span className="ml-0.5 text-fog">{stat.unit}</span>
+                    </span>
+                  </span>
+                ))}
+              </span>
+
+              <span className="mt-3 block border-t border-line pt-3 font-mono text-[0.65rem] uppercase tracking-[0.14em] text-amber">
+                View the {robot.model} →
+              </span>
+            </span>
+          </Link>
+        );
+      })}
+    </div>
+  );
+}

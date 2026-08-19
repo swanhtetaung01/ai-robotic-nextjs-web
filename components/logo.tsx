@@ -8,7 +8,7 @@ export function Wordmark({ className = "h-7 w-auto" }: { className?: string }) {
     <Image
       src={wordmarkWhite}
       alt="AI Robotic"
-      priority
+      preload
       sizes="200px"
       className={className}
     />

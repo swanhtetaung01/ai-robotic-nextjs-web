@@ -53,7 +53,7 @@ export default async function RobotPage({ params }: PageProps<"/robots/[slug]">)
             <Image
               src={images.hero}
               alt={`${robot.model} ${robot.kind}`}
-              priority
+              preload
               placeholder="blur"
               className={`absolute inset-0 -z-10 h-full w-full object-cover ${images.heroClass ?? "object-right"}`}
               sizes="100vw"
@@ -75,7 +75,7 @@ export default async function RobotPage({ params }: PageProps<"/robots/[slug]">)
             <Image
               src={images.heroForeground.src}
               alt=""
-              priority
+              preload
               className="h-auto w-full drop-shadow-2xl"
               sizes="(min-width: 1024px) 448px, 40vw"
             />

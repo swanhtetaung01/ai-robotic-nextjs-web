@@ -1,7 +1,8 @@
 import type { StaticImageData } from "next/image";
 
+import homeHeroWarehouse from "@/public/robots/shared/home-hero-warehouse.webp";
+
 import l3Hero from "@/public/robots/l3/l3-hero-wide.png";
-import l3Moon from "@/public/robots/l3/l3-hero-moon.png";
 import l3Product from "@/public/robots/l3/l3-product.png";
 import l3App from "@/public/robots/l3/l3-app-retail.png";
 import l3Perception from "@/public/robots/l3/l3-perception.webp";
@@ -183,5 +184,6 @@ export const robotImages: Record<string, RobotImages> = {
   },
 };
 
-/** Homepage hero — L3 on the moonscape set. */
-export { l3Moon as homeHero };
+/** Homepage hero — an empty distribution aisle at night, floor freshly scrubbed.
+ *  Deliberately has no machine in it: the clean, empty building is the pitch. */
+export { homeHeroWarehouse as homeHero };

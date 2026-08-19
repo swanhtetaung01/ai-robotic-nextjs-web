@@ -4,6 +4,7 @@ import { getRobot, robots } from "@/lib/robots";
 import { homeHero, robotImages } from "@/lib/robot-images";
 import { RobotCard } from "@/components/robot-card";
 import { RobotSpotlight } from "@/components/robot-spotlight";
+import { HeroFleet } from "@/components/hero-fleet";
 import { Reveal } from "@/components/reveal";
 import { Eyebrow, QuoteBand } from "@/components/ui";
 
@@ -51,19 +52,24 @@ export default function HomePage() {
       <section className="relative isolate overflow-hidden bg-ink">
         <Image
           src={homeHero}
-          alt="AI Robotic L3 autonomous scrubber on a dramatic lunar set beneath a rising dome"
-          priority
-          placeholder="blur"
-          className="absolute inset-0 -z-10 h-full w-full object-cover object-[center_30%] sm:object-center"
+          alt="A distribution-centre aisle at night with the AI Robotic fleet at work, its floor freshly scrubbed and reflecting the overhead worklights"
+          preload
+          quality={92}
+          className="absolute inset-0 -z-10 h-full w-full object-cover object-[center_38%] sm:object-center"
           sizes="100vw"
         />
-        {/* darker sky for the headline, clear middle for the machine,
-            solid ground for the actions */}
+        {/* Minimal scrim — only enough to keep the headline and CTAs legible.
+            The plate itself is left unfiltered. */}
         <div
-          className="absolute inset-0 -z-10 bg-gradient-to-b from-ink/80 via-ink/5 via-45% to-base"
+          className="absolute inset-0 -z-10"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(10,11,14,0.55) 0%, rgba(10,11,14,0.12) 24%, rgba(10,11,14,0) 46%, rgba(18,20,26,0.62) 78%, var(--color-base) 100%)",
+          }}
           aria-hidden="true"
         />
-        <div className="mx-auto flex min-h-[92svh] max-w-6xl flex-col items-center justify-between px-5 pb-10 pt-16 text-center sm:pt-20">
+        <HeroFleet />
+        <div className="relative z-10 mx-auto flex min-h-[92svh] max-w-6xl flex-col items-center justify-between px-5 pb-10 pt-16 text-center sm:pt-20">
           {/* headline in the sky, above the machine */}
           <div>
             <p className="stencil text-amber">
@@ -74,8 +80,8 @@ export default function HomePage() {
             </h1>
           </div>
 
-          {/* the machine stands here, unobstructed */}
-          <div className="min-h-[24svh] flex-1" aria-hidden="true" />
+          {/* lets the aisle and its vanishing point breathe */}
+          <div className="min-h-[14svh] flex-1" aria-hidden="true" />
 
           {/* subcopy and actions on the ground, below the machine */}
           <div className="max-w-2xl">
