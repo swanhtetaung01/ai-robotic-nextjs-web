@@ -1,0 +1,164 @@
+import type { StaticImageData } from "next/image";
+
+import l3Hero from "@/public/robots/l3/l3-hero-wide.png";
+import l3Moon from "@/public/robots/l3/l3-hero-moon.png";
+import l3Product from "@/public/robots/l3/l3-product.png";
+import l3App from "@/public/robots/l3/l3-app-retail.png";
+import l3Perception from "@/public/robots/l3/l3-perception.webp";
+import l3Maintenance from "@/public/robots/l3/l3-maintenance.webp";
+import l3Workstation from "@/public/robots/l3/l3-workstation-ws3.png";
+
+import l4Hero from "@/public/robots/l4/l4-hero-arches.jpg";
+import l4Product from "@/public/robots/l4/l4-product.png";
+import l4Edge from "@/public/robots/l4/l4-edge-cleaning.png";
+import l4Lidar from "@/public/robots/l4/l4-lidar.jpg";
+import l4App from "@/public/robots/l4/l4-app-report.jpg";
+import l4WorkstationPair from "@/public/robots/l4/l4-workstation-pair.jpg";
+
+import l50Hero from "@/public/robots/l50/l50-hero-dome.jpg";
+import l50Product from "@/public/robots/l50/l50-product.png";
+import l50Console from "@/public/robots/l50/l50-console.jpg";
+import l50Safety from "@/public/robots/l50/l50-safety.jpg";
+import l50App from "@/public/robots/l50/l50-app-report.jpg";
+import l50Cws from "@/public/robots/l50/l50-workstation-cws.jpg";
+import l50SceneRetail from "@/public/robots/l50/l50-scene-retail.jpg";
+import l50SceneHospitals from "@/public/robots/l50/l50-scene-hospitals.jpg";
+import l50SceneHotels from "@/public/robots/l50/l50-scene-hotels.jpg";
+import l50SceneEducation from "@/public/robots/l50/l50-scene-education.jpg";
+
+import s5Warehouse from "@/public/robots/s5/s5-hero-warehouse.webp";
+import s5HeroRobot from "@/public/robots/s5/s5-hero-robot.webp";
+import s5Product from "@/public/robots/s5/s5-product.webp";
+import s5TeamClean from "@/public/robots/s5/s5-teamclean.webp";
+import s5Vehicle from "@/public/robots/s5/s5-vehicle-recognition.webp";
+import s5Dust from "@/public/robots/s5/s5-dust-control.webp";
+import s5Maintenance from "@/public/robots/s5/s5-maintenance.webp";
+import s5Station from "@/public/robots/s5/s5-station.png";
+
+export type RobotImages = {
+  /** wide banner behind the product-page hero */
+  hero?: StaticImageData;
+  /** object-position class when the default right-bias crop doesn't suit the shot */
+  heroClass?: string;
+  /** transparent cutout composited onto the hero (for background-only banners) */
+  heroForeground?: { src: StaticImageData; alt: string };
+  /** transparent product cut-out for cards and lineup */
+  product?: StaticImageData;
+  /** keyed feature-section imagery */
+  features: Record<string, { src: StaticImageData; alt: string }>;
+  /** in-situ environment gallery for the "where it works" section */
+  scenes?: { src: StaticImageData; alt: string; label: string }[];
+};
+
+export const robotImages: Record<string, RobotImages> = {
+  l3: {
+    hero: l3Hero,
+    product: l3Product,
+    features: {
+      perception: {
+        src: l3Perception,
+        alt: "L3 detecting a temporary entrance carpet with its perception system in a mall lobby",
+      },
+      app: {
+        src: l3App,
+        alt: "Facility staff dispatching the L3 from the mobile app in a supermarket aisle",
+      },
+      maintenance: {
+        src: l3Maintenance,
+        alt: "Underside of the L3 showing the quick-release squeegee and brush assembly",
+      },
+      workstation: {
+        src: l3Workstation,
+        alt: "WS3 workstation for autonomous charging and water exchange",
+      },
+    },
+  },
+
+  l4: {
+    hero: l4Hero,
+    product: l4Product,
+    features: {
+      edge: {
+        src: l4Edge,
+        alt: "L4 front view with the brush deck highlighted, scrubbing flush against a wall edge",
+      },
+      lidar: {
+        src: l4Lidar,
+        alt: "L4 projecting its 3D LiDAR field onto surrounding surfaces while mapping a space",
+      },
+      app: {
+        src: l4App,
+        alt: "Completed-run report in the AI Robotic app: route map, 97.8% coverage, water use and cleaning time",
+      },
+      workstation: {
+        src: l4WorkstationPair,
+        alt: "L4 docked beside its 4-in-1 workstation for autonomous refill, discharge and charging",
+      },
+    },
+  },
+
+  l50: {
+    hero: l50Hero,
+    heroClass: "object-[65%_30%]",
+    product: l50Product,
+    features: {
+      console: {
+        src: l50Console,
+        alt: "L50 onboard console showing a full-clean task at 34% with pause, stop and dispatch controls",
+      },
+      safety: {
+        src: l50Safety,
+        alt: "Top-down view of the L50 sensor head: 150 m detection range, protruding-object and glass detection",
+      },
+      app: {
+        src: l50App,
+        alt: "Completed-run report in the AI Robotic app: route map, coverage, water use and cleaning time",
+      },
+      workstation: {
+        src: l50Cws,
+        alt: "CWS workstation with docking fiducials for autonomous water refill and discharge",
+      },
+    },
+    scenes: [
+      { src: l50SceneRetail, alt: "Food-court retail concourse", label: "Retail" },
+      { src: l50SceneHospitals, alt: "Hospital corridor", label: "Hospitals" },
+      { src: l50SceneHotels, alt: "Hotel lobby", label: "Hotels" },
+      { src: l50SceneEducation, alt: "University hallway", label: "Education" },
+    ],
+  },
+
+  s5: {
+    hero: s5Warehouse,
+    heroClass: "object-center",
+    heroForeground: {
+      src: s5HeroRobot,
+      alt: "S5 industrial sweeper with twin side brushes and amber beacon",
+    },
+    product: s5Product,
+    features: {
+      teamclean: {
+        src: s5TeamClean,
+        alt: "Several S5 sweepers dividing one warehouse floor as a coordinated fleet",
+      },
+      vehicle: {
+        src: s5Vehicle,
+        alt: "S5 recognising and yielding to a forklift crossing its route",
+      },
+      dust: {
+        src: s5Dust,
+        alt: "S5 sweeping fine dust and coarse debris with sealed dust control",
+      },
+      maintenance: {
+        src: s5Maintenance,
+        alt: "S5 debris hopper removed for emptying without tools",
+      },
+      station: {
+        src: s5Station,
+        alt: "S5 charging station with docking fiducials in a white corridor",
+      },
+    },
+  },
+};
+
+/** Homepage hero — L3 on the moonscape set. */
+export { l3Moon as homeHero };

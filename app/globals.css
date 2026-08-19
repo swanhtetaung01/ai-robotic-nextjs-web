@@ -1,26 +1,128 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ── AI Robotic design tokens ─────────────────────────────────────────
+   Industrial Graphite + Safety Amber. Amber is the machine's beacon:
+   reserved for action and key data. Red is for errors only. */
+@theme {
+  /* surfaces */
+  --color-base: #12141a;
+  --color-surface: #1c1f26;
+  --color-raise: #232733;
+  --color-line: #2c313c;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* accent */
+  --color-amber: #ff9a1f;
+  --color-amber-hot: #ffb84d;
+  --color-amber-deep: #c46f00;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* light sections */
+  --color-paper: #fafaf8;
+  --color-paper-dim: #f1f0ec;
+  --color-cloud: #e4e6ea;
+
+  /* text */
+  --color-ink: #0a0b0e;
+  --color-ink-soft: #4c515b;
+  --color-fog: #9aa1ac;
+  --color-snow: #f4f5f7;
+
+  /* status */
+  --color-danger: #e5484d;
+
+  /* type */
+  --font-display: var(--font-archivo), "Arial Black", sans-serif;
+  --font-sans: var(--font-plex), system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+
+  --tracking-badge: 0.14em;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-base);
+  color: var(--color-snow);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-amber);
+  color: var(--color-ink);
+}
+
+/* Display type: expanded Archivo, machine-badge voice */
+.display {
+  font-family: var(--font-display);
+  font-stretch: 125%;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+/* Stencil eyebrow — floor-marking label */
+.stencil {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-badge);
+}
+
+/* ── Signature: warehouse hazard striping ── */
+.hazard {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--color-amber) 0 10px,
+    transparent 10px 20px
+  );
+}
+.hazard-thin {
+  height: 6px;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--color-amber) 0 8px,
+    var(--color-ink) 8px 16px
+  );
+}
+
+/* Scanner stage: calibration-grid plate */
+.grid-plate {
+  background-image:
+    linear-gradient(var(--color-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-line) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+/* Focus visibility on both grounds */
+:focus-visible {
+  outline: 2px solid var(--color-amber);
+  outline-offset: 3px;
+}
+
+/* Scroll-reveal (JS adds .in-view). Motion is opt-out via media query. */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.6s cubic-bezier(0.2, 0.6, 0.2, 1),
+    transform 0.6s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
 }
