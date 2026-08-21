@@ -8,6 +8,7 @@ import { Wordmark } from "@/components/logo";
 const nav = [
   { href: "/robots", label: "The fleet" },
   { href: "/#why", label: "Why autonomous" },
+  { href: "/reference", label: "Reference" },
   { href: "/contact", label: "Contact" },
 ] as const;
 

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { robots } from "@/lib/robots";
+import { references } from "@/lib/references";
 import { homeHero } from "@/lib/robot-images";
 import { RobotCard } from "@/components/robot-card";
 import { RobotSpotlight } from "@/components/robot-spotlight";
@@ -22,27 +23,6 @@ const verticals = [
   "Hospitality",
   "Education",
   "Transportation",
-] as const;
-
-const testimonials = [
-  {
-    quote:
-      "600,000 square feet of carpet cleaned automatically. We anticipate saving tons of money.",
-    name: "Jeff Heugli",
-    role: "CEO, Beacon Hill — Detroit, MI",
-  },
-  {
-    quote:
-      "The bots are making a huge difference in our hospital cleanliness. Our staff now focus on deep scrubbing, stripping and waxing.",
-    name: "Brindy Literski",
-    role: "Environmental Services, Aspirus Hospital — Wausau, WI",
-  },
-  {
-    quote:
-      "A game-changer for maintaining high cleaning standards in high-traffic areas. An invaluable investment.",
-    name: "David Harris",
-    role: "EVS Manager, University Health System — Austin, TX",
-  },
 ] as const;
 
 export default function HomePage() {
@@ -104,9 +84,12 @@ export default function HomePage() {
                 Request a quote
               </Link>
             </div>
-            <p className="stencil mt-9 animate-pulse text-fog" aria-hidden="true">
-              ▼ Scroll
-            </p>
+            <a
+              href="#finder"
+              className="stencil mt-9 inline-block animate-pulse text-fog transition-colors hover:text-amber"
+            >
+              <span aria-hidden="true">▼ </span>Scroll
+            </a>
           </div>
         </div>
       </section>
@@ -202,9 +185,15 @@ export default function HomePage() {
             <p className="mt-3 max-w-xl text-sm text-fog">
               Operator reports from live deployments of our robot platform.
             </p>
+            <Link
+              href="/reference"
+              className="stencil mt-4 inline-block text-amber hover:text-amber-hot"
+            >
+              Read the full reference →
+            </Link>
           </Reveal>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {testimonials.map((t, i) => (
+            {references.map((t, i) => (
               <Reveal key={t.name} delay={i * 80}>
                 <figure className="flex h-full flex-col border border-line bg-surface p-7">
                   <span className="font-mono text-3xl text-amber" aria-hidden="true">
@@ -215,7 +204,11 @@ export default function HomePage() {
                   </blockquote>
                   <figcaption className="mt-6 border-t border-line pt-4">
                     <p className="text-sm font-semibold text-snow">{t.name}</p>
-                    <p className="mt-1 text-xs text-fog">{t.role}</p>
+                    <p className="mt-1 text-xs leading-relaxed text-fog">
+                      {t.role}
+                      <br />
+                      {t.organisation} — {t.location}
+                    </p>
                   </figcaption>
                 </figure>
               </Reveal>

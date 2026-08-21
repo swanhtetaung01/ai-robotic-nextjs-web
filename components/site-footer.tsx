@@ -46,6 +46,11 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link href="/reference" className="text-fog transition-colors hover:text-snow">
+                Reference
+              </Link>
+            </li>
+            <li>
               <Link href="/contact" className="text-fog transition-colors hover:text-snow">
                 Request a quote
               </Link>

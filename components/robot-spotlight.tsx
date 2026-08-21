@@ -71,8 +71,9 @@ export function RobotSpotlight() {
 
   return (
     <section
+      id="finder"
       aria-labelledby="finder-title"
-      className="border-b border-line bg-base"
+      className="scroll-mt-16 border-b border-line bg-base"
     >
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:py-20 lg:grid-cols-[1fr_1.15fr]">
         {/* ── Finder ── */}
