@@ -2,6 +2,7 @@
 
 import { mkdir, appendFile } from "node:fs/promises";
 import path from "node:path";
+import { getRobot } from "@/lib/robots";
 
 export type QuoteFormState = {
   status: "idle" | "error" | "success";
@@ -10,10 +11,105 @@ export type QuoteFormState = {
   message?: string;
 };
 
+type Lead = {
+  receivedAt: string;
+  name: string;
+  email: string;
+  phone: string;
+  company: string | null;
+  address: string | null;
+  robot: string | null;
+  facility: string | null;
+  message: string | null;
+};
+
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-/** Where leads land until a CRM/inbox is wired up (see docs/research). */
+/** Local-dev sink. Never used in production: serverless filesystems are
+ *  read-only, so this would throw EROFS. Email is the real destination. */
 const LEADS_FILE = path.join(process.cwd(), "data", "leads.jsonl");
+
+/** Lead fields are attacker-controlled and land inside an HTML email body. */
+function esc(value: string) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function rows(lead: Lead) {
+  const robot = lead.robot ? getRobot(lead.robot) : undefined;
+  return [
+    ["Name", lead.name],
+    ["Email", lead.email],
+    ["Phone", lead.phone],
+    ["Company", lead.company],
+    ["Address", lead.address],
+    ["Interested robot", robot ? `${robot.model} — ${robot.kind}` : lead.robot],
+    ["Facility size", lead.facility],
+    ["Message", lead.message],
+  ].filter(([, v]) => v) as [string, string][];
+}
+
+function renderEmail(lead: Lead) {
+  const list = rows(lead);
+  const text = list.map(([k, v]) => `${k}: ${v}`).join("\n");
+  const html = `<table style="border-collapse:collapse;font-family:system-ui,sans-serif;font-size:14px">
+${list
+  .map(
+    ([k, v]) =>
+      `<tr><td style="padding:6px 16px 6px 0;color:#4c515b;vertical-align:top">${esc(
+        k
+      )}</td><td style="padding:6px 0;color:#0a0b0e"><strong>${esc(
+        v
+      )}</strong></td></tr>`
+  )
+  .join("\n")}
+</table>`;
+  return { text, html };
+}
+
+/** Resend's REST API directly — one POST, so the SDK would be a dependency
+ *  to maintain for no gain. Throws on non-2xx so the caller can log the lead. */
+async function sendQuoteEmail(lead: Lead) {
+  const apiKey = process.env.RESEND_API_KEY!;
+  const from = process.env.QUOTE_FROM_EMAIL ?? "AI Robotic <quotes@airoboticsth.com>";
+  const to = process.env.QUOTE_TO_EMAIL;
+  if (!to) throw new Error("QUOTE_TO_EMAIL is not set");
+
+  const cc = (process.env.QUOTE_CC_EMAILS ?? "")
+    .split(",")
+    .map((a) => a.trim())
+    .filter(Boolean);
+
+  const robot = lead.robot ? getRobot(lead.robot) : undefined;
+  const { text, html } = renderEmail(lead);
+
+  const res = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      from,
+      to: [to],
+      ...(cc.length ? { cc } : {}),
+      // so sales can reply straight to the customer
+      reply_to: lead.email,
+      subject: robot
+        ? `Quote request · ${robot.model} — ${lead.name}`
+        : `Quote request — ${lead.name}`,
+      text,
+      html,
+    }),
+  });
+
+  if (!res.ok) {
+    throw new Error(`Resend ${res.status}: ${await res.text()}`);
+  }
+}
 
 export async function submitQuote(
   _prev: QuoteFormState,
@@ -43,7 +139,7 @@ export async function submitQuote(
     return { status: "error", errors };
   }
 
-  const lead = {
+  const lead: Lead = {
     receivedAt: new Date().toISOString(),
     name,
     email,
@@ -56,14 +152,22 @@ export async function submitQuote(
   };
 
   try {
-    await mkdir(path.dirname(LEADS_FILE), { recursive: true });
-    await appendFile(LEADS_FILE, JSON.stringify(lead) + "\n", "utf8");
+    if (process.env.RESEND_API_KEY) {
+      await sendQuoteEmail(lead);
+    } else {
+      // No key configured — local development. Append to the JSONL sink.
+      await mkdir(path.dirname(LEADS_FILE), { recursive: true });
+      await appendFile(LEADS_FILE, JSON.stringify(lead) + "\n", "utf8");
+    }
   } catch (err) {
-    console.error("[quote] failed to persist lead", err, lead);
+    // Log the whole lead, not just the error: this is the only remaining copy,
+    // and it can be recovered by hand from the platform logs.
+    console.error("[quote] DELIVERY FAILED — lead follows", err);
+    console.error("[quote] LEAD", JSON.stringify(lead));
     return {
       status: "error",
       message:
-        "Something went wrong on our side. Please try again, or email us directly.",
+        "We couldn’t submit your request. Please email us directly at quotes@airoboticsth.com and we’ll pick it up straight away.",
     };
   }
 
