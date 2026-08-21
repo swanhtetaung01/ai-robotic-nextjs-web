@@ -3,6 +3,7 @@ import { Saira, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { SITE_URL } from "@/lib/site";
 
 const saira = Saira({
   variable: "--font-saira",
@@ -23,6 +24,9 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
+  // resolves relative OG/social image URLs against the live domain
+  metadataBase: new URL(SITE_URL),
+  alternates: { canonical: "/" },
   title: {
     default: "AI Robotic — Autonomous Commercial Cleaning Robots",
     template: "%s · AI Robotic",
