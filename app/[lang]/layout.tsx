@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
-import { Saira, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
-import "./globals.css";
+import { notFound } from "next/navigation";
+import { Saira, IBM_Plex_Sans, IBM_Plex_Mono, Noto_Sans_Thai } from "next/font/google";
+import "../globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { SITE_URL } from "@/lib/site";
+import { locales, isLocale, type Locale } from "@/lib/i18n/config";
+import { getDictionary, translator } from "@/lib/i18n/dictionary";
 
 const saira = Saira({
   variable: "--font-saira",
@@ -23,29 +26,76 @@ const plexMono = IBM_Plex_Mono({
   weight: ["400", "500", "600"],
 });
 
-export const metadata: Metadata = {
-  // resolves relative OG/social image URLs against the live domain
-  metadataBase: new URL(SITE_URL),
-  alternates: { canonical: "/" },
-  title: {
-    default: "AI Robotic — Autonomous Commercial Cleaning Robots",
-    template: "%s · AI Robotic",
-  },
-  description:
-    "AI Robotic supplies autonomous floor-cleaning robots for hospitals, warehouses, retail and schools. Request a quote for the L3, L4 and L50 scrubbers, the C5 3-in-1 machine or the S5 industrial sweeper.",
-};
+/* Saira and IBM Plex Sans carry no Thai glyphs, so Thai text would fall back
+ * to whatever the OS supplies and look unrelated to the rest of the design.
+ * Noto Sans Thai is loaded alongside and placed first in the Thai stack. */
+const notoThai = Noto_Sans_Thai({
+  variable: "--font-thai",
+  subsets: ["thai"],
+  weight: ["400", "500", "600", "700"],
+});
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export function generateStaticParams() {
+  return locales.map((lang) => ({ lang }));
+}
+
+export async function generateMetadata({
+  params,
+}: LayoutProps<"/[lang]">): Promise<Metadata> {
+  const { lang } = await params;
+  if (!isLocale(lang)) return {};
+  const t = translator(await getDictionary(lang));
+
+  return {
+    metadataBase: new URL(SITE_URL),
+    title: {
+      default: t("META.site_title_default"),
+      template: t("META.site_title_template", { page: "%s" }),
+    },
+    description: t("META.site_description"),
+    alternates: {
+      canonical: `/${lang}`,
+      languages: {
+        en: "/en",
+        th: "/th",
+        "x-default": "/en",
+      },
+    },
+  };
+}
+
+export default async function RootLayout({
+  children,
+  params,
+}: LayoutProps<"/[lang]">) {
+  const { lang } = await params;
+  if (!isLocale(lang)) notFound();
+
+  const locale = lang as Locale;
+  const t = translator(await getDictionary(locale));
+
   return (
     <html
-      lang="en"
+      lang={locale}
       data-scroll-behavior="smooth"
-      className={`${saira.variable} ${plexSans.variable} ${plexMono.variable} h-full antialiased`}
+      data-locale={locale}
+      className={`${saira.variable} ${plexSans.variable} ${plexMono.variable} ${notoThai.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <SiteHeader />
+        <SiteHeader
+          locale={locale}
+          nav={{
+            fleet: t("NAV.fleet"),
+            why: t("NAV.why"),
+            reference: t("NAV.reference"),
+            contact: t("NAV.contact"),
+            quote: t("NAV.quote_cta"),
+            openMenu: t("NAV.menu_open"),
+            closeMenu: t("NAV.menu_close"),
+          }}
+        />
         <main className="flex-1">{children}</main>
-        <SiteFooter />
+        <SiteFooter locale={locale} />
       </body>
     </html>
   );

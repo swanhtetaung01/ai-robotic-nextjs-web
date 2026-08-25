@@ -1,38 +1,58 @@
 import Image from "next/image";
 import Link from "next/link";
-import { robots } from "@/lib/robots";
-import { references } from "@/lib/references";
+import { notFound } from "next/navigation";
 import { homeHero } from "@/lib/robot-images";
 import { RobotCard } from "@/components/robot-card";
 import { RobotSpotlight } from "@/components/robot-spotlight";
 import { HeroFleet } from "@/components/hero-fleet";
 import { Reveal } from "@/components/reveal";
-import { Eyebrow, QuoteBand } from "@/components/ui";
+import { Eyebrow } from "@/components/ui";
+import { QuoteBand } from "@/components/quote-band";
+import { getDictionary, translator } from "@/lib/i18n/dictionary";
+import { localizeRobots } from "@/lib/i18n/localize-robots";
+import { localizeReferences } from "@/lib/i18n/localize-references";
+import { isLocale, localePath, type Locale } from "@/lib/i18n/config";
 
+/* The four headline proof figures. Values are locale-independent; only the
+   labels are translated, so they live here rather than in the dictionary. */
 const proof = [
-  { value: "$0.008", unit: "/ft²", label: "cleaning cost — 5–7× below manual labor" },
-  { value: "50", unit: "%", label: "typical labor cost reduction" },
-  { value: "9–12", unit: "mo", label: "payback on large open floors" },
-  { value: "62", unit: "dB", label: "quiet enough for open trading hours" },
+  { value: "$0.008", unit: "/ft²", key: "HOME.proof.stat1_label" },
+  { value: "50", unit: "%", key: "HOME.proof.stat2_label" },
+  { value: "9–12", unit: "mo", key: "HOME.proof.stat3_label" },
+  { value: "62", unit: "dB", key: "HOME.proof.stat4_label" },
 ] as const;
 
-const verticals = [
-  "Healthcare",
-  "Warehousing",
-  "Retail",
-  "Hospitality",
-  "Education",
-  "Transportation",
+const verticalKeys = [
+  "HOME.verticals.item1",
+  "HOME.verticals.item2",
+  "HOME.verticals.item3",
+  "HOME.verticals.item4",
+  "HOME.verticals.item5",
+  "HOME.verticals.item6",
 ] as const;
 
-export default function HomePage() {
+export default async function HomePage({ params }: PageProps<"/[lang]">) {
+  const { lang } = await params;
+  if (!isLocale(lang)) notFound();
+  const locale = lang as Locale;
+
+  const dict = await getDictionary(locale);
+  const t = translator(dict);
+  const robots = localizeRobots(dict, locale);
+  const references = localizeReferences(dict);
+
+  const cardStrings = {
+    view: t("ROBOTDETAIL.card_view"),
+    photoPlaceholder: t("ROBOTDETAIL.card_photo_placeholder"),
+  };
+
   return (
     <>
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="relative isolate overflow-hidden bg-ink">
         <Image
           src={homeHero}
-          alt="A distribution-centre aisle at night with the AI Robotic fleet at work, its floor freshly scrubbed and reflecting the overhead worklights"
+          alt={t("ALT.home_hero")}
           preload
           quality={92}
           className="absolute inset-0 -z-10 h-full w-full object-cover object-[center_38%] sm:object-center"
@@ -48,15 +68,13 @@ export default function HomePage() {
           }}
           aria-hidden="true"
         />
-        <HeroFleet />
+        <HeroFleet locale={locale} robots={robots} />
         <div className="relative z-10 mx-auto flex min-h-[92svh] max-w-6xl flex-col items-center justify-between px-5 pb-10 pt-16 text-center sm:pt-20">
           {/* headline in the sky, above the machine */}
           <div>
-            <p className="stencil text-amber">
-              AI Robotic · Autonomous cleaning fleet
-            </p>
+            <p className="stencil text-amber">{t("HOME.hero.eyebrow")}</p>
             <h1 className="display mx-auto mt-5 max-w-4xl text-4xl text-snow sm:text-5xl lg:text-6xl">
-              The night shift that never calls in sick
+              {t("HOME.hero.h1")}
             </h1>
           </div>
 
@@ -66,62 +84,72 @@ export default function HomePage() {
           {/* subcopy and actions on the ground, below the machine */}
           <div className="max-w-2xl">
             <p className="mx-auto max-w-xl text-base leading-relaxed text-cloud sm:text-lg">
-              Autonomous floor-cleaning robots for hospitals, warehouses,
-              retail and schools — machines that map your building, plan their
-              own routes, and clean every night to the same standard.
+              {t("HOME.hero.body")}
             </p>
             <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
               <Link
-                href="/robots"
+                href={localePath(locale, "/robots")}
                 className="stencil rounded-sm bg-amber px-7 py-4 text-ink transition-colors hover:bg-amber-hot"
               >
-                Explore the fleet
+                {t("HOME.hero.cta_primary")}
               </Link>
               <Link
-                href="/contact"
+                href={localePath(locale, "/contact")}
                 className="stencil rounded-sm border border-snow/40 px-7 py-4 text-snow transition-colors hover:border-snow hover:bg-snow/10"
               >
-                Request a quote
+                {t("HOME.hero.cta_secondary")}
               </Link>
             </div>
             <a
               href="#finder"
               className="stencil mt-9 inline-block animate-pulse text-fog transition-colors hover:text-amber"
             >
-              <span aria-hidden="true">▼ </span>Scroll
+              <span aria-hidden="true">▼ </span>
+              {t("HOME.hero.scroll_cue")}
             </a>
           </div>
         </div>
       </section>
 
-      {/* ── Fleet spotlight: animated L3 scanner stage ───────── */}
-      <RobotSpotlight />
+      {/* ── Machine finder ───────────────────────────────────── */}
+      <RobotSpotlight
+        locale={locale}
+        robots={robots}
+        strings={{
+          eyebrow: t("SPOTLIGHT.eyebrow"),
+          heading: t("SPOTLIGHT.heading"),
+          intro: t("SPOTLIGHT.intro"),
+          tablistLabel: t("SPOTLIGHT.tablist_label"),
+          worksIn: t("SPOTLIGHT.works_in"),
+          compare: t("SPOTLIGHT.cta_compare"),
+          viewTemplate: t("SPOTLIGHT.cta_view"),
+        }}
+      />
 
       {/* ── Proof band ───────────────────────────────────────── */}
       <section id="why" className="scroll-mt-16 border-y border-line bg-base">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
           <Reveal>
-            <Eyebrow>Why autonomous</Eyebrow>
+            <Eyebrow>{t("HOME.proof.eyebrow")}</Eyebrow>
             <h2 className="display mt-4 max-w-2xl text-3xl text-snow sm:text-4xl">
-              The math your CFO will do anyway
+              {t("HOME.proof.heading")}
             </h2>
           </Reveal>
           <div className="mt-10 grid gap-px overflow-hidden border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
             {proof.map((p, i) => (
-              <Reveal key={p.label} delay={i * 80} className="bg-surface p-6">
+              <Reveal key={p.key} delay={i * 80} className="bg-surface p-6">
                 <p className="font-mono text-3xl font-semibold tabular-nums text-amber">
                   {p.value}
                   <span className="ml-1 text-base text-fog">{p.unit}</span>
                 </p>
-                <p className="mt-3 text-sm leading-relaxed text-fog">{p.label}</p>
+                <p className="mt-3 text-sm leading-relaxed text-fog">
+                  {t(p.key)}
+                </p>
               </Reveal>
             ))}
           </div>
           <p className="mt-6 max-w-2xl text-sm leading-relaxed text-fog">
-            One deployed scrubber has logged 345+ autonomous hours a month — the
-            working hours of two full-time staff — while floor maps guarantee
-            identical coverage every night, independent of turnover, sickness
-            and fatigue.
+            {t("HOME.proof.footnote")}
           </p>
         </div>
       </section>
@@ -131,19 +159,22 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
           <Reveal className="flex flex-wrap items-end justify-between gap-6">
             <div>
-              <Eyebrow>The fleet</Eyebrow>
+              <Eyebrow>{t("HOME.fleet.eyebrow")}</Eyebrow>
               <h2 className="display mt-4 text-3xl text-snow sm:text-4xl">
-                Five machines. Every floor covered.
+                {t("HOME.fleet.heading")}
               </h2>
             </div>
-            <Link href="/robots" className="stencil text-amber hover:text-amber-hot">
-              Compare all models →
+            <Link
+              href={localePath(locale, "/robots")}
+              className="stencil text-amber hover:text-amber-hot"
+            >
+              {t("HOME.fleet.compare_link")}
             </Link>
           </Reveal>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {robots.map((robot, i) => (
               <Reveal key={robot.slug} delay={(i % 3) * 80} className="h-full">
-                <RobotCard robot={robot} />
+                <RobotCard robot={robot} locale={locale} strings={cardStrings} />
               </Reveal>
             ))}
           </div>
@@ -154,16 +185,16 @@ export default function HomePage() {
       <section className="border-y border-line bg-paper text-ink">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
           <Reveal>
-            <Eyebrow tone="light">Where they work</Eyebrow>
+            <Eyebrow tone="light">{t("HOME.verticals.eyebrow")}</Eyebrow>
             <h2 className="display mt-4 max-w-2xl text-3xl sm:text-4xl">
-              Built for buildings that never really close
+              {t("HOME.verticals.heading")}
             </h2>
           </Reveal>
           <div className="mt-10 grid gap-px overflow-hidden border border-cloud bg-cloud sm:grid-cols-3">
-            {verticals.map((v, i) => (
-              <Reveal key={v} delay={i * 60} className="bg-paper">
+            {verticalKeys.map((key, i) => (
+              <Reveal key={key} delay={i * 60} className="bg-paper">
                 <div className="flex items-center justify-between p-6">
-                  <span className="display text-lg">{v}</span>
+                  <span className="display text-lg">{t(key)}</span>
                   <span className="font-mono text-xs text-ink-soft">
                     {String(i + 1).padStart(2, "0")}
                   </span>
@@ -178,36 +209,36 @@ export default function HomePage() {
       <section className="bg-base">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
           <Reveal>
-            <Eyebrow>Field reports</Eyebrow>
+            <Eyebrow>{t("HOME.testimonials.eyebrow")}</Eyebrow>
             <h2 className="display mt-4 text-3xl text-snow sm:text-4xl">
-              From the field, worldwide
+              {t("HOME.testimonials.heading")}
             </h2>
             <p className="mt-3 max-w-xl text-sm text-fog">
-              Operator reports from live deployments of our robot platform.
+              {t("HOME.testimonials.subtext")}
             </p>
             <Link
-              href="/reference"
+              href={localePath(locale, "/reference")}
               className="stencil mt-4 inline-block text-amber hover:text-amber-hot"
             >
-              Read the full reference →
+              {t("HOME.testimonials.link")}
             </Link>
           </Reveal>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {references.map((t, i) => (
-              <Reveal key={t.name} delay={i * 80}>
+            {references.map((r, i) => (
+              <Reveal key={r.slug} delay={i * 80}>
                 <figure className="flex h-full flex-col border border-line bg-surface p-7">
                   <span className="font-mono text-3xl text-amber" aria-hidden="true">
                     &ldquo;
                   </span>
                   <blockquote className="mt-2 flex-1 text-sm leading-relaxed text-cloud">
-                    {t.quote}
+                    {r.quote}
                   </blockquote>
                   <figcaption className="mt-6 border-t border-line pt-4">
-                    <p className="text-sm font-semibold text-snow">{t.name}</p>
+                    <p className="text-sm font-semibold text-snow">{r.name}</p>
                     <p className="mt-1 text-xs leading-relaxed text-fog">
-                      {t.role}
+                      {r.role}
                       <br />
-                      {t.organisation} — {t.location}
+                      {r.organisation} — {r.location}
                     </p>
                   </figcaption>
                 </figure>
@@ -217,7 +248,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <QuoteBand />
+      <QuoteBand locale={locale} />
     </>
   );
 }

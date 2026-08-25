@@ -4,8 +4,9 @@ import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
-import { robots } from "@/lib/robots";
+import type { Robot } from "@/lib/robots";
 import { Eyebrow } from "@/components/ui";
+import { localePath, type Locale } from "@/lib/i18n/config";
 
 import l3 from "@/public/robots/fleet/l3.webp";
 import l4 from "@/public/robots/fleet/l4.webp";
@@ -56,7 +57,26 @@ const CORNERS = [
  *  number, because a first-time visitor knows their building, not our SKUs —
  *  so the section answers "which one do I need?" instead of listing what we
  *  happen to sell. Picking a situation names the machine and says why. */
-export function RobotSpotlight() {
+export type SpotlightStrings = {
+  eyebrow: string;
+  heading: string;
+  intro: string;
+  tablistLabel: string;
+  worksIn: string;
+  compare: string;
+  /** contains {model} */
+  viewTemplate: string;
+};
+
+export function RobotSpotlight({
+  locale,
+  robots,
+  strings,
+}: {
+  locale: Locale;
+  robots: Robot[];
+  strings: SpotlightStrings;
+}) {
   const [active, setActive] = useState(0);
   const still = useReducedMotion() ?? false;
 
@@ -78,22 +98,21 @@ export function RobotSpotlight() {
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:py-20 lg:grid-cols-[1fr_1.15fr]">
         {/* ── Finder ── */}
         <div>
-          <Eyebrow>Find your machine</Eyebrow>
+          <Eyebrow>{strings.eyebrow}</Eyebrow>
           <h2
             id="finder-title"
             className="display mt-5 max-w-md text-3xl text-snow sm:text-4xl"
           >
-            Which machine fits your floor?
+            {strings.heading}
           </h2>
           <p className="mt-4 max-w-md text-sm leading-relaxed text-fog">
-            Start with the kind of space you clean — we&rsquo;ll name the
-            machine built for it.
+            {strings.intro}
           </p>
 
           {/* Situation-led selector: what you have, not what we stock */}
           <div
             role="tablist"
-            aria-label="Choose the kind of space you clean"
+            aria-label={strings.tablistLabel}
             className="mt-7 grid grid-cols-5 gap-px border border-line bg-line"
           >
             {robots.map((r, i) => (
@@ -146,7 +165,7 @@ export function RobotSpotlight() {
             </p>
 
             <div className="mt-6">
-              <p className="stencil text-amber">Works in</p>
+              <p className="stencil text-amber">{strings.worksIn}</p>
               <ul className="mt-3 flex flex-wrap gap-2">
                 {robot.environments.map((env) => (
                   <li
@@ -162,16 +181,16 @@ export function RobotSpotlight() {
 
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
-              href={`/robots/${robot.slug}`}
+              href={localePath(locale, `/robots/${robot.slug}`)}
               className="stencil rounded-sm bg-amber px-7 py-4 text-ink transition-colors hover:bg-amber-hot"
             >
-              View the {robot.model}
+              {strings.viewTemplate.replace("{model}", robot.model)}
             </Link>
             <Link
-              href="/robots"
+              href={localePath(locale, "/robots")}
               className="stencil rounded-sm border border-snow/40 px-7 py-4 text-snow transition-colors hover:border-snow hover:bg-snow/10"
             >
-              Compare all five
+              {strings.compare}
             </Link>
           </div>
         </div>

@@ -2,7 +2,21 @@
 
 import { useActionState } from "react";
 import { submitQuote, type QuoteFormState } from "./actions";
-import { robots } from "@/lib/robots";
+
+export type QuoteFormStrings = {
+  name: string; namePlaceholder: string;
+  company: string; companyPlaceholder: string;
+  email: string; emailPlaceholder: string;
+  phone: string; phonePlaceholder: string;
+  address: string; addressPlaceholder: string;
+  robot: string; robotDefault: string;
+  facility: string; facilityPlaceholder: string;
+  message: string; messagePlaceholder: string;
+  submit: string; submitPending: string;
+  successHeading: string;
+};
+
+type RobotOption = { slug: string; model: string; kind: string };
 
 const initialState: QuoteFormState = { status: "idle" };
 
@@ -42,7 +56,15 @@ function Field({
   );
 }
 
-export function QuoteForm({ preselect }: { preselect?: string }) {
+export function QuoteForm({
+  preselect,
+  robots,
+  strings,
+}: {
+  preselect?: string;
+  robots: RobotOption[];
+  strings: QuoteFormStrings;
+}) {
   const [state, action, pending] = useActionState(submitQuote, initialState);
 
   if (state.status === "success") {
@@ -51,7 +73,7 @@ export function QuoteForm({ preselect }: { preselect?: string }) {
         <p className="font-mono text-4xl text-amber" aria-hidden="true">
           ✓
         </p>
-        <h2 className="display mt-4 text-2xl text-snow">Request received</h2>
+        <h2 className="display mt-4 text-2xl text-snow">{strings.successHeading}</h2>
         <p className="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-fog">
           {state.message}
         </p>
@@ -65,55 +87,55 @@ export function QuoteForm({ preselect }: { preselect?: string }) {
     <form action={action} noValidate className="space-y-6">
       {/* Honeypot — hidden from people, tempting to bots */}
       <div className="absolute -left-[9999px]" aria-hidden="true">
-        <label htmlFor="website">Leave this field empty</label>
+        <label htmlFor="website">Leave this field empty</label>{/* honeypot: never shown, never translated */}
         <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
       </div>
 
       <div className="grid gap-6 sm:grid-cols-2">
-        <Field label="Name" name="name" required error={errors.name}>
+        <Field label={strings.name} name="name" required error={errors.name}>
           <input
             id="name"
             name="name"
             type="text"
             required
             autoComplete="name"
-            placeholder="Jane Facility"
+            placeholder={strings.namePlaceholder}
             className={inputCls}
             aria-invalid={!!errors.name}
             aria-describedby={errors.name ? "name-error" : undefined}
           />
         </Field>
-        <Field label="Company" name="company">
+        <Field label={strings.company} name="company">
           <input
             id="company"
             name="company"
             type="text"
             autoComplete="organization"
-            placeholder="Acme Facilities Group"
+            placeholder={strings.companyPlaceholder}
             className={inputCls}
           />
         </Field>
-        <Field label="Email" name="email" required error={errors.email}>
+        <Field label={strings.email} name="email" required error={errors.email}>
           <input
             id="email"
             name="email"
             type="email"
             required
             autoComplete="email"
-            placeholder="jane@company.com"
+            placeholder={strings.emailPlaceholder}
             className={inputCls}
             aria-invalid={!!errors.email}
             aria-describedby={errors.email ? "email-error" : undefined}
           />
         </Field>
-        <Field label="Phone" name="phone" required error={errors.phone}>
+        <Field label={strings.phone} name="phone" required error={errors.phone}>
           <input
             id="phone"
             name="phone"
             type="tel"
             required
             autoComplete="tel"
-            placeholder="+1 555 000 0000"
+            placeholder={strings.phonePlaceholder}
             className={inputCls}
             aria-invalid={!!errors.phone}
             aria-describedby={errors.phone ? "phone-error" : undefined}
@@ -121,26 +143,26 @@ export function QuoteForm({ preselect }: { preselect?: string }) {
         </Field>
       </div>
 
-      <Field label="Address" name="address">
+      <Field label={strings.address} name="address">
         <input
           id="address"
           name="address"
           type="text"
           autoComplete="street-address"
-          placeholder="Street, city, country (optional)"
+          placeholder={strings.addressPlaceholder}
           className={inputCls}
         />
       </Field>
 
       <div className="grid gap-6 sm:grid-cols-2">
-        <Field label="Interested robot" name="robot">
+        <Field label={strings.robot} name="robot">
           <select
             id="robot"
             name="robot"
             defaultValue={preselect ?? ""}
             className={inputCls}
           >
-            <option value="">Not sure yet — recommend one</option>
+            <option value="">{strings.robotDefault}</option>
             {robots.map((r) => (
               <option key={r.slug} value={r.slug}>
                 {r.model} — {r.kind}
@@ -148,23 +170,23 @@ export function QuoteForm({ preselect }: { preselect?: string }) {
             ))}
           </select>
         </Field>
-        <Field label="Facility size" name="facility">
+        <Field label={strings.facility} name="facility">
           <input
             id="facility"
             name="facility"
             type="text"
-            placeholder="e.g. 120,000 ft² warehouse"
+            placeholder={strings.facilityPlaceholder}
             className={inputCls}
           />
         </Field>
       </div>
 
-      <Field label="Anything else" name="message">
+      <Field label={strings.message} name="message">
         <textarea
           id="message"
           name="message"
           rows={4}
-          placeholder="Floor types, operating hours, current cleaning setup…"
+          placeholder={strings.messagePlaceholder}
           className={inputCls}
         />
       </Field>
@@ -180,7 +202,7 @@ export function QuoteForm({ preselect }: { preselect?: string }) {
         disabled={pending}
         className="stencil w-full rounded-sm bg-amber px-7 py-4 text-ink transition-colors hover:bg-amber-hot disabled:cursor-wait disabled:opacity-60 sm:w-auto"
       >
-        {pending ? "Sending…" : "Request my quote"}
+        {pending ? strings.submitPending : strings.submit}
       </button>
     </form>
   );

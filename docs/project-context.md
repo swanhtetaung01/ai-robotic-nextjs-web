@@ -191,6 +191,33 @@ facility size, message.
 
 ---
 
+## 5b. Languages
+
+The site is bilingual: English at `/en`, Thai at `/th`. Every page lives
+under `app/[lang]/`; nothing is served from the bare root.
+
+| Piece | Where |
+|---|---|
+| Locale list, default, unit system, `localePath()` | `lib/i18n/config.ts` |
+| Dictionary loading (Thai layered over English) | `lib/i18n/dictionary.ts` |
+| Robot data translation overlay | `lib/i18n/localize-robots.ts` |
+| Customer reference overlay | `lib/i18n/localize-references.ts` |
+| Locale redirect / language negotiation | `proxy.ts` |
+| Translator hand-off + workflow | `docs/translation/` |
+
+**Middleware is called Proxy in Next 16.** `proxy.ts` at the repo root reads
+a `locale` cookie set by the switcher, falls back to `Accept-Language`, then
+to English, and redirects any unprefixed path.
+
+**Thai copy is metric; English is imperial.** Not just prose — headline stats
+are swapped and the spec-table unit toggle is hidden on Thai. See
+`docs/translation/README.md`.
+
+**Thai needs its own font.** Saira and IBM Plex carry no Thai glyphs, so
+Noto Sans Thai is loaded and sits behind them in every stack. `globals.css`
+also relaxes the display treatment for Thai — no uppercase, looser leading —
+because Thai has no letter case and its tone marks clip at tight line-height.
+
 ## 6. Environment gotchas
 
 These have each cost time at least once.

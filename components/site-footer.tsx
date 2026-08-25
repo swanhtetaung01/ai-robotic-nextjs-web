@@ -1,8 +1,14 @@
 import Link from "next/link";
 import { Wordmark } from "@/components/logo";
-import { robots } from "@/lib/robots";
+import { localizeRobots } from "@/lib/i18n/localize-robots";
+import { getDictionary, translator } from "@/lib/i18n/dictionary";
+import { localePath, type Locale } from "@/lib/i18n/config";
 
-export function SiteFooter() {
+export async function SiteFooter({ locale }: { locale: Locale }) {
+  const dict = await getDictionary(locale);
+  const t = translator(dict);
+  const robots = localizeRobots(dict, locale);
+
   return (
     <footer className="border-t border-line bg-base">
       <div className="hazard-thin" aria-hidden="true" />
@@ -10,19 +16,19 @@ export function SiteFooter() {
         <div className="space-y-4">
           <Wordmark className="h-8 w-auto" />
           <p className="max-w-xs text-sm leading-relaxed text-fog">
-            Autonomous cleaning robots for facilities that can&rsquo;t afford a
-            missed night. Every machine is configured, delivered and supported
-            by AI Robotic.
+            {t("FOOTER.tagline")}
           </p>
         </div>
 
         <div>
-          <h2 className="stencil mb-4 text-amber">The fleet</h2>
+          <h2 className="stencil mb-4 text-amber">
+            {t("FOOTER.col_fleet_heading")}
+          </h2>
           <ul className="space-y-2.5 text-sm">
             {robots.map((r) => (
               <li key={r.slug}>
                 <Link
-                  href={`/robots/${r.slug}`}
+                  href={localePath(locale, `/robots/${r.slug}`)}
                   className="text-fog transition-colors hover:text-snow"
                 >
                   {r.model} — {r.kind}
@@ -33,49 +39,51 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <h2 className="stencil mb-4 text-amber">Company</h2>
+          <h2 className="stencil mb-4 text-amber">
+            {t("FOOTER.col_company_heading")}
+          </h2>
           <ul className="space-y-2.5 text-sm">
             <li>
-              <Link href="/robots" className="text-fog transition-colors hover:text-snow">
-                Compare models
+              <Link href={localePath(locale, "/robots")} className="text-fog transition-colors hover:text-snow">
+                {t("FOOTER.link_compare")}
               </Link>
             </li>
             <li>
-              <Link href="/#why" className="text-fog transition-colors hover:text-snow">
-                Why autonomous
+              <Link href={`${localePath(locale)}#why`} className="text-fog transition-colors hover:text-snow">
+                {t("FOOTER.link_why")}
               </Link>
             </li>
             <li>
-              <Link href="/reference" className="text-fog transition-colors hover:text-snow">
-                Reference
+              <Link href={localePath(locale, "/reference")} className="text-fog transition-colors hover:text-snow">
+                {t("FOOTER.link_reference")}
               </Link>
             </li>
             <li>
-              <Link href="/contact" className="text-fog transition-colors hover:text-snow">
-                Request a quote
+              <Link href={localePath(locale, "/contact")} className="text-fog transition-colors hover:text-snow">
+                {t("FOOTER.link_quote")}
               </Link>
             </li>
           </ul>
         </div>
 
         <div>
-          <h2 className="stencil mb-4 text-amber">Talk to us</h2>
+          <h2 className="stencil mb-4 text-amber">
+            {t("FOOTER.col_contact_heading")}
+          </h2>
           <p className="text-sm leading-relaxed text-fog">
-            Tell us about your facility and we&rsquo;ll match a robot to it —
-            usually within one business day.
+            {t("FOOTER.contact_body")}
           </p>
           <Link
-            href="/contact"
+            href={localePath(locale, "/contact")}
             className="stencil mt-5 inline-block rounded-sm border border-amber px-4 py-2.5 text-amber transition-colors hover:bg-amber hover:text-ink"
           >
-            Get a quote
+            {t("FOOTER.contact_cta")}
           </Link>
         </div>
       </div>
       <div className="border-t border-line">
         <p className="mx-auto max-w-6xl px-5 py-5 font-mono text-xs text-fog">
-          © {new Date().getFullYear()} AI Robotic. All robot specifications are
-          manufacturer figures.
+          {t("FOOTER.copyright", { year: String(new Date().getFullYear()) })}
         </p>
       </div>
     </footer>

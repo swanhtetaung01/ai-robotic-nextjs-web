@@ -3,16 +3,25 @@ import Link from "next/link";
 import type { Robot } from "@/lib/robots";
 import { robotImages } from "@/lib/robot-images";
 import { LogoMark } from "@/components/logo";
+import { localePath, type Locale } from "@/lib/i18n/config";
 
 /** Lineup card. Renders the product cut-out when photos exist, otherwise a
  *  quiet placeholder panel — honest until every model has photography. */
-export function RobotCard({ robot }: { robot: Robot }) {
+export function RobotCard({
+  robot,
+  locale,
+  strings,
+}: {
+  robot: Robot;
+  locale: Locale;
+  strings: { view: string; photoPlaceholder: string };
+}) {
   const product = robotImages[robot.slug]?.product;
   const lead = robot.heroStats[0];
 
   return (
     <Link
-      href={`/robots/${robot.slug}`}
+      href={localePath(locale, `/robots/${robot.slug}`)}
       className="group flex h-full flex-col border border-line bg-surface transition-colors hover:border-amber/60"
     >
       <div className="relative flex h-56 items-center justify-center overflow-hidden bg-raise">
@@ -27,7 +36,7 @@ export function RobotCard({ robot }: { robot: Robot }) {
           <div className="flex flex-col items-center gap-3 text-fog">
             <LogoMark className="h-10 w-10 opacity-25" />
             <span className="font-mono text-xs uppercase tracking-[0.14em]">
-              Photography in progress
+              {strings.photoPlaceholder}
             </span>
           </div>
         )}
@@ -59,7 +68,7 @@ export function RobotCard({ robot }: { robot: Robot }) {
             <span className="ml-1 text-xs text-fog">{lead.unit} {lead.label}</span>
           </span>
           <span className="stencil text-amber transition-transform duration-300 group-hover:translate-x-1">
-            View →
+            {strings.view}
           </span>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
-import { getRobot } from "@/lib/robots";
+import type { Robot } from "@/lib/robots";
+import { localePath, type Locale } from "@/lib/i18n/config";
 
 import l3 from "@/public/robots/fleet/l3.webp";
 import l4 from "@/public/robots/fleet/l4.webp";
@@ -40,20 +41,29 @@ function cardAlign(i: number, total: number) {
 
 /** The fleet lined up down the aisle behind the hero copy. Hovering or
  *  focusing a machine opens its spec card; clicking opens its page. */
-export function HeroFleet() {
+export function HeroFleet({
+  locale,
+  robots,
+  viewTemplate = "View the {model} →",
+}: {
+  locale: Locale;
+  robots: Robot[];
+  viewTemplate?: string;
+}) {
+  const bySlug = new Map(robots.map((r) => [r.slug, r]));
   return (
     <div
       className="pointer-events-none absolute inset-x-[5%] z-20 hidden items-end justify-between lg:flex [@media(max-height:640px)]:!hidden"
       style={{ bottom: `max(${LINE_BASE}svh, ${MIN_BASE}px)` }}
     >
       {fleet.map((unit, i) => {
-        const robot = getRobot(unit.slug);
+        const robot = bySlug.get(unit.slug);
         if (!robot) return null;
 
         return (
           <Link
             key={unit.slug}
-            href={`/robots/${unit.slug}`}
+            href={localePath(locale, `/robots/${unit.slug}`)}
             aria-label={`${robot.model} — ${robot.kind}`}
             className="fleet-unit group pointer-events-auto relative block hover:z-30 focus-visible:z-30"
             style={{ animationDelay: `${0.3 + i * 0.12}s` }}
@@ -126,7 +136,7 @@ export function HeroFleet() {
               </span>
 
               <span className="mt-3 block border-t border-line pt-3 font-mono text-[0.65rem] uppercase tracking-[0.14em] text-amber">
-                View the {robot.model} →
+                {viewTemplate.replace("{model}", robot.model)}
               </span>
             </span>
           </Link>

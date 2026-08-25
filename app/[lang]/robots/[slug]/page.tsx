@@ -2,15 +2,21 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getRobot, robots } from "@/lib/robots";
+import { robots as sourceRobots } from "@/lib/robots";
 import { robotImages } from "@/lib/robot-images";
+import { getDictionary, translator } from "@/lib/i18n/dictionary";
+import { localizeRobots } from "@/lib/i18n/localize-robots";
+import { isLocale, localePath, locales, localeUnits, type Locale } from "@/lib/i18n/config";
 import { SpecTable } from "@/components/spec-table";
 import { RobotCard } from "@/components/robot-card";
 import { Reveal } from "@/components/reveal";
-import { Eyebrow, QuoteBand, StatTile } from "@/components/ui";
+import { Eyebrow, StatTile } from "@/components/ui";
+import { QuoteBand } from "@/components/quote-band";
 
 export function generateStaticParams() {
-  return robots.map((r) => ({ slug: r.slug }));
+  return locales.flatMap((lang) =>
+    sourceRobots.map((r) => ({ lang, slug: r.slug }))
+  );
 }
 
 /** Taller than it is wide — needs height-capped, centred treatment. */
@@ -20,9 +26,11 @@ function isPortrait(img: { width: number; height: number }) {
 
 export async function generateMetadata({
   params,
-}: PageProps<"/robots/[slug]">): Promise<Metadata> {
-  const { slug } = await params;
-  const robot = getRobot(slug);
+}: PageProps<"/[lang]/robots/[slug]">): Promise<Metadata> {
+  const { lang, slug } = await params;
+  if (!isLocale(lang)) return {};
+  const dict = await getDictionary(lang);
+  const robot = localizeRobots(dict, lang).find((r) => r.slug === slug);
   if (!robot) return {};
   return {
     title: `${robot.model} — ${robot.kind}`,
@@ -30,9 +38,16 @@ export async function generateMetadata({
   };
 }
 
-export default async function RobotPage({ params }: PageProps<"/robots/[slug]">) {
-  const { slug } = await params;
-  const robot = getRobot(slug);
+export default async function RobotPage({
+  params,
+}: PageProps<"/[lang]/robots/[slug]">) {
+  const { lang, slug } = await params;
+  if (!isLocale(lang)) notFound();
+  const locale = lang as Locale;
+  const dict = await getDictionary(locale);
+  const t = translator(dict);
+  const localized = localizeRobots(dict, locale);
+  const robot = localized.find((r) => r.slug === slug);
   if (!robot) notFound();
 
   const images = robotImages[robot.slug];
@@ -41,8 +56,12 @@ export default async function RobotPage({ params }: PageProps<"/robots/[slug]">)
     (f) => f.imageKey && images?.features[f.imageKey]
   );
   const siblings = robot.compare
-    .map((s) => getRobot(s))
+    .map((sib) => localized.find((r) => r.slug === sib))
     .filter((r) => r !== undefined);
+  const cardStrings = {
+    view: t("ROBOTDETAIL.card_view"),
+    photoPlaceholder: t("ROBOTDETAIL.card_photo_placeholder"),
+  };
 
   return (
     <>
@@ -84,8 +103,8 @@ export default async function RobotPage({ params }: PageProps<"/robots/[slug]">)
         <div className="relative z-10 mx-auto flex min-h-[80svh] max-w-6xl flex-col justify-center px-5 py-20">
           <div className="max-w-xl">
             <nav aria-label="Breadcrumb" className="stencil text-fog">
-              <Link href="/robots" className="hover:text-snow">
-                The fleet
+              <Link href={localePath(locale, "/robots")} className="hover:text-snow">
+                {t("ROBOTDETAIL.breadcrumb")}
               </Link>
               <span aria-hidden="true"> / </span>
               <span className="text-amber">{robot.model}</span>
@@ -99,16 +118,16 @@ export default async function RobotPage({ params }: PageProps<"/robots/[slug]">)
             <p className="mt-6 leading-relaxed text-cloud">{robot.intro}</p>
             <div className="mt-9 flex flex-wrap gap-4">
               <Link
-                href={`/contact?robot=${robot.slug}`}
+                href={localePath(locale, `/contact?robot=${robot.slug}`)}
                 className="stencil rounded-sm bg-amber px-7 py-4 text-ink transition-colors hover:bg-amber-hot"
               >
-                Request a quote
+                {t("ROBOTDETAIL.cta_quote")}
               </Link>
               <a
                 href="#specs"
                 className="stencil rounded-sm border border-snow/40 px-7 py-4 text-snow transition-colors hover:border-snow hover:bg-snow/10"
               >
-                Full specifications
+                {t("ROBOTDETAIL.cta_specs")}
               </a>
             </div>
           </div>
@@ -224,14 +243,23 @@ export default async function RobotPage({ params }: PageProps<"/robots/[slug]">)
       {/* ── Full specifications ──────────────────────────────── */}
       <section id="specs" className="scroll-mt-16 bg-base">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
-          <SpecTable groups={robot.specGroups} />
+          <SpecTable
+            groups={robot.specGroups}
+            showUnitToggle={localeUnits[locale] === "imperial"}
+            strings={{
+              heading: t("ROBOTDETAIL.specs_heading"),
+              metric: t("ROBOTDETAIL.units_metric"),
+              imperial: t("ROBOTDETAIL.units_imperial"),
+              unitsLabel: t("SPECTABLE.units_label"),
+            }}
+          />
         </div>
       </section>
 
       {/* ── Environments ─────────────────────────────────────── */}
       <section className="border-t border-line bg-base">
         <div className="mx-auto max-w-6xl px-5 py-14">
-          <Eyebrow>Where the {robot.model} works</Eyebrow>
+          <Eyebrow>{t("ROBOTDETAIL.works_in", { model: robot.model })}</Eyebrow>
           {images?.scenes ? (
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {images.scenes.map((scene) => (
@@ -251,7 +279,7 @@ export default async function RobotPage({ params }: PageProps<"/robots/[slug]">)
                     aria-hidden="true"
                   />
                   <figcaption className="stencil absolute bottom-3 left-4 text-snow">
-                    {scene.label}
+                    {t(`ROBOT.${robot.slug}.scene_${scene.label.toLowerCase()}`)}
                   </figcaption>
                 </figure>
               ))}
@@ -277,22 +305,25 @@ export default async function RobotPage({ params }: PageProps<"/robots/[slug]">)
           <div className="mx-auto max-w-6xl px-5 py-16">
             <Reveal className="flex flex-wrap items-end justify-between gap-6">
               <h2 className="display text-2xl text-snow sm:text-3xl">
-                Not quite the fit?
+                {t("ROBOTDETAIL.crosssell_heading")}
               </h2>
-              <Link href="/robots" className="stencil text-amber hover:text-amber-hot">
-                Compare all five →
+              <Link
+                href={localePath(locale, "/robots")}
+                className="stencil text-amber hover:text-amber-hot"
+              >
+                {t("ROBOTDETAIL.crosssell_link")}
               </Link>
             </Reveal>
             <div className="mt-8 grid gap-6 sm:grid-cols-2">
               {siblings.map((s) => (
-                <RobotCard key={s.slug} robot={s} />
+                <RobotCard key={s.slug} robot={s} locale={locale} strings={cardStrings} />
               ))}
             </div>
           </div>
         </section>
       )}
 
-      <QuoteBand robotSlug={robot.slug} robotModel={robot.model} />
+      <QuoteBand locale={locale} robotSlug={robot.slug} robotModel={robot.model} />
     </>
   );
 }

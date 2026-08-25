@@ -5,18 +5,29 @@ import type { SpecGroup } from "@/lib/robots";
 
 /** Full specification table with a metric / imperial readout toggle.
  *  Values without an imperial variant are unit-independent. */
-export function SpecTable({ groups }: { groups: SpecGroup[] }) {
+export function SpecTable({
+  groups,
+  strings,
+  showUnitToggle = true,
+}: {
+  groups: SpecGroup[];
+  strings: { heading: string; metric: string; imperial: string; unitsLabel: string };
+  /** Thai copy is metric throughout, so the toggle is hidden there — there is
+   *  no imperial column to switch to. */
+  showUnitToggle?: boolean;
+}) {
   const [units, setUnits] = useState<"metric" | "imperial">("metric");
 
   return (
     <div>
       <div className="mb-8 flex items-center justify-between gap-4">
         <h2 className="display text-2xl text-snow sm:text-3xl">
-          Full specifications
+          {strings.heading}
         </h2>
+        {showUnitToggle && (
         <div
           role="group"
-          aria-label="Measurement units"
+          aria-label={strings.unitsLabel}
           className="flex rounded-sm border border-line font-mono text-xs"
         >
           {(["metric", "imperial"] as const).map((u) => (
@@ -31,10 +42,11 @@ export function SpecTable({ groups }: { groups: SpecGroup[] }) {
                   : "text-fog hover:text-snow"
               }`}
             >
-              {u}
+              {u === "metric" ? strings.metric : strings.imperial}
             </button>
           ))}
         </div>
+        )}
       </div>
 
       <div className="grid gap-x-12 gap-y-10 md:grid-cols-2">

@@ -295,6 +295,50 @@ TH:
 
 
 ================================================================
+5a. MACHINE FINDER  (home page — the interactive "which machine
+    fits your floor?" section between the hero and the proof band)
+================================================================
+ADDED AFTER THE FIRST TRANSLATION ROUND — these were missed because the
+section was built later. Until translated they will display in English
+on the Thai site.
+
+[SPOTLIGHT.eyebrow]
+EN: Find your machine
+TH:
+
+[SPOTLIGHT.heading]
+EN: Which machine fits your floor?
+TH:
+
+[SPOTLIGHT.intro]
+EN: Start with the kind of space you clean — we will name the machine built for it.
+TH:
+
+[SPOTLIGHT.tablist_label]
+EN: Choose the kind of space you clean
+TH:
+
+[SPOTLIGHT.works_in]
+EN: Works in
+TH:
+
+[SPOTLIGHT.cta_view]
+EN: View the {model}
+TH:
+
+[SPOTLIGHT.cta_compare]
+EN: Compare all five
+TH:
+
+[SPECTABLE.units_label]
+EN: Measurement units
+TH:
+
+[HEROFLEET.card_view]
+EN: View the {model} →
+TH:
+
+================================================================
 6. FLEET / COMPARE PAGE  (page: /robots)
 ================================================================
 

@@ -1,29 +1,46 @@
 import type { Metadata } from "next";
-import { references } from "@/lib/references";
+import { notFound } from "next/navigation";
 import { ReferenceGallery } from "@/components/reference-gallery";
 import { Reveal } from "@/components/reveal";
-import { Eyebrow, QuoteBand } from "@/components/ui";
+import { Eyebrow } from "@/components/ui";
+import { QuoteBand } from "@/components/quote-band";
+import { getDictionary, translator } from "@/lib/i18n/dictionary";
+import { localizeReferences } from "@/lib/i18n/localize-references";
+import { isLocale, type Locale } from "@/lib/i18n/config";
 
-export const metadata: Metadata = {
-  title: "Reference",
-  description:
-    "Operators running AI Robotic machines on live sites — hospitals, resorts and facility management — in their own words.",
-};
+export async function generateMetadata({
+  params,
+}: PageProps<"/[lang]/reference">): Promise<Metadata> {
+  const { lang } = await params;
+  if (!isLocale(lang)) return {};
+  const t = translator(await getDictionary(lang));
+  return {
+    title: t("REFERENCE.meta_title"),
+    description: t("REFERENCE.meta_description"),
+  };
+}
 
-export default function ReferencePage() {
+export default async function ReferencePage({
+  params,
+}: PageProps<"/[lang]/reference">) {
+  const { lang } = await params;
+  if (!isLocale(lang)) notFound();
+  const locale = lang as Locale;
+  const dict = await getDictionary(locale);
+  const t = translator(dict);
+  const references = localizeReferences(dict);
+
   return (
     <>
       <section className="border-b border-line bg-base">
         <div className="mx-auto max-w-6xl px-5 pb-14 pt-16 sm:pt-20">
           <Reveal>
-            <Eyebrow>Reference</Eyebrow>
+            <Eyebrow>{t("REFERENCE.eyebrow")}</Eyebrow>
             <h1 className="display mt-4 max-w-3xl text-4xl text-snow sm:text-5xl">
-              Operators, in their own words
+              {t("REFERENCE.heading")}
             </h1>
             <p className="mt-6 max-w-2xl leading-relaxed text-fog">
-              Facility managers, EVS teams and operations directors running these
-              machines on live floors — hospitals mid-shift, resorts during
-              season, warehouses overnight. Quotes are reproduced as published.
+              {t("REFERENCE.body")}
             </p>
           </Reveal>
         </div>
@@ -69,9 +86,16 @@ export default function ReferencePage() {
         </div>
       </section>
 
-      <ReferenceGallery />
+      <ReferenceGallery
+        strings={{
+          eyebrow: t("REFERENCE.gallery.eyebrow"),
+          heading: t("REFERENCE.gallery.heading"),
+          emptyLabel: t("REFERENCE.gallery.empty_label"),
+          emptyBody: t("REFERENCE.gallery.empty_body"),
+        }}
+      />
 
-      <QuoteBand />
+      <QuoteBand locale={locale} />
     </>
   );
 }

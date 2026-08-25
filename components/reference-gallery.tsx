@@ -4,21 +4,28 @@ import { Eyebrow } from "@/components/ui";
 
 /** Deployment photography and video. Renders an honest empty state until real
  *  footage exists — stock imagery on a reference page is worse than none. */
-export function ReferenceGallery() {
+export type GalleryStrings = {
+  eyebrow: string;
+  heading: string;
+  emptyLabel: string;
+  emptyBody: string;
+};
+
+export function ReferenceGallery({ strings }: { strings: GalleryStrings }) {
   if (media.length === 0) {
     return (
       <section className="border-t border-line bg-base">
         <div className="mx-auto max-w-6xl px-5 py-16">
-          <Eyebrow>From site</Eyebrow>
+          <Eyebrow>{strings.eyebrow}</Eyebrow>
           <h2 className="display mt-4 text-2xl text-snow sm:text-3xl">
-            Deployment footage
+            {strings.heading}
           </h2>
           <div className="mt-8 border border-dashed border-line p-10 text-center">
             <p className="font-mono text-xs uppercase tracking-[0.14em] text-fog">
-              Photography and video in progress
+              {strings.emptyLabel}
             </p>
             <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-fog">
-              Footage from live sites is being collected and will appear here.
+              {strings.emptyBody}
             </p>
           </div>
         </div>
@@ -29,9 +36,9 @@ export function ReferenceGallery() {
   return (
     <section className="border-t border-line bg-base">
       <div className="mx-auto max-w-6xl px-5 py-16">
-        <Eyebrow>From site</Eyebrow>
+        <Eyebrow>{strings.eyebrow}</Eyebrow>
         <h2 className="display mt-4 text-2xl text-snow sm:text-3xl">
-          Deployment footage
+          {strings.heading}
         </h2>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
