@@ -6,7 +6,7 @@ import { localePath, type Locale } from "@/lib/i18n/config";
 import l3 from "@/public/robots/fleet/l3.webp";
 import l4 from "@/public/robots/fleet/l4.webp";
 import l50 from "@/public/robots/fleet/l50.webp";
-import c5 from "@/public/robots/fleet/c5.webp";
+import sp50 from "@/public/robots/fleet/sp50.webp";
 import s5 from "@/public/robots/fleet/s5.webp";
 
 /* The fleet stands in a single line across the aisle, all at one depth.
@@ -28,7 +28,7 @@ const fleet: { slug: string; img: StaticImageData }[] = [
   { slug: "l3", img: l3 },
   { slug: "l4", img: l4 },
   { slug: "l50", img: l50 },
-  { slug: "c5", img: c5 },
+  { slug: "sp50", img: sp50 },
   { slug: "s5", img: s5 },
 ];
 

@@ -44,6 +44,10 @@ export type Robot = {
   environments: string[];
   /** which sibling models to suggest, in order */
   compare: string[];
+  /** Withheld from the site without being deleted: the entry stays here with
+   *  its copy and specs intact, but no listing, route or sitemap entry is
+   *  generated for it. Use this rather than commenting a machine out. */
+  hidden?: boolean;
 };
 
 export const robots: Robot[] = [
@@ -369,10 +373,126 @@ export const robots: Robot[] = [
       },
     ],
     environments: ["Warehouses", "Logistics", "Manufacturing", "Big-box retail"],
-    compare: ["c5", "s5"],
+    compare: ["sp50", "s5"],
+  },
+  {
+    slug: "sp50",
+    model: "SP50",
+    kind: "AI spot-cleaning robot",
+    tagline: "Finds the mess. Skips the rest.",
+    pitch:
+      "Patrols for spills and litter instead of scrubbing everything — covering up to 167,379 ft²/h because it only stops where there is something to clean.",
+    highlights: [
+      "Cleans only where the mess is",
+      "99% recognition accuracy",
+      "Up to 13 hours on one charge",
+    ],
+    bestFor: "Spot cleaning",
+    pickIf:
+      "Your floors are broadly clean but constantly picking up scattered mess — dropped food, spills, litter — across an area far too large to keep scrubbing end to end.",
+    intro:
+      "Full-coverage cleaning spends most of its effort on floor that was already clean. The SP50 patrols instead: a 10-billion-parameter model recognises debris with 99% accuracy, and 25 kPa of suction goes exactly where it is needed. The result is up to 167,379 square feet an hour — roughly eight times what the same machine manages scrubbing every inch.",
+    heroStats: [
+      { value: "167,379", unit: "ft²/h", label: "spot-clean patrol" },
+      { value: "99", unit: "%", label: "recognition accuracy" },
+      { value: "25", unit: "kPa", label: "suction" },
+      { value: "13", unit: "h", label: "max runtime" },
+    ],
+    features: [
+      {
+        eyebrow: "Spot intelligence",
+        title: "Eight times the ground, same shift",
+        body: "Because it cleans only where its AI sees dirt, the SP50 patrols roughly eight times the area of a full-coverage machine — the right shape for food courts, terminals and lobbies where mess is constant but scattered.",
+        bullets: [
+          "167,379 ft²/h patrolling versus 21,388 ft²/h full coverage",
+          "Cleans on detection, not on a fixed route",
+          "Automatic map updates when the floor plan changes",
+        ],
+      },
+      {
+        eyebrow: "Recognition",
+        title: "A ten-billion-parameter eye for mess",
+        body: "The onboard model identifies waste types with 99% accuracy — dropped fries, spilt drinks, shredded paper — and picks the approach each one needs rather than treating every mark the same.",
+        bullets: [
+          "10-billion-parameter recognition model",
+          "99% accuracy on waste identification",
+          "25 kPa suction applied where it counts",
+        ],
+      },
+      {
+        eyebrow: "Onboard console",
+        title: "Run it from the machine",
+        body: "The onboard touchscreen shows task progress, schedules and alarms, with one-touch continue, stop and return-to-dock. Anyone on shift can drive it without training.",
+        imageKey: "console",
+      },
+      {
+        eyebrow: "Perception & safety",
+        title: "Built to work among people",
+        body: "150 metres of detection range, plus protruding-object and glass detection, keep the SP50 safe in crowds and against the floor-to-ceiling glass that defeats lesser machines. Edge cleaning reaches within 5 cm of the wall.",
+        bullets: [
+          "150 m detection range",
+          "Protruding-object and glass detection",
+          "Edge cleaning to within 5 cm",
+        ],
+      },
+      {
+        eyebrow: "Workstation",
+        title: "Empties and charges itself",
+        body: "The CCS-02 workstation takes the machine back between patrols — charging it and handling the debris so the 18-litre filter bag and 5-litre tray last far longer than a shift.",
+        imageKey: "workstation",
+        bullets: [
+          "CCS-02 docking and charging station",
+          "18 L dust filter bag, 5 L trash tray",
+          "Docking fiducials for unattended return",
+        ],
+      },
+    ],
+    specGroups: [
+      {
+        title: "Performance",
+        specs: [
+          { label: "Spot-clean patrol", metric: "15,550 m²/h", imperial: "167,379 ft²/h" },
+          { label: "Full coverage", metric: "1,987 m²/h", imperial: "21,388 ft²/h" },
+          { label: "Suction", metric: "25 kPa" },
+          { label: "Max runtime", metric: "13 h" },
+          { label: "Sweeping width", metric: "720 mm", imperial: "28.3 in" },
+          { label: "Roller brush", metric: "460 mm", imperial: "18.1 in" },
+        ],
+      },
+      {
+        title: "Intelligence & safety",
+        specs: [
+          { label: "Model parameters", metric: "10B" },
+          { label: "Recognition accuracy", metric: "99%" },
+          { label: "Detection range", metric: "150 m", imperial: "492 ft" },
+          { label: "Protruding objects", metric: "Detected" },
+          { label: "Glass", metric: "Detected" },
+          { label: "Edge cleaning", metric: "<5 cm", imperial: "<2 in" },
+          { label: "Map updates", metric: "Automatic" },
+        ],
+      },
+      {
+        title: "Capacity",
+        specs: [
+          { label: "Dust filter bag", metric: "18 L", imperial: "4.8 gal" },
+          { label: "Trash tray", metric: "5 L", imperial: "1.3 gal" },
+        ],
+      },
+      {
+        title: "Dimensions",
+        specs: [
+          { label: "Length", metric: "855 mm", imperial: "33.7 in" },
+          { label: "Width", metric: "600 mm", imperial: "23.6 in" },
+          { label: "Height", metric: "1,050 mm", imperial: "41.3 in" },
+        ],
+      },
+    ],
+    environments: ["Hotels", "Hospitals", "Retail", "Education"],
+    compare: ["l50", "s5"],
   },
   {
     slug: "c5",
+    hidden: true, // not currently sold — kept for reference, see Robot.hidden
     model: "C5",
     kind: "3-in-1 cleaning machine",
     tagline: "Three jobs. One pass.",
@@ -584,10 +704,14 @@ export const robots: Robot[] = [
       },
     ],
     environments: ["Warehouses", "Manufacturing", "Parking garages", "Logistics"],
-    compare: ["l50", "c5"],
+    compare: ["l50", "sp50"],
   },
 ];
 
+/** Everything the site should show. Listings, routes, the sitemap and the
+ *  comparison table all read from this, never from `robots` directly. */
+export const visibleRobots: Robot[] = robots.filter((r) => !r.hidden);
+
 export function getRobot(slug: string): Robot | undefined {
-  return robots.find((r) => r.slug === slug);
+  return visibleRobots.find((r) => r.slug === slug);
 }

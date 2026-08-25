@@ -17,7 +17,7 @@ brochure voice. Sentences are often short on purpose.
 DO NOT TRANSLATE — leave these exactly as-is wherever they appear
 -------------------------------------------------------------------
   Brand and company:     AI Robotic
-  Robot model names:     L3, L4, L50, C5, S5
+  Robot model names:     L3, L4, L50, SP50, S5
   Technology/part names: NVIDIA, LiDAR, TOPS, TeamClean, WS3, WT3, CWS
   Units of measurement:  mm, cm, m, kg, L, gal, in, ft, h, min, kPa,
                           m²/h, ft²/h, TOPS, dB, kg, Ah, W
@@ -347,7 +347,7 @@ EN: The fleet
 TH:
 
 [FLEET.meta_description]
-EN: Compare the AI Robotic fleet: L3 and L4 autonomous scrubbers, the L50 industrial workhorse, the C5 3-in-1 cleaning machine and the S5 industrial sweeper.
+EN: Compare the AI Robotic fleet: L3 and L4 autonomous scrubbers, the L50 industrial workhorse, the SP50 AI spot cleaner and the S5 industrial sweeper.
 TH:
 
 [FLEET.hero.eyebrow]
@@ -486,6 +486,25 @@ TH:
 EN: Laser + vision fusion
 TH:
 
+[FLEET.table.sp50.job]
+EN: Spot clean · patrol
+TH: 
+
+[FLEET.table.sp50.runtime]
+EN: Up to 13 h
+TH: 
+
+[FLEET.table.sp50.bestfor]
+EN: Hotels, retail, hospitals
+TH: 
+
+[FLEET.table.sp50.compute]
+EN: 10B-parameter model
+TH: 
+
+[FLEET.table.sp50.lidar]
+EN: 150 m range
+TH: 
 [FLEET.table.tank_solution]
 EN: solution
 TH:
@@ -495,6 +514,16 @@ TH:
 EN: hopper
 TH:
 (Note: rendered after a number, e.g. "50 L hopper" — translate the word "hopper" only. This is the dry-debris bin on the sweeper; no water is involved.)
+
+[FLEET.table.tank_dustbag]
+EN: dust bag
+TH: 
+(Note: rendered after a number, e.g. "18 L dust bag" — translate the words "dust bag" only. This is the dry-debris bag on the spot cleaner; no water is involved.)
+
+[FLEET.table.productivity_spot]
+EN: spot-clean
+TH: 
+(Note: rendered after a figure, e.g. "15,550 m²/h spot-clean". It marks the SP50's patrol rate as a different measure from the scrubbers' coverage rate, so the two are not read as like for like.)
 
 
 ================================================================
@@ -555,7 +584,7 @@ TH:
 ================================================================
 8. ROBOT DATA — model-specific content
 ================================================================
-Each robot (L3, L4, L50, C5, S5) has the same shape: a kind, tagline,
+Each robot (L3, L4, L50, SP50, S5) has the same shape: a kind, tagline,
 one-line pitch, three highlight bullets, a "best for" label, a
 "pick this if" paragraph, an intro paragraph, four headline stats,
 five feature blocks (each with an eyebrow label, title, body text,
@@ -1394,6 +1423,281 @@ TH:
 8.4  C5 — 3-in-1 cleaning machine
 ----------------------------------------------------------------
 
+[ROBOT.sp50.kind]
+EN: AI spot-cleaning robot
+TH: 
+
+[ROBOT.sp50.tagline]
+EN: Finds the mess. Skips the rest.
+TH: 
+
+[ROBOT.sp50.pitch]
+EN: Patrols for spills and litter instead of scrubbing everything — covering up to 167,379 ft²/h because it only stops where there is something to clean.
+TH: 
+
+[ROBOT.sp50.bestfor]
+EN: Spot cleaning
+TH: 
+
+[ROBOT.sp50.pickif]
+EN: Your floors are broadly clean but constantly picking up scattered mess — dropped food, spills, litter — across an area far too large to keep scrubbing end to end.
+TH: 
+
+[ROBOT.sp50.intro]
+EN: Full-coverage cleaning spends most of its effort on floor that was already clean. The SP50 patrols instead: a 10-billion-parameter model recognises debris with 99% accuracy, and 25 kPa of suction goes exactly where it is needed. The result is up to 167,379 square feet an hour — roughly eight times what the same machine manages scrubbing every inch.
+TH: 
+
+[ROBOT.sp50.highlight1]
+EN: Cleans only where the mess is
+TH: 
+
+[ROBOT.sp50.highlight2]
+EN: 99% recognition accuracy
+TH: 
+
+[ROBOT.sp50.highlight3]
+EN: Up to 13 hours on one charge
+TH: 
+
+[ROBOT.sp50.stat1_label]
+EN: spot-clean patrol
+TH: 
+
+[ROBOT.sp50.stat2_label]
+EN: recognition accuracy
+TH: 
+
+[ROBOT.sp50.stat3_label]
+EN: suction
+TH: 
+
+[ROBOT.sp50.stat4_label]
+EN: max runtime
+TH: 
+
+[ROBOT.sp50.f1.eyebrow]
+EN: Spot intelligence
+TH: 
+
+[ROBOT.sp50.f1.title]
+EN: Eight times the ground, same shift
+TH: 
+
+[ROBOT.sp50.f1.body]
+EN: Because it cleans only where its AI sees dirt, the SP50 patrols roughly eight times the area of a full-coverage machine — the right shape for food courts, terminals and lobbies where mess is constant but scattered.
+TH: 
+
+[ROBOT.sp50.f1.bullet1]
+EN: 167,379 ft²/h patrolling versus 21,388 ft²/h full coverage
+TH: 
+
+[ROBOT.sp50.f1.bullet2]
+EN: Cleans on detection, not on a fixed route
+TH: 
+
+[ROBOT.sp50.f1.bullet3]
+EN: Automatic map updates when the floor plan changes
+TH: 
+
+[ROBOT.sp50.f2.eyebrow]
+EN: Recognition
+TH: 
+
+[ROBOT.sp50.f2.title]
+EN: A ten-billion-parameter eye for mess
+TH: 
+
+[ROBOT.sp50.f2.body]
+EN: The onboard model identifies waste types with 99% accuracy — dropped fries, spilt drinks, shredded paper — and picks the approach each one needs rather than treating every mark the same.
+TH: 
+
+[ROBOT.sp50.f2.bullet1]
+EN: 10-billion-parameter recognition model
+TH: 
+
+[ROBOT.sp50.f2.bullet2]
+EN: 99% accuracy on waste identification
+TH: 
+
+[ROBOT.sp50.f2.bullet3]
+EN: 25 kPa suction applied where it counts
+TH: 
+
+[ROBOT.sp50.f3.eyebrow]
+EN: Onboard console
+TH: 
+
+[ROBOT.sp50.f3.title]
+EN: Run it from the machine
+TH: 
+
+[ROBOT.sp50.f3.body]
+EN: The onboard touchscreen shows task progress, schedules and alarms, with one-touch continue, stop and return-to-dock. Anyone on shift can drive it without training.
+TH: 
+
+[ROBOT.sp50.f4.eyebrow]
+EN: Perception & safety
+TH: 
+
+[ROBOT.sp50.f4.title]
+EN: Built to work among people
+TH: 
+
+[ROBOT.sp50.f4.body]
+EN: 150 metres of detection range, plus protruding-object and glass detection, keep the SP50 safe in crowds and against the floor-to-ceiling glass that defeats lesser machines. Edge cleaning reaches within 5 cm of the wall.
+TH: 
+
+[ROBOT.sp50.f4.bullet1]
+EN: 150 m detection range
+TH: 
+
+[ROBOT.sp50.f4.bullet2]
+EN: Protruding-object and glass detection
+TH: 
+
+[ROBOT.sp50.f4.bullet3]
+EN: Edge cleaning to within 5 cm
+TH: 
+
+[ROBOT.sp50.f5.eyebrow]
+EN: Workstation
+TH: 
+
+[ROBOT.sp50.f5.title]
+EN: Empties and charges itself
+TH: 
+
+[ROBOT.sp50.f5.body]
+EN: The CCS-02 workstation takes the machine back between patrols — charging it and handling the debris so the 18-litre filter bag and 5-litre tray last far longer than a shift.
+TH: 
+
+[ROBOT.sp50.f5.bullet1]
+EN: CCS-02 docking and charging station
+TH: 
+
+[ROBOT.sp50.f5.bullet2]
+EN: 18 L dust filter bag, 5 L trash tray
+TH: 
+
+[ROBOT.sp50.f5.bullet3]
+EN: Docking fiducials for unattended return
+TH: 
+
+[ROBOT.sp50.specgroup1_title]
+EN: Performance
+TH: 
+
+[ROBOT.sp50.spec_spotcleanpatrol]
+EN: Spot-clean patrol
+TH: 
+
+[ROBOT.sp50.spec_fullcoverage]
+EN: Full coverage
+TH: 
+
+[ROBOT.sp50.spec_suction]
+EN: Suction
+TH: 
+
+[ROBOT.sp50.spec_maxruntime]
+EN: Max runtime
+TH: 
+
+[ROBOT.sp50.spec_sweepingwidth]
+EN: Sweeping width
+TH: 
+
+[ROBOT.sp50.spec_rollerbrush]
+EN: Roller brush
+TH: 
+
+[ROBOT.sp50.specgroup2_title]
+EN: Intelligence & safety
+TH: 
+
+[ROBOT.sp50.spec_modelparameters]
+EN: Model parameters
+TH: 
+
+[ROBOT.sp50.spec_recognitionaccuracy]
+EN: Recognition accuracy
+TH: 
+
+[ROBOT.sp50.spec_detectionrange]
+EN: Detection range
+TH: 
+
+[ROBOT.sp50.spec_protrudingobjects]
+EN: Protruding objects
+TH: 
+
+[ROBOT.sp50.spec_protrudingobjects_value]
+EN: Detected
+TH: 
+
+[ROBOT.sp50.spec_glass]
+EN: Glass
+TH: 
+
+[ROBOT.sp50.spec_glass_value]
+EN: Detected
+TH: 
+
+[ROBOT.sp50.spec_edgecleaning]
+EN: Edge cleaning
+TH: 
+
+[ROBOT.sp50.spec_mapupdates]
+EN: Map updates
+TH: 
+
+[ROBOT.sp50.spec_mapupdates_value]
+EN: Automatic
+TH: 
+
+[ROBOT.sp50.specgroup3_title]
+EN: Capacity
+TH: 
+
+[ROBOT.sp50.spec_dustfilterbag]
+EN: Dust filter bag
+TH: 
+
+[ROBOT.sp50.spec_trashtray]
+EN: Trash tray
+TH: 
+
+[ROBOT.sp50.specgroup4_title]
+EN: Dimensions
+TH: 
+
+[ROBOT.sp50.spec_length]
+EN: Length
+TH: 
+
+[ROBOT.sp50.spec_width]
+EN: Width
+TH: 
+
+[ROBOT.sp50.spec_height]
+EN: Height
+TH: 
+
+[ROBOT.sp50.env1]
+EN: Hotels
+TH: 
+
+[ROBOT.sp50.env2]
+EN: Hospitals
+TH: 
+
+[ROBOT.sp50.env3]
+EN: Retail
+TH: 
+
+[ROBOT.sp50.env4]
+EN: Education
+TH: 
 [ROBOT.c5.kind]
 EN: 3-in-1 cleaning machine
 TH:
@@ -1626,7 +1930,7 @@ TH:
 EN: Visual + point cloud
 TH:
 
-[ROBOT.c5.spec_selfdiagnostic]
+[ROBOT.c5.spec_selfdiagnosticcoverage]
 EN: Self-diagnostic coverage
 TH:
 
@@ -1642,7 +1946,7 @@ TH:
 EN: Durability & upkeep
 TH:
 
-[ROBOT.c5.spec_sewagetank]
+[ROBOT.c5.spec_sewagetankselfclean]
 EN: Sewage tank self-clean
 TH:
 
@@ -1662,7 +1966,7 @@ TH:
 EN: Workstation
 TH:
 
-[ROBOT.c5.spec_dimensions]
+[ROBOT.c5.spec_dimensionslwh]
 EN: Dimensions (L×W×H)
 TH:
 
@@ -1880,6 +2184,11 @@ TH:
 [ROBOT.s5.spec_fleetmode]
 EN: Fleet mode
 TH:
+
+[ROBOT.s5.spec_fleetmode_value]
+EN: TeamClean
+TH:
+(Note: the manufacturer's name for the feature that splits one floor between several machines. Keep it as-is — it is a product name, not a description.)
 
 [ROBOT.s5.spec_vehiclerecognition]
 EN: Vehicle recognition
@@ -2258,7 +2567,7 @@ TH:
 (This is a pattern, not a full sentence — e.g. becomes "Reference · AI Robotic". Only translate the surrounding format if Thai reads better with a different separator/order; otherwise leave as structure.)
 
 [META.site_description]
-EN: AI Robotic supplies autonomous floor-cleaning robots for hospitals, warehouses, retail and schools. Request a quote for the L3, L4 and L50 scrubbers, the C5 3-in-1 machine or the S5 industrial sweeper.
+EN: AI Robotic supplies autonomous floor-cleaning robots for hospitals, warehouses, retail and schools. Request a quote for the L3, L4 and L50 scrubbers, the SP50 AI spot cleaner or the S5 industrial sweeper.
 TH:
 
 

@@ -68,7 +68,11 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
           }}
           aria-hidden="true"
         />
-        <HeroFleet locale={locale} robots={robots} />
+        <HeroFleet
+          locale={locale}
+          robots={robots}
+          viewTemplate={t("HEROFLEET.card_view")}
+        />
         <div className="relative z-10 mx-auto flex min-h-[92svh] max-w-6xl flex-col items-center justify-between px-5 pb-10 pt-16 text-center sm:pt-20">
           {/* headline in the sky, above the machine */}
           <div>

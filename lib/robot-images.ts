@@ -31,6 +31,11 @@ import c5Pair from "@/public/robots/C5/c5-hero-pair.png";
 import c5Product from "@/public/robots/C5/c5-product.png";
 import c5Workstation from "@/public/robots/C5/c5-workstation.png";
 
+import sp50Hero from "@/public/robots/sp50/sp50-hero-robot.png";
+import sp50Product from "@/public/robots/sp50/sp50-product.png";
+import sp50Workstation from "@/public/robots/sp50/sp50-workstation.png";
+import sp50Console from "@/public/robots/sp50/sp50-console.jpg";
+
 import s5Warehouse from "@/public/robots/s5/s5-hero-warehouse.webp";
 import s5HeroRobot from "@/public/robots/s5/s5-hero-robot.webp";
 import s5Product from "@/public/robots/s5/s5-product.webp";
@@ -147,6 +152,27 @@ export const robotImages: Record<string, RobotImages> = {
       workstation: {
         src: c5Workstation,
         alt: "C5 workstation, which refills, drains and flushes the robot's sewage tank",
+      },
+    },
+  },
+
+  sp50: {
+    // no wide banner shot — the cutout carries the hero against the graphite
+    heroForeground: {
+      src: sp50Hero,
+      alt: "SP50 AI spot-cleaning robot with its twin side brushes extended",
+    },
+    heroForegroundClass:
+      "pointer-events-none absolute bottom-0 right-2 z-0 hidden w-[34%] max-w-sm sm:block lg:right-12 lg:max-w-md",
+    product: sp50Product,
+    features: {
+      console: {
+        src: sp50Console,
+        alt: "SP50 onboard console showing a vacuum-and-mop task at 100% with continue, end and return-to-dock controls",
+      },
+      workstation: {
+        src: sp50Workstation,
+        alt: "CCS-02 workstation with docking fiducials, where the SP50 charges and empties",
       },
     },
   },

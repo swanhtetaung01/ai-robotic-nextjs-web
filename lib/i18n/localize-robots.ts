@@ -1,4 +1,4 @@
-import { robots as sourceRobots, type Robot, type Spec } from "@/lib/robots";
+import { visibleRobots, type Robot, type Spec } from "@/lib/robots";
 import type { Dictionary } from "./dictionary";
 import { localeUnits, type Locale } from "./config";
 
@@ -51,7 +51,7 @@ function localizeSpec(
 export function localizeRobots(dict: Dictionary, locale: Locale): Robot[] {
   const units = localeUnits[locale];
 
-  return sourceRobots.map((robot) => {
+  return visibleRobots.map((robot) => {
     const p = `ROBOT.${robot.slug}`;
     const pick = (key: string, fallback: string) => dict[`${p}.${key}`] ?? fallback;
 
@@ -60,8 +60,8 @@ export function localizeRobots(dict: Dictionary, locale: Locale): Robot[] {
       kind: pick("kind", robot.kind),
       tagline: pick("tagline", robot.tagline),
       pitch: pick("pitch", robot.pitch),
-      bestFor: pick("bestFor", robot.bestFor),
-      pickIf: pick("pickIf", robot.pickIf),
+      bestFor: pick("bestfor", robot.bestFor),
+      pickIf: pick("pickif", robot.pickIf),
       intro: pick("intro", robot.intro),
 
       highlights: robot.highlights.map((h, i) => pick(`highlight${i + 1}`, h)),
@@ -106,6 +106,7 @@ const METRIC_HEROSTATS: Record<string, { value: string; unit: string }> = {
   "20,925|ft²/h": { value: "1,944", unit: "m²/h" },
   "23,713|ft²/h": { value: "2,203", unit: "m²/h" },
   "27,000|ft²/h": { value: "~2,500", unit: "m²/h" },
+  "167,379|ft²/h": { value: "15,550", unit: "m²/h" },
 };
 
 function statForUnits(

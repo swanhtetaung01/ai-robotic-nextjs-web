@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { robots as fleet } from "@/lib/robots";
+import { visibleRobots as fleet } from "@/lib/robots";
 import { SITE_URL } from "@/lib/site";
 import { locales, localePath } from "@/lib/i18n/config";
 

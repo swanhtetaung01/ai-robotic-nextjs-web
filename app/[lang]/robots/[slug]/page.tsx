@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { robots as sourceRobots } from "@/lib/robots";
+import { visibleRobots as sourceRobots } from "@/lib/robots";
 import { robotImages } from "@/lib/robot-images";
 import { getDictionary, translator } from "@/lib/i18n/dictionary";
 import { localizeRobots } from "@/lib/i18n/localize-robots";

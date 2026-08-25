@@ -31,3 +31,49 @@ for (const [loc, dict] of [["en", en], ["th", th]]) {
   writeFileSync(`lib/i18n/dictionaries/${loc}.json`, JSON.stringify(sorted, null, 2) + "\n", "utf8");
   console.log(`${loc}.json  ${Object.keys(sorted).length} keys`);
 }
+
+/* ── Guard against silent fallbacks ───────────────────────────────────────
+ * Thai layers over English, so a key the code asks for but the dictionary
+ * lacks renders as English instead of failing. That is right for copy added
+ * between translation rounds, but it also hides typos — a camelCase/lowercase
+ * mismatch on `bestfor` and `pickif` shipped English robot descriptions to the
+ * Thai site unnoticed. This asserts every key the robot overlay derives is
+ * really present, so drift surfaces here rather than on the page. */
+import { robots } from "../lib/robots.ts";
+
+const specSlug = (label) => label.toLowerCase().replace(/[^a-z0-9]/g, "");
+const expected = [];
+
+for (const r of robots) {
+  const p = `ROBOT.${r.slug}`;
+  expected.push(
+    `${p}.kind`, `${p}.tagline`, `${p}.pitch`,
+    `${p}.bestfor`, `${p}.pickif`, `${p}.intro`
+  );
+  r.highlights.forEach((_, i) => expected.push(`${p}.highlight${i + 1}`));
+  r.heroStats.forEach((_, i) => expected.push(`${p}.stat${i + 1}_label`));
+  r.environments.forEach((_, i) => expected.push(`${p}.env${i + 1}`));
+  r.features.forEach((f, i) => {
+    expected.push(`${p}.f${i + 1}.eyebrow`, `${p}.f${i + 1}.title`, `${p}.f${i + 1}.body`);
+    f.bullets?.forEach((_, j) => expected.push(`${p}.f${i + 1}.bullet${j + 1}`));
+  });
+  r.specGroups.forEach((g, i) => {
+    expected.push(`${p}.specgroup${i + 1}_title`);
+    g.specs.forEach((s) => {
+      expected.push(`${p}.spec_${specSlug(s.label)}`);
+      // A spec value with no digit in it is prose ("Detected", "Automatic")
+      // and needs its own string; figures carry across locales unchanged.
+      if (!/\d/.test(s.metric)) expected.push(`${p}.spec_${specSlug(s.label)}_value`);
+    });
+  });
+}
+
+const absent = [...new Set(expected)].filter((k) => !en[k]);
+if (absent.length) {
+  console.error(`\n${absent.length} key(s) the robot overlay needs are absent from en.json:`);
+  for (const k of absent.slice(0, 25)) console.error("  " + k);
+  console.error("These would silently render English. Fix the key name or add the string.");
+  process.exitCode = 1;
+} else {
+  console.log(`robot overlay: all ${new Set(expected).size} derived keys present`);
+}
