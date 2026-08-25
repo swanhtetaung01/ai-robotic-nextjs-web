@@ -443,12 +443,14 @@ EN: Laser + vision fusion
 TH: ผสานเลเซอร์ + การมองเห็น
 
 [FLEET.table.tank_solution]
-EN: solution   (appears after a number, e.g. "25 L solution" — this is the word "solution" only)
+EN: solution
 TH: น้ำสะอาด/น้ำยา
+(Note: rendered after a number, e.g. "25 L solution" — translate the word "solution" only. This is the cleaning solution: the water-and-detergent mix a scrubber sprays onto the floor.)
 
 [FLEET.table.tank_hopper]
-EN: hopper   (appears after a number, e.g. "50 L hopper" — this is the word "hopper" only)
+EN: hopper
 TH: ถังเก็บเศษ
+(Note: rendered after a number, e.g. "50 L hopper" — translate the word "hopper" only. This is the dry-debris bin on the sweeper; no water is involved.)
 
 
 ================================================================
