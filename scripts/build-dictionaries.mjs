@@ -68,12 +68,25 @@ for (const r of robots) {
   });
 }
 
+/* Same trap, same shape: the reference overlay derives its prefix from each
+ * customer's slug, so a file that spelled Aspirus Hospital's keys REF.aspirus.*
+ * instead of REF.aspirushospital.* shipped an English testimonial to the Thai
+ * page with nothing to show for it. */
+import { references } from "../lib/references.ts";
+
+for (const ref of references) {
+  const p = `REF.${ref.slug.replace(/-/g, "")}`;
+  expected.push(`${p}.quote`, `${p}.role`, `${p}.location`, `${p}.sector`);
+  // Only some customers stated an outcome; the overlay skips the rest.
+  if (ref.outcome) expected.push(`${p}.outcome`);
+}
+
 const absent = [...new Set(expected)].filter((k) => !en[k]);
 if (absent.length) {
-  console.error(`\n${absent.length} key(s) the robot overlay needs are absent from en.json:`);
+  console.error(`\n${absent.length} key(s) the overlays need are absent from en.json:`);
   for (const k of absent.slice(0, 25)) console.error("  " + k);
   console.error("These would silently render English. Fix the key name or add the string.");
   process.exitCode = 1;
 } else {
-  console.log(`robot overlay: all ${new Set(expected).size} derived keys present`);
+  console.log(`overlays: all ${new Set(expected).size} derived keys present`);
 }

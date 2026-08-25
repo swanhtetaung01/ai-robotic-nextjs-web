@@ -2447,33 +2447,33 @@ TH: ทำความสะอาด ประมาณ 55,700 ตร.ม. แ�
 
 --- Reference 2: Aspirus Hospital ---
 
-[REF.aspirus.quote]
+[REF.aspirushospital.quote]
 EN: The bots are making a huge difference in our hospital cleanliness. Our staff now focus on deep scrubbing, stripping and waxing.
 TH: หุ่นยนต์สร้างความแตกต่างอย่างมากต่อความสะอาดของโรงพยาบาล ตอนนี้ทีมงานของเราสามารถมุ่งเน้นไปที่งานขัดลึก งานลอกพื้น และงานเคลือบแว็กซ์ได้มากขึ้น
 
-[REF.aspirus.name]
+[REF.aspirushospital.name]
 EN: Brindy Literski
 TH: Brindy Literski
 (Proper name — do not translate.)
 
-[REF.aspirus.role]
+[REF.aspirushospital.role]
 EN: Manager, Environmental Services
 TH: ผู้จัดการฝ่ายบริการสิ่งแวดล้อม
 
-[REF.aspirus.organisation]
+[REF.aspirushospital.organisation]
 EN: Aspirus Hospital
 TH: Aspirus Hospital
 (Organisation name — do not translate.)
 
-[REF.aspirus.location]
+[REF.aspirushospital.location]
 EN: Wausau, Wisconsin
 TH: วอซอ, วิสคอนซิน
 
-[REF.aspirus.sector]
+[REF.aspirushospital.sector]
 EN: Healthcare
 TH: สถานพยาบาล
 
-[REF.aspirus.outcome]
+[REF.aspirushospital.outcome]
 EN: Third-shift technician reassigned to specialist work
 TH: พนักงานกะกลางคืนสามารถเปลี่ยนไปทำงานทำความสะอาดเฉพาะทาง
 

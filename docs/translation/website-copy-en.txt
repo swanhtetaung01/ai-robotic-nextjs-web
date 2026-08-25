@@ -2491,33 +2491,33 @@ TH:
 
 --- Reference 2: Aspirus Hospital ---
 
-[REF.aspirus.quote]
+[REF.aspirushospital.quote]
 EN: The bots are making a huge difference in our hospital cleanliness. Our staff now focus on deep scrubbing, stripping and waxing.
 TH:
 
-[REF.aspirus.name]
+[REF.aspirushospital.name]
 EN: Brindy Literski
 TH:
 (Proper name — do not translate.)
 
-[REF.aspirus.role]
+[REF.aspirushospital.role]
 EN: Manager, Environmental Services
 TH:
 
-[REF.aspirus.organisation]
+[REF.aspirushospital.organisation]
 EN: Aspirus Hospital
 TH:
 (Organisation name — do not translate.)
 
-[REF.aspirus.location]
+[REF.aspirushospital.location]
 EN: Wausau, Wisconsin
 TH:
 
-[REF.aspirus.sector]
+[REF.aspirushospital.sector]
 EN: Healthcare
 TH:
 
-[REF.aspirus.outcome]
+[REF.aspirushospital.outcome]
 EN: Third-shift technician reassigned to specialist work
 TH:
 

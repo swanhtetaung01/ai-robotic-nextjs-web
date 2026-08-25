@@ -1,9 +1,11 @@
-import Image from "next/image";
-import { media } from "@/lib/reference-media";
+import { media, galleryMedia } from "@/lib/reference-media";
+import { MediaFrame } from "@/components/media-frame";
 import { Eyebrow } from "@/components/ui";
 
-/** Deployment photography and video. Renders an honest empty state until real
- *  footage exists — stock imagery on a reference page is worse than none. */
+/** Deployment photography and video that isn't tied to a named customer —
+ *  anything that is plays on that customer's testimonial card instead.
+ *  Renders an honest empty state until real footage exists; stock imagery on
+ *  a reference page is worse than none. */
 export type GalleryStrings = {
   eyebrow: string;
   heading: string;
@@ -12,7 +14,11 @@ export type GalleryStrings = {
 };
 
 export function ReferenceGallery({ strings }: { strings: GalleryStrings }) {
-  if (media.length === 0) {
+  // Every clip is on a card, so a gallery here would either be empty or repeat
+  // them. The empty state is for having no footage at all, which isn't the case.
+  if (galleryMedia.length === 0 && media.length > 0) return null;
+
+  if (galleryMedia.length === 0) {
     return (
       <section className="border-t border-line bg-base">
         <div className="mx-auto max-w-6xl px-5 py-16">
@@ -42,50 +48,15 @@ export function ReferenceGallery({ strings }: { strings: GalleryStrings }) {
         </h2>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {media.map((item, i) => (
+          {galleryMedia.map((item, i) => (
             <figure
               key={i}
               className="overflow-hidden border border-line bg-surface"
             >
-              <div className="relative aspect-video bg-raise">
-                {item.kind === "photo" && (
-                  <Image
-                    src={item.src}
-                    alt={item.alt}
-                    fill
-                    className="object-cover"
-                    sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 92vw"
-                  />
-                )}
-
-                {item.kind === "video" && (
-                  <video
-                    controls
-                    preload="metadata"
-                    playsInline
-                    poster={
-                      typeof item.poster === "string"
-                        ? item.poster
-                        : item.poster?.src
-                    }
-                    aria-label={item.alt}
-                    className="h-full w-full object-cover"
-                  >
-                    <source src={item.src} type="video/mp4" />
-                  </video>
-                )}
-
-                {item.kind === "youtube" && (
-                  <iframe
-                    src={`https://www.youtube-nocookie.com/embed/${item.id}`}
-                    title={item.alt}
-                    loading="lazy"
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="h-full w-full"
-                  />
-                )}
-              </div>
+              <MediaFrame
+                item={item}
+                sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 92vw"
+              />
 
               {item.caption && (
                 <figcaption className="border-t border-line px-4 py-3 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-fog">

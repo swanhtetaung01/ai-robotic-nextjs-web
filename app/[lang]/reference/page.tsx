@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ReferenceGallery } from "@/components/reference-gallery";
+import { MediaFrame } from "@/components/media-frame";
+import { mediaForReference } from "@/lib/reference-media";
 import { Reveal } from "@/components/reveal";
 import { Eyebrow } from "@/components/ui";
 import { QuoteBand } from "@/components/quote-band";
@@ -50,38 +52,55 @@ export default async function ReferencePage({
       <section className="bg-base">
         <div className="mx-auto max-w-6xl px-5 py-14">
           <div className="grid gap-6 lg:grid-cols-3">
-            {references.map((ref, i) => (
-              <Reveal key={ref.slug} delay={(i % 3) * 80} className="h-full">
-                <figure className="flex h-full flex-col border border-line bg-surface p-7">
-                  <p className="stencil text-amber">{ref.sector}</p>
+            {references.map((ref, i) => {
+              const footage = mediaForReference(ref.slug);
+              return (
+                <Reveal key={ref.slug} delay={(i % 3) * 80} className="h-full">
+                  <figure className="flex h-full flex-col overflow-hidden border border-line bg-surface">
+                    {/* Footage from the customer's own site, above what they
+                        said about it. No caption — the attribution below
+                        already names the place. */}
+                    {footage && (
+                      <MediaFrame
+                        item={footage}
+                        sizes="(min-width: 1024px) 360px, 92vw"
+                      />
+                    )}
 
-                  <span
-                    className="mt-4 font-mono text-3xl leading-none text-amber"
-                    aria-hidden="true"
-                  >
-                    &ldquo;
-                  </span>
-                  <blockquote className="mt-2 flex-1 leading-relaxed text-cloud">
-                    {ref.quote}
-                  </blockquote>
+                    <div className="flex flex-1 flex-col p-7">
+                      <p className="stencil text-amber">{ref.sector}</p>
 
-                  {ref.outcome && (
-                    <p className="mt-5 border-l-2 border-amber py-1 pl-3 font-mono text-xs text-snow">
-                      {ref.outcome}
-                    </p>
-                  )}
+                      <span
+                        className="mt-4 font-mono text-3xl leading-none text-amber"
+                        aria-hidden="true"
+                      >
+                        &ldquo;
+                      </span>
+                      <blockquote className="mt-2 flex-1 leading-relaxed text-cloud">
+                        {ref.quote}
+                      </blockquote>
 
-                  <figcaption className="mt-6 border-t border-line pt-4">
-                    <p className="text-sm font-semibold text-snow">{ref.name}</p>
-                    <p className="mt-1 text-xs leading-relaxed text-fog">
-                      {ref.role}
-                      <br />
-                      {ref.organisation} — {ref.location}
-                    </p>
-                  </figcaption>
-                </figure>
-              </Reveal>
-            ))}
+                      {ref.outcome && (
+                        <p className="mt-5 border-l-2 border-amber py-1 pl-3 font-mono text-xs text-snow">
+                          {ref.outcome}
+                        </p>
+                      )}
+
+                      <figcaption className="mt-6 border-t border-line pt-4">
+                        <p className="text-sm font-semibold text-snow">
+                          {ref.name}
+                        </p>
+                        <p className="mt-1 text-xs leading-relaxed text-fog">
+                          {ref.role}
+                          <br />
+                          {ref.organisation} — {ref.location}
+                        </p>
+                      </figcaption>
+                    </div>
+                  </figure>
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
