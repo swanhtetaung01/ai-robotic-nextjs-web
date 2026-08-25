@@ -56,7 +56,11 @@ export function ReferenceGallery() {
                     controls
                     preload="metadata"
                     playsInline
-                    poster={item.poster?.src}
+                    poster={
+                      typeof item.poster === "string"
+                        ? item.poster
+                        : item.poster?.src
+                    }
                     aria-label={item.alt}
                     className="h-full w-full object-cover"
                   >

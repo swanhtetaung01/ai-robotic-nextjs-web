@@ -7,6 +7,18 @@ const nextConfig: NextConfig = {
        cache entries per image. 92 is here for the hero plate, whose dark
        gradients band at the default 75. */
     qualities: [75, 92],
+
+    /* Reference photography is hosted on Cloudinary rather than committed,
+       so deployment footage never bloats the repo. Scoped to the delivery
+       host only — remote image config is a fetch-on-behalf-of primitive, so
+       it stays as narrow as it can be. */
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        pathname: "/**",
+      },
+    ],
   },
 };
 

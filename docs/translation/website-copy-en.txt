@@ -1,0 +1,2402 @@
+AI ROBOTIC WEBSITE — ENGLISH SOURCE TEXT FOR THAI TRANSLATION
+================================================================
+Generated 2026-08-21. Covers every visible word on airoboticsth.com.
+
+HOW TO USE THIS FILE
+---------------------
+Every string has a [KEY] identifying where it lives on the site, an
+EN: line with the English source, and a blank TH: line underneath.
+Type the Thai translation directly on the TH: line and send the file
+back — do not change the [KEY] lines, they are used to put each
+translation back in the right place on the site.
+
+Keep the same tone as the English where you can: direct, plain-spoken,
+aimed at a facility manager or operations director — not a marketing
+brochure voice. Sentences are often short on purpose.
+
+DO NOT TRANSLATE — leave these exactly as-is wherever they appear
+-------------------------------------------------------------------
+  Brand and company:     AI Robotic
+  Robot model names:     L3, L4, L50, C5, S5
+  Technology/part names: NVIDIA, LiDAR, TOPS, TeamClean, WS3, WT3, CWS
+  Units of measurement:  mm, cm, m, kg, L, gal, in, ft, h, min, kPa,
+                          m²/h, ft²/h, TOPS, dB, kg, Ah, W
+  Numbers and specs themselves (700, 21,674, 96-beam, etc.)
+  URLs and email addresses (airoboticsth.com, quotes@airoboticsth.com)
+
+Numerals: use whichever numeral style your team prefers for Thai
+(Thai numerals ๐-๙ or Arabic 0-9 as commonly used in Thai business
+writing) — just be consistent throughout.
+
+A NOTE ON THE CUSTOMER QUOTES (section 10, REFERENCES)
+---------------------------------------------------------
+These are direct quotes attributed to named, real customers (Jeff
+Heugli, Brindy Literski, Frizzell Frizzell), reproduced as published.
+Translating a direct quote changes another person's words, so:
+  - Either translate them clearly as a translation (not a rewrite —
+    stay as literal as natural Thai allows), or
+  - Leave the quote in English and only translate the role/company/
+    location text around it.
+Flag which approach you'd like before this goes live — see the note
+at the end of this file.
+
+
+================================================================
+1. GLOBAL — HEADER NAVIGATION
+================================================================
+
+[NAV.fleet]
+EN: The fleet
+TH:
+
+[NAV.why]
+EN: Why autonomous
+TH:
+
+[NAV.reference]
+EN: Reference
+TH:
+
+[NAV.contact]
+EN: Contact
+TH:
+
+[NAV.quote_cta]
+EN: Request a quote
+TH:
+
+[NAV.menu_open]
+EN: Open menu
+TH:
+
+[NAV.menu_close]
+EN: Close menu
+TH:
+
+
+================================================================
+2. GLOBAL — FOOTER
+================================================================
+
+[FOOTER.tagline]
+EN: Autonomous cleaning robots for facilities that can't afford a missed night. Every machine is configured, delivered and supported by AI Robotic.
+TH:
+
+[FOOTER.col_fleet_heading]
+EN: The fleet
+TH:
+
+[FOOTER.col_company_heading]
+EN: Company
+TH:
+
+[FOOTER.link_compare]
+EN: Compare models
+TH:
+
+[FOOTER.link_why]
+EN: Why autonomous
+TH:
+
+[FOOTER.link_reference]
+EN: Reference
+TH:
+
+[FOOTER.link_quote]
+EN: Request a quote
+TH:
+
+[FOOTER.col_contact_heading]
+EN: Talk to us
+TH:
+
+[FOOTER.contact_body]
+EN: Tell us about your facility and we'll match a robot to it — usually within one business day.
+TH:
+
+[FOOTER.contact_cta]
+EN: Get a quote
+TH:
+
+[FOOTER.copyright]
+EN: © {year} AI Robotic. All robot specifications are manufacturer figures.
+TH:
+(Note: {year} is generated automatically, e.g. "2026" — leave the placeholder pattern if you can, or just translate the surrounding sentence.)
+
+
+================================================================
+3. GLOBAL — QUOTE CALL-TO-ACTION BAND (appears at the bottom of most pages)
+================================================================
+
+[QUOTEBAND.heading_generic]
+EN: Put a robot on your floor.
+TH:
+
+[QUOTEBAND.heading_with_model]
+EN: Put the {model} on your floor.
+TH:
+(Note: {model} is replaced with a robot name like "L3" — keep the placeholder.)
+
+[QUOTEBAND.body]
+EN: Tell us about your facility — square footage, floor type, operating hours — and we'll come back with a recommendation and a quotation, usually within one business day.
+TH:
+
+[QUOTEBAND.cta]
+EN: Request a quote
+TH:
+
+
+================================================================
+4. GLOBAL — 404 / PAGE NOT FOUND
+================================================================
+
+[404.eyebrow]
+EN: Error 404
+TH:
+
+[404.heading]
+EN: Nothing on this floor
+TH:
+
+[404.body]
+EN: This page doesn't exist — or the robot hasn't docked here yet. The fleet is over here:
+TH:
+
+[404.cta]
+EN: Explore the fleet
+TH:
+
+
+================================================================
+5. HOME PAGE
+================================================================
+
+--- Hero ---
+
+[HOME.hero.eyebrow]
+EN: AI Robotic · Autonomous cleaning fleet
+TH:
+
+[HOME.hero.h1]
+EN: The night shift that never calls in sick
+TH:
+
+[HOME.hero.body]
+EN: Autonomous floor-cleaning robots for hospitals, warehouses, retail and schools — machines that map your building, plan their own routes, and clean every night to the same standard.
+TH:
+
+[HOME.hero.cta_primary]
+EN: Explore the fleet
+TH:
+
+[HOME.hero.cta_secondary]
+EN: Request a quote
+TH:
+
+[HOME.hero.scroll_cue]
+EN: Scroll
+TH:
+
+--- Proof band (statistics) ---
+
+[HOME.proof.eyebrow]
+EN: Why autonomous
+TH:
+
+[HOME.proof.heading]
+EN: The math your CFO will do anyway
+TH:
+
+[HOME.proof.stat1_label]
+EN: cleaning cost — 5–7× below manual labor
+TH:
+
+[HOME.proof.stat2_label]
+EN: typical labor cost reduction
+TH:
+
+[HOME.proof.stat3_label]
+EN: payback on large open floors
+TH:
+
+[HOME.proof.stat4_label]
+EN: quiet enough for open trading hours
+TH:
+
+[HOME.proof.footnote]
+EN: One deployed scrubber has logged 345+ autonomous hours a month — the working hours of two full-time staff — while floor maps guarantee identical coverage every night, independent of turnover, sickness and fatigue.
+TH:
+
+--- Fleet lineup ---
+
+[HOME.fleet.eyebrow]
+EN: The fleet
+TH:
+
+[HOME.fleet.heading]
+EN: Five machines. Every floor covered.
+TH:
+
+[HOME.fleet.compare_link]
+EN: Compare all models →
+TH:
+
+--- Verticals (industries served) ---
+
+[HOME.verticals.eyebrow]
+EN: Where they work
+TH:
+
+[HOME.verticals.heading]
+EN: Built for buildings that never really close
+TH:
+
+[HOME.verticals.item1]
+EN: Healthcare
+TH:
+
+[HOME.verticals.item2]
+EN: Warehousing
+TH:
+
+[HOME.verticals.item3]
+EN: Retail
+TH:
+
+[HOME.verticals.item4]
+EN: Hospitality
+TH:
+
+[HOME.verticals.item5]
+EN: Education
+TH:
+
+[HOME.verticals.item6]
+EN: Transportation
+TH:
+
+--- Testimonials preview ---
+
+[HOME.testimonials.eyebrow]
+EN: Field reports
+TH:
+
+[HOME.testimonials.heading]
+EN: From the field, worldwide
+TH:
+
+[HOME.testimonials.subtext]
+EN: Operator reports from live deployments of our robot platform.
+TH:
+
+[HOME.testimonials.link]
+EN: Read the full reference →
+TH:
+
+
+================================================================
+6. FLEET / COMPARE PAGE  (page: /robots)
+================================================================
+
+[FLEET.meta_title]
+EN: The fleet
+TH:
+
+[FLEET.meta_description]
+EN: Compare the AI Robotic fleet: L3 and L4 autonomous scrubbers, the L50 industrial workhorse, the C5 3-in-1 cleaning machine and the S5 industrial sweeper.
+TH:
+
+[FLEET.hero.eyebrow]
+EN: The fleet
+TH:
+
+[FLEET.hero.heading]
+EN: Wet or dry. Tight or vast. Covered.
+TH:
+
+[FLEET.hero.body]
+EN: Two compact scrubbers for occupied buildings, an industrial workhorse for warehouse floors, a 3-in-1 machine that sweeps, scrubs and mops in one pass, and a fleet-capable dry sweeper — all reporting to the same AI Robotic app.
+TH:
+
+--- Comparison table ---
+
+[FLEET.table.eyebrow]
+EN: Side by side
+TH:
+
+[FLEET.table.heading]
+EN: Pick the machine for your floor
+TH:
+
+[FLEET.table.row_job]
+EN: Job
+TH:
+
+[FLEET.table.row_productivity]
+EN: Max productivity
+TH:
+
+[FLEET.table.row_passage]
+EN: Passage width
+TH:
+
+[FLEET.table.row_tank]
+EN: Tank / hopper
+TH:
+
+[FLEET.table.row_compute]
+EN: AI compute
+TH:
+
+[FLEET.table.row_lidar]
+EN: LiDAR
+TH:
+
+[FLEET.table.row_runtime]
+EN: Runtime
+TH:
+
+[FLEET.table.row_bestfor]
+EN: Best for
+TH:
+
+[FLEET.table.cta]
+EN: Get a quote →
+TH:
+
+--- Compare table cell values (short phrases inside the table) ---
+
+[FLEET.table.l3.job]
+EN: Scrub · tight spaces
+TH:
+
+[FLEET.table.l4.job]
+EN: Scrub · retail & hospitality
+TH:
+
+[FLEET.table.l50.job]
+EN: Scrub · warehouse scale
+TH:
+
+[FLEET.table.c5.job]
+EN: Sweep + scrub + mop
+TH:
+
+[FLEET.table.s5.job]
+EN: Sweep · dry debris
+TH:
+
+[FLEET.table.l3.runtime]
+EN: Extended (WT3)
+TH:
+
+[FLEET.table.l4.runtime]
+EN: 24/7 with dock
+TH:
+
+[FLEET.table.l50.runtime]
+EN: Up to 6 h
+TH:
+
+[FLEET.table.c5.runtime]
+EN: 3 h scrubbing
+TH:
+
+[FLEET.table.s5.runtime]
+EN: 2 h fast charge
+TH:
+
+[FLEET.table.l3.bestfor]
+EN: Hospitals, schools
+TH:
+
+[FLEET.table.l4.bestfor]
+EN: Retail, hotels
+TH:
+
+[FLEET.table.l50.bestfor]
+EN: Warehouses, logistics
+TH:
+
+[FLEET.table.c5.bestfor]
+EN: Malls, airports, factories
+TH:
+
+[FLEET.table.s5.bestfor]
+EN: Industry, garages
+TH:
+
+[FLEET.table.l50.compute]
+EN: NVIDIA AI
+TH:
+
+[FLEET.table.c5.compute]
+EN: Laser-vision fusion
+TH:
+
+[FLEET.table.l50.lidar]
+EN: 150 m range
+TH:
+
+[FLEET.table.c5.lidar]
+EN: Laser + vision fusion
+TH:
+
+[FLEET.table.tank_solution]
+EN: solution   (appears after a number, e.g. "25 L solution" — this is the word "solution" only)
+TH:
+
+[FLEET.table.tank_hopper]
+EN: hopper   (appears after a number, e.g. "50 L hopper" — this is the word "hopper" only)
+TH:
+
+
+================================================================
+7. ROBOT DETAIL PAGE TEMPLATE  (page: /robots/[l3|l4|l50|c5|s5])
+================================================================
+This is the fixed template wording shared by all five robot pages.
+The robot-specific content (specs, features, descriptions) is in
+section 8 below.
+
+[ROBOTDETAIL.breadcrumb]
+EN: The fleet
+TH:
+(Appears as: "The fleet / L3" — only "The fleet" needs translating, the model name stays as-is.)
+
+[ROBOTDETAIL.cta_quote]
+EN: Request a quote
+TH:
+
+[ROBOTDETAIL.cta_specs]
+EN: Full specifications
+TH:
+
+[ROBOTDETAIL.specs_heading]
+EN: Full specifications
+TH:
+
+[ROBOTDETAIL.units_metric]
+EN: metric
+TH:
+
+[ROBOTDETAIL.units_imperial]
+EN: imperial
+TH:
+
+[ROBOTDETAIL.works_in]
+EN: Where the {model} works
+TH:
+(Note: {model} becomes "L3", "L4" etc. — keep the placeholder.)
+
+[ROBOTDETAIL.crosssell_heading]
+EN: Not quite the fit?
+TH:
+
+[ROBOTDETAIL.crosssell_link]
+EN: Compare all five →
+TH:
+
+[ROBOTDETAIL.card_view]
+EN: View →
+TH:
+
+[ROBOTDETAIL.card_photo_placeholder]
+EN: Photography in progress
+TH:
+(Shown on a lineup card when no product photo exists yet for a robot.)
+
+
+================================================================
+8. ROBOT DATA — model-specific content
+================================================================
+Each robot (L3, L4, L50, C5, S5) has the same shape: a kind, tagline,
+one-line pitch, three highlight bullets, a "best for" label, a
+"pick this if" paragraph, an intro paragraph, four headline stats,
+five feature blocks (each with an eyebrow label, title, body text,
+and often three bullet points), spec table group titles and spec
+labels, and a list of environments it's used in.
+
+Spec VALUES (numbers like "700 mm" or "100 TOPS") do not need
+translation — only the LABELS next to them do (e.g. "Passage width",
+"Max productivity").
+
+
+----------------------------------------------------------------
+8.1  L3 — Autonomous floor scrubber
+----------------------------------------------------------------
+
+[ROBOT.l3.kind]
+EN: Autonomous floor scrubber
+TH:
+
+[ROBOT.l3.tagline]
+EN: Fits where the others can't.
+TH:
+
+[ROBOT.l3.pitch]
+EN: Compact AI floor scrubber that passes through 700 mm gaps — built for hospitals, schools and tight retail floors.
+TH:
+
+[ROBOT.l3.highlight1]
+EN: Passes through 700 mm gaps
+TH:
+
+[ROBOT.l3.highlight2]
+EN: Hands-free voice control
+TH:
+
+[ROBOT.l3.highlight3]
+EN: Spots cables and loose mats
+TH:
+
+[ROBOT.l3.bestfor]
+EN: Tight spaces
+TH:
+
+[ROBOT.l3.pickif]
+EN: Your floors have narrow corridors, standard doorways or crowded aisles where a larger machine simply cannot fit — hospital wings, classrooms, small-format retail.
+TH:
+
+[ROBOT.l3.intro]
+EN: The L3 carries a 100 TOPS NVIDIA AI platform and a 96-beam 3D LiDAR in a body narrow enough for a hospital corridor at visiting hours. It plans its own routes, avoids what people leave in them, and answers to plain voice commands.
+TH:
+
+[ROBOT.l3.stat1_label]
+EN: passage width
+TH:
+
+[ROBOT.l3.stat2_label]
+EN: max productivity
+TH:
+
+[ROBOT.l3.stat3_label]
+EN: NVIDIA AI compute
+TH:
+
+[ROBOT.l3.stat4_label]
+EN: 3D LiDAR
+TH:
+
+--- L3 Feature 1: Intelligence ---
+
+[ROBOT.l3.f1.eyebrow]
+EN: Intelligence
+TH:
+
+[ROBOT.l3.f1.title]
+EN: A supercomputer pushing a scrubber
+TH:
+
+[ROBOT.l3.f1.body]
+EN: NVIDIA silicon rated at 100 TOPS reads a 96-beam 3D LiDAR point cloud in real time. The L3 doesn't follow a painted line — it builds a live map, plans its own routes, and re-plans the moment a pallet, bed or person appears where the map says floor.
+TH:
+
+[ROBOT.l3.f1.bullet1]
+EN: Autonomous path planning with live re-routing
+TH:
+
+[ROBOT.l3.f1.bullet2]
+EN: Obstacle avoidance tuned for occupied buildings
+TH:
+
+[ROBOT.l3.f1.bullet3]
+EN: Maps update themselves when your layout changes
+TH:
+
+--- L3 Feature 2: Perception & safety ---
+
+[ROBOT.l3.f2.eyebrow]
+EN: Perception & safety
+TH:
+
+[ROBOT.l3.f2.title]
+EN: Sees the hazards people trip on
+TH:
+
+[ROBOT.l3.f2.body]
+EN: Ground-level perception detects the things that stop other robots and hurt staff — temporary carpets, loose cables, mats at a wet entrance. The L3 classifies them and cleans around them instead of eating them.
+TH:
+
+[ROBOT.l3.f2.bullet1]
+EN: Temporary carpet and cable detection
+TH:
+
+[ROBOT.l3.f2.bullet2]
+EN: Safe behaviour around doors and entrances
+TH:
+
+[ROBOT.l3.f2.bullet3]
+EN: Designed for daytime operation among people
+TH:
+
+--- L3 Feature 3: Voice control ---
+
+[ROBOT.l3.f3.eyebrow]
+EN: Voice control
+TH:
+
+[ROBOT.l3.f3.title]
+EN: Tell it. Don't touch it.
+TH:
+
+[ROBOT.l3.f3.body]
+EN: Simple voice commands start, pause and redirect the robot — no gloves off, no screen taps. For clinical environments where hands stay clean, that's not a gimmick; it's infection control.
+TH:
+
+[ROBOT.l3.f3.bullet1]
+EN: Hands-free start, pause and dispatch
+TH:
+
+[ROBOT.l3.f3.bullet2]
+EN: Full mobile app for routes, alerts and reports
+TH:
+
+[ROBOT.l3.f3.bullet3]
+EN: Live location and completed-task notifications
+TH:
+
+--- L3 Feature 4: Serviceability ---
+
+[ROBOT.l3.f4.eyebrow]
+EN: Serviceability
+TH:
+
+[ROBOT.l3.f4.title]
+EN: Maintenance measured in seconds
+TH:
+
+[ROBOT.l3.f4.body]
+EN: A large-access recovery tank, magnetic quick-swap brushes and a quick-release squeegee mean the daily service routine doesn't need a technician — or a coffee break.
+TH:
+
+[ROBOT.l3.f4.bullet1]
+EN: Magnetic brushes drop in and out by hand
+TH:
+
+[ROBOT.l3.f4.bullet2]
+EN: Quick-release squeegee, no tools
+TH:
+
+[ROBOT.l3.f4.bullet3]
+EN: Wide-mouth recovery tank for fast rinse-out
+TH:
+
+--- L3 Feature 5: Extended operations ---
+
+[ROBOT.l3.f5.eyebrow]
+EN: Extended operations
+TH:
+
+[ROBOT.l3.f5.title]
+EN: No plumbing? No problem.
+TH:
+
+[ROBOT.l3.f5.body]
+EN: Pair the L3 with the WS3 workstation and WT3 mobile water tank (60 L fresh / 50 L recovery) and it runs extended cleaning cycles in buildings with no fixed water connection at all.
+TH:
+
+[ROBOT.l3.f5.bullet1]
+EN: WS3 workstation for autonomous charging
+TH:
+
+[ROBOT.l3.f5.bullet2]
+EN: WT3 mobile tank: 60 L fresh, 50 L recovery
+TH:
+
+[ROBOT.l3.f5.bullet3]
+EN: Off-hours cycles without a water hookup
+TH:
+
+--- L3 Spec table group titles + spec labels ---
+
+[ROBOT.l3.specgroup1_title]
+EN: Performance
+TH:
+
+[ROBOT.l3.spec_maxproductivity]
+EN: Max productivity
+TH:
+
+[ROBOT.l3.spec_cleaningwidth]
+EN: Cleaning width
+TH:
+
+[ROBOT.l3.spec_brushpressure]
+EN: Brush pressure
+TH:
+
+[ROBOT.l3.spec_solutiontank]
+EN: Solution tank
+TH:
+
+[ROBOT.l3.specgroup2_title]
+EN: Intelligence
+TH:
+
+[ROBOT.l3.spec_aicompute]
+EN: AI compute
+TH:
+
+[ROBOT.l3.spec_lidar]
+EN: LiDAR
+TH:
+
+[ROBOT.l3.spec_voicecontrol]
+EN: Voice control
+TH:
+
+[ROBOT.l3.spec_voicecontrol_value]
+EN: Onboard commands
+TH:
+
+[ROBOT.l3.spec_mapupdates]
+EN: Map updates
+TH:
+
+[ROBOT.l3.spec_mapupdates_value]
+EN: Automatic
+TH:
+
+[ROBOT.l3.specgroup3_title]
+EN: Dimensions
+TH:
+
+[ROBOT.l3.spec_passagewidth]
+EN: Passage width
+TH:
+
+[ROBOT.l3.spec_length]
+EN: Length
+TH:
+
+[ROBOT.l3.spec_width]
+EN: Width
+TH:
+
+[ROBOT.l3.spec_height]
+EN: Height
+TH:
+
+[ROBOT.l3.specgroup4_title]
+EN: WT3 mobile tank (optional)
+TH:
+
+[ROBOT.l3.spec_freshwater]
+EN: Fresh water
+TH:
+
+[ROBOT.l3.spec_recovery]
+EN: Recovery
+TH:
+
+--- L3 Environments (tags shown as a list) ---
+
+[ROBOT.l3.env1]
+EN: Hospitals
+TH:
+
+[ROBOT.l3.env2]
+EN: Schools
+TH:
+
+[ROBOT.l3.env3]
+EN: Retail
+TH:
+
+[ROBOT.l3.env4]
+EN: Offices
+TH:
+
+[ROBOT.l3.env5]
+EN: Clinics
+TH:
+
+
+----------------------------------------------------------------
+8.2  L4 — Edge-cleaning floor scrubber
+----------------------------------------------------------------
+
+[ROBOT.l4.kind]
+EN: Edge-cleaning floor scrubber
+TH:
+
+[ROBOT.l4.tagline]
+EN: Balanced size. High productivity.
+TH:
+
+[ROBOT.l4.pitch]
+EN: The volume workhorse for retail and hospitality — fits a standard doorway and scrubs to within 3 cm of the wall.
+TH:
+
+[ROBOT.l4.highlight1]
+EN: Clears a standard doorway
+TH:
+
+[ROBOT.l4.highlight2]
+EN: Scrubs to 3 cm from the wall
+TH:
+
+[ROBOT.l4.highlight3]
+EN: Runs 24/7 with its workstation
+TH:
+
+[ROBOT.l4.bestfor]
+EN: Retail & hotels
+TH:
+
+[ROBOT.l4.pickif]
+EN: You clean occupied retail floors or hotel public areas during trading hours, and need the edges and skirting done properly, not just the middle.
+TH:
+
+[ROBOT.l4.intro]
+EN: At 810 mm passage width the L4 goes through a standard door frame, then cleans to within 3 cm of the skirting board. Stain-perception AI adjusts water, pressure and speed to what it actually sees on the floor.
+TH:
+
+[ROBOT.l4.stat1_label]
+EN: passage width
+TH:
+
+[ROBOT.l4.stat2_label]
+EN: max productivity
+TH:
+
+[ROBOT.l4.stat3_label]
+EN: edge distance
+TH:
+
+[ROBOT.l4.stat4_label]
+EN: LiDAR range
+TH:
+
+--- L4 Feature 1: Stain perception ---
+
+[ROBOT.l4.f1.eyebrow]
+EN: Stain perception
+TH:
+
+[ROBOT.l4.f1.title]
+EN: Cleans harder where it's dirtier
+TH:
+
+[ROBOT.l4.f1.body]
+EN: Vision AI classifies stains in its path and adjusts brush pressure, water flow and speed on the spot — full effort on the spill, light touch on the clean run.
+TH:
+
+[ROBOT.l4.f1.bullet1]
+EN: Real-time stain classification
+TH:
+
+[ROBOT.l4.f1.bullet2]
+EN: Automatic pressure, flow and speed adjustment
+TH:
+
+[ROBOT.l4.f1.bullet3]
+EN: Solution flow tracks cleaning speed to cut waste
+TH:
+
+--- L4 Feature 2: Edge cleaning ---
+
+[ROBOT.l4.f2.eyebrow]
+EN: Edge cleaning
+TH:
+
+[ROBOT.l4.f2.title]
+EN: Through the doorway, along the edge
+TH:
+
+[ROBOT.l4.f2.body]
+EN: Most rivals in this class can't pass a standard door frame. The L4 does — then hugs walls and shelving to under 3 cm, where the dirt actually collects.
+TH:
+
+[ROBOT.l4.f2.bullet1]
+EN: 810 mm passage width clears standard doorways
+TH:
+
+[ROBOT.l4.f2.bullet2]
+EN: Edge distance under 3 cm along walls and racking
+TH:
+
+[ROBOT.l4.f2.bullet3]
+EN: 1,100 mm turning width for tight aisle ends
+TH:
+
+--- L4 Feature 3: Perception ---
+
+[ROBOT.l4.f3.eyebrow]
+EN: Perception
+TH:
+
+[ROBOT.l4.f3.title]
+EN: A 150-metre head start
+TH:
+
+[ROBOT.l4.f3.body]
+EN: A 32-beam 3D LiDAR with 150 m of range, backed by 3D depth cameras and bumper sensors, maps the building and everything moving through it — so the L4 plans clean lines and gives people and pallet trucks a wide berth.
+TH:
+
+[ROBOT.l4.f3.bullet1]
+EN: 32-beam 3D LiDAR, 150 m detection range
+TH:
+
+[ROBOT.l4.f3.bullet2]
+EN: 3D depth cameras and bumper sensors
+TH:
+
+[ROBOT.l4.f3.bullet3]
+EN: Re-plans live when the aisle changes
+TH:
+
+--- L4 Feature 4: Mobile app ---
+
+[ROBOT.l4.f4.eyebrow]
+EN: Mobile app
+TH:
+
+[ROBOT.l4.f4.title]
+EN: The whole night, reported
+TH:
+
+[ROBOT.l4.f4.body]
+EN: Every run ends with a report: route map, coverage percentage, area cleaned, water and detergent used, minutes worked. Plan routes, get completion alerts, and prove the clean happened — without walking the floor.
+TH:
+
+[ROBOT.l4.f4.bullet1]
+EN: Route planning and live location
+TH:
+
+[ROBOT.l4.f4.bullet2]
+EN: Coverage and consumption reports per run
+TH:
+
+[ROBOT.l4.f4.bullet3]
+EN: Completion and fault alerts to your phone
+TH:
+
+--- L4 Feature 5: 24/7 operation ---
+
+[ROBOT.l4.f5.eyebrow]
+EN: 24/7 operation
+TH:
+
+[ROBOT.l4.f5.title]
+EN: The 4-in-1 workstation
+TH:
+
+[ROBOT.l4.f5.body]
+EN: Docked at its workstation the L4 empties, refills, charges and returns to work without a human in the loop. Squeegee replacement takes 30 seconds when it's finally due.
+TH:
+
+[ROBOT.l4.f5.bullet1]
+EN: Autonomous empty, refill and charge cycles
+TH:
+
+[ROBOT.l4.f5.bullet2]
+EN: Overnight cleaning with nobody on site
+TH:
+
+[ROBOT.l4.f5.bullet3]
+EN: 30-second squeegee replacement
+TH:
+
+--- L4 Spec table group titles + spec labels ---
+
+[ROBOT.l4.specgroup1_title]
+EN: Performance
+TH:
+
+[ROBOT.l4.spec_maxproductivity]
+EN: Max productivity
+TH:
+
+[ROBOT.l4.spec_cleaningwidth]
+EN: Cleaning width
+TH:
+
+[ROBOT.l4.spec_brushpressure]
+EN: Brush pressure
+TH:
+
+[ROBOT.l4.spec_solutiontank]
+EN: Solution tank
+TH:
+
+[ROBOT.l4.spec_edgecleaning]
+EN: Edge cleaning
+TH:
+
+[ROBOT.l4.specgroup2_title]
+EN: Intelligence
+TH:
+
+[ROBOT.l4.spec_aicompute]
+EN: AI compute
+TH:
+
+[ROBOT.l4.spec_lidar]
+EN: LiDAR
+TH:
+
+[ROBOT.l4.spec_touchscreen]
+EN: Touchscreen
+TH:
+
+[ROBOT.l4.spec_stainperception]
+EN: Stain perception
+TH:
+
+[ROBOT.l4.spec_stainperception_value]
+EN: Vision AI
+TH:
+
+[ROBOT.l4.specgroup3_title]
+EN: Dimensions
+TH:
+
+[ROBOT.l4.spec_passagewidth]
+EN: Passage width
+TH:
+
+[ROBOT.l4.spec_turningwidth]
+EN: Turning width
+TH:
+
+[ROBOT.l4.spec_length]
+EN: Length
+TH:
+
+[ROBOT.l4.spec_width]
+EN: Width
+TH:
+
+[ROBOT.l4.spec_height]
+EN: Height
+TH:
+
+--- L4 Environments ---
+
+[ROBOT.l4.env1]
+EN: Retail
+TH:
+
+[ROBOT.l4.env2]
+EN: Hospitality
+TH:
+
+[ROBOT.l4.env3]
+EN: Hospitals
+TH:
+
+[ROBOT.l4.env4]
+EN: Education
+TH:
+
+
+----------------------------------------------------------------
+8.3  L50 — High-capacity industrial scrubber
+----------------------------------------------------------------
+
+[ROBOT.l50.kind]
+EN: High-capacity industrial scrubber
+TH:
+
+[ROBOT.l50.tagline]
+EN: Sixty thousand square feet. One charge.
+TH:
+
+[ROBOT.l50.pitch]
+EN: The warehouse workhorse — 55 L tank, 6-hour runtime, and 40–60,000 ft² covered without a refill.
+TH:
+
+[ROBOT.l50.highlight1]
+EN: 40–60,000 ft² on one charge
+TH:
+
+[ROBOT.l50.highlight2]
+EN: Six-hour runtime
+TH:
+
+[ROBOT.l50.highlight3]
+EN: Sees 150 m down the aisle
+TH:
+
+[ROBOT.l50.bestfor]
+EN: Warehouses
+TH:
+
+[ROBOT.l50.pickif]
+EN: You have large open floors where the machine spends more time going back for water than cleaning — distribution centres, big-box retail, industrial units.
+TH:
+
+[ROBOT.l50.intro]
+EN: Built for warehouses, logistics hubs and big-box floors: a 55-litre solution tank, 25 kg of brush pressure for epoxy floors, and a battery that runs a full shift. It covers 40–60,000 square feet on a single charge without asking for anything.
+TH:
+
+[ROBOT.l50.stat1_label]
+EN: hourly coverage
+TH:
+
+[ROBOT.l50.stat2_label]
+EN: solution tank
+TH:
+
+[ROBOT.l50.stat3_label]
+EN: max runtime
+TH:
+
+[ROBOT.l50.stat4_label]
+EN: brush pressure
+TH:
+
+--- L50 Feature 1: Capacity ---
+
+[ROBOT.l50.f1.eyebrow]
+EN: Capacity
+TH:
+
+[ROBOT.l50.f1.title]
+EN: A full shift without a refill
+TH:
+
+[ROBOT.l50.f1.body]
+EN: The 120 Ah battery and 55-litre tank are sized so one dispatch covers 40–60,000 square feet — a full night's floor in most facilities — before it needs water or power.
+TH:
+
+[ROBOT.l50.f1.bullet1]
+EN: Up to 6 hours on one charge
+TH:
+
+[ROBOT.l50.f1.bullet2]
+EN: 55 L solution tank, 25 kg brush pressure
+TH:
+
+[ROBOT.l50.f1.bullet3]
+EN: Built for epoxy and sealed concrete floors
+TH:
+
+--- L50 Feature 2: Detection ---
+
+[ROBOT.l50.f2.eyebrow]
+EN: Detection
+TH:
+
+[ROBOT.l50.f2.title]
+EN: Sees 150 metres down the aisle
+TH:
+
+[ROBOT.l50.f2.body]
+EN: Long-range LiDAR plus protruding-object and glass detection keep it safe among racking, forklifts and floor-to-ceiling storefronts — the hazards that blind lesser machines.
+TH:
+
+--- L50 Feature 3: Onboard console ---
+
+[ROBOT.l50.f3.eyebrow]
+EN: Onboard console
+TH:
+
+[ROBOT.l50.f3.title]
+EN: Mission control, on the machine
+TH:
+
+[ROBOT.l50.f3.body]
+EN: The onboard touchscreen shows task progress, schedules and alarms, with one-touch pause, stop and dispatch. Anyone on the night crew can drive the whole operation without training.
+TH:
+
+--- L50 Feature 4: Fleet app ---
+
+[ROBOT.l50.f4.eyebrow]
+EN: Fleet app
+TH:
+
+[ROBOT.l50.f4.title]
+EN: Not a speck missed
+TH:
+
+[ROBOT.l50.f4.body]
+EN: Plan routes, watch live location, and get completion reports with coverage and consumption per run. Over-the-air updates add capability while the robot sleeps.
+TH:
+
+--- L50 Feature 5: Autonomous refill ---
+
+[ROBOT.l50.f5.eyebrow]
+EN: Autonomous refill
+TH:
+
+[ROBOT.l50.f5.title]
+EN: Docks. Drains. Refills. Returns.
+TH:
+
+[ROBOT.l50.f5.body]
+EN: The CWS workstation lets the L50 swap its own water — discharging the recovery tank and refilling solution against docking fiducials, then heading straight back to the floor.
+TH:
+
+--- L50 Spec table group titles + spec labels ---
+
+[ROBOT.l50.specgroup1_title]
+EN: Performance
+TH:
+
+[ROBOT.l50.spec_hourlycoverage]
+EN: Hourly coverage
+TH:
+
+[ROBOT.l50.spec_cleaningwidth]
+EN: Cleaning width
+TH:
+
+[ROBOT.l50.spec_brushpressure]
+EN: Brush pressure
+TH:
+
+[ROBOT.l50.spec_solutiontank]
+EN: Solution tank
+TH:
+
+[ROBOT.l50.spec_maxspeed]
+EN: Max speed
+TH:
+
+[ROBOT.l50.spec_battery]
+EN: Battery
+TH:
+
+[ROBOT.l50.spec_edgecleaning]
+EN: Edge cleaning
+TH:
+
+[ROBOT.l50.specgroup2_title]
+EN: Detection
+TH:
+
+[ROBOT.l50.spec_detectionrange]
+EN: Detection range
+TH:
+
+[ROBOT.l50.spec_protrudingobjects]
+EN: Protruding objects
+TH:
+
+[ROBOT.l50.spec_protrudingobjects_value]
+EN: Detected
+TH:
+
+[ROBOT.l50.spec_glass]
+EN: Glass
+TH:
+
+[ROBOT.l50.spec_glass_value]
+EN: Detected
+TH:
+
+[ROBOT.l50.specgroup3_title]
+EN: Dimensions
+TH:
+
+[ROBOT.l50.spec_length]
+EN: Length
+TH:
+
+[ROBOT.l50.spec_width]
+EN: Width
+TH:
+
+[ROBOT.l50.spec_height]
+EN: Height
+TH:
+
+[ROBOT.l50.spec_squeegeewidth]
+EN: Squeegee width
+TH:
+
+--- L50 Environments ---
+
+[ROBOT.l50.env1]
+EN: Warehouses
+TH:
+
+[ROBOT.l50.env2]
+EN: Logistics
+TH:
+
+[ROBOT.l50.env3]
+EN: Manufacturing
+TH:
+
+[ROBOT.l50.env4]
+EN: Big-box retail
+TH:
+
+--- L50 in-situ scene gallery captions (photos of L50 in different environments) ---
+
+[ROBOT.l50.scene_retail]
+EN: Retail
+TH:
+
+[ROBOT.l50.scene_hospitals]
+EN: Hospitals
+TH:
+
+[ROBOT.l50.scene_hotels]
+EN: Hotels
+TH:
+
+[ROBOT.l50.scene_education]
+EN: Education
+TH:
+
+
+----------------------------------------------------------------
+8.4  C5 — 3-in-1 cleaning machine
+----------------------------------------------------------------
+
+[ROBOT.c5.kind]
+EN: 3-in-1 cleaning machine
+TH:
+
+[ROBOT.c5.tagline]
+EN: Three jobs. One pass.
+TH:
+
+[ROBOT.c5.pitch]
+EN: Sweeps, scrubs and dust mops in a single pass — with a 90-litre tank and a workstation that refills and cleans itself.
+TH:
+
+[ROBOT.c5.highlight1]
+EN: Sweeps, scrubs and mops in one pass
+TH:
+
+[ROBOT.c5.highlight2]
+EN: 90 L tank — largest in the fleet
+TH:
+
+[ROBOT.c5.highlight3]
+EN: Self-cleans its tank in 4 min
+TH:
+
+[ROBOT.c5.bestfor]
+EN: All-in-one
+TH:
+
+[ROBOT.c5.pickif]
+EN: Your floors need sweeping, scrubbing and mopping, and running three separate machines over the same ground is not practical.
+TH:
+
+[ROBOT.c5.intro]
+EN: Most floors need three machines and three passes. The C5 needs one. It sweeps debris, scrubs the floor and dust mops behind itself in a single run, carries 90 litres of water to do it, and returns to a workstation that refills, drains and flushes its own sewage tank in four minutes.
+TH:
+
+[ROBOT.c5.stat1_label]
+EN: max cleaning rate
+TH:
+
+[ROBOT.c5.stat2_label]
+EN: water tank
+TH:
+
+[ROBOT.c5.stat3_label]
+EN: cleaning width
+TH:
+
+[ROBOT.c5.stat4_label]
+EN: debris removal
+TH:
+
+--- C5 Feature 1: Professional cleaning ---
+
+[ROBOT.c5.f1.eyebrow]
+EN: Professional cleaning
+TH:
+
+[ROBOT.c5.f1.title]
+EN: Sweep, scrub and mop — in one run
+TH:
+
+[ROBOT.c5.f1.body]
+EN: Dual side brushes pull debris in from the edges, the roller brush and 25 kg of scrubbing pressure take the floor down to clean, and the dust mop finishes behind. Heavily soiled floors come back in a single pass instead of three.
+TH:
+
+[ROBOT.c5.f1.bullet1]
+EN: Sweeping, scrubbing and dust mopping combined
+TH:
+
+[ROBOT.c5.f1.bullet2]
+EN: Over 95% debris removal
+TH:
+
+[ROBOT.c5.f1.bullet3]
+EN: Zero-distance side-brush edge cleaning
+TH:
+
+--- C5 Feature 2: Positioning ---
+
+[ROBOT.c5.f2.eyebrow]
+EN: Positioning
+TH:
+
+[ROBOT.c5.f2.title]
+EN: Laser and vision, fused
+TH:
+
+[ROBOT.c5.f2.body]
+EN: Laser-vision fusion positioning keeps the C5 located when either sensor alone would drift — through glass atriums, past mirrored shopfronts, across the wide open floors that defeat pure-LiDAR machines.
+TH:
+
+[ROBOT.c5.f2.bullet1]
+EN: Laser-vision fusion positioning
+TH:
+
+[ROBOT.c5.f2.bullet2]
+EN: Visual and point-cloud fusion perception
+TH:
+
+[ROBOT.c5.f2.bullet3]
+EN: Over 90% self-diagnostic coverage
+TH:
+
+--- C5 Feature 3: Self-maintenance ---
+
+[ROBOT.c5.f3.eyebrow]
+EN: Self-maintenance
+TH:
+
+[ROBOT.c5.f3.title]
+EN: It cleans its own tank
+TH:
+
+[ROBOT.c5.f3.body]
+EN: The dirtiest job on any scrubber is the sewage tank, and it is the one people skip. The C5 flushes its own in four minutes at the workstation — then refills, charges and goes back out.
+TH:
+
+[ROBOT.c5.f3.bullet1]
+EN: Four-minute sewage tank self-clean
+TH:
+
+[ROBOT.c5.f3.bullet2]
+EN: Automatic charging and water management
+TH:
+
+[ROBOT.c5.f3.bullet3]
+EN: Closed-loop cleaning re-covers any missed area
+TH:
+
+--- C5 Feature 4: Control ---
+
+[ROBOT.c5.f4.eyebrow]
+EN: Control
+TH:
+
+[ROBOT.c5.f4.title]
+EN: On the machine, on your phone, in the cloud
+TH:
+
+[ROBOT.c5.f4.body]
+EN: Start a job from the robot's own screen, dispatch it from your phone, or schedule the whole week from the cloud console — with job reports waiting for you either way.
+TH:
+
+[ROBOT.c5.f4.bullet1]
+EN: Triple-platform control: robot, mobile and cloud
+TH:
+
+[ROBOT.c5.f4.bullet2]
+EN: Autonomous boundary recognition and map updates
+TH:
+
+[ROBOT.c5.f4.bullet3]
+EN: Automatic scheduling and job reporting
+TH:
+
+--- C5 Feature 5: Workstation ---
+
+[ROBOT.c5.f5.eyebrow]
+EN: Workstation
+TH:
+
+[ROBOT.c5.f5.title]
+EN: The dock does the dirty work
+TH:
+
+[ROBOT.c5.f5.body]
+EN: A compact station that fills at up to 10 litres a minute, drains at up to 15, and runs the tank self-clean cycle. Where there is no plumbing, a mobile tank configuration does the same job.
+TH:
+
+[ROBOT.c5.f5.bullet1]
+EN: Automatic fill, drain and sewage self-clean
+TH:
+
+[ROBOT.c5.f5.bullet2]
+EN: 8 L onboard tank, 1,800 W peak draw
+TH:
+
+[ROBOT.c5.f5.bullet3]
+EN: Mobile tank option for sites without plumbing
+TH:
+
+--- C5 Spec table group titles + spec labels ---
+
+[ROBOT.c5.specgroup1_title]
+EN: Performance
+TH:
+
+[ROBOT.c5.spec_maxcleaningrate]
+EN: Max cleaning rate
+TH:
+
+[ROBOT.c5.spec_cleaningwidth]
+EN: Cleaning width
+TH:
+
+[ROBOT.c5.spec_scrubbingpressure]
+EN: Scrubbing pressure
+TH:
+
+[ROBOT.c5.spec_watertank]
+EN: Water tank
+TH:
+
+[ROBOT.c5.spec_debrisremoval]
+EN: Debris removal
+TH:
+
+[ROBOT.c5.spec_scrubbingendurance]
+EN: Scrubbing endurance
+TH:
+
+[ROBOT.c5.specgroup2_title]
+EN: Intelligence & safety
+TH:
+
+[ROBOT.c5.spec_positioning]
+EN: Positioning
+TH:
+
+[ROBOT.c5.spec_positioning_value]
+EN: Laser-vision fusion
+TH:
+
+[ROBOT.c5.spec_perception]
+EN: Perception
+TH:
+
+[ROBOT.c5.spec_perception_value]
+EN: Visual + point cloud
+TH:
+
+[ROBOT.c5.spec_selfdiagnostic]
+EN: Self-diagnostic coverage
+TH:
+
+[ROBOT.c5.spec_boundaryrecognition]
+EN: Boundary recognition
+TH:
+
+[ROBOT.c5.spec_boundaryrecognition_value]
+EN: Autonomous
+TH:
+
+[ROBOT.c5.specgroup3_title]
+EN: Durability & upkeep
+TH:
+
+[ROBOT.c5.spec_sewagetank]
+EN: Sewage tank self-clean
+TH:
+
+[ROBOT.c5.spec_fanlifespan]
+EN: Fan lifespan
+TH:
+
+[ROBOT.c5.spec_cleaningmodes]
+EN: Cleaning modes
+TH:
+
+[ROBOT.c5.spec_cleaningmodes_value]
+EN: Sweep · scrub · dust mop
+TH:
+
+[ROBOT.c5.specgroup4_title]
+EN: Workstation
+TH:
+
+[ROBOT.c5.spec_dimensions]
+EN: Dimensions (L×W×H)
+TH:
+
+[ROBOT.c5.spec_ws_watertank]
+EN: Water tank
+TH:
+
+[ROBOT.c5.spec_fillrate]
+EN: Fill rate
+TH:
+
+[ROBOT.c5.spec_drainagerate]
+EN: Drainage rate
+TH:
+
+[ROBOT.c5.spec_maxpower]
+EN: Max power
+TH:
+
+--- C5 Environments ---
+
+[ROBOT.c5.env1]
+EN: Shopping malls
+TH:
+
+[ROBOT.c5.env2]
+EN: Airports
+TH:
+
+[ROBOT.c5.env3]
+EN: Transport hubs
+TH:
+
+[ROBOT.c5.env4]
+EN: Factories
+TH:
+
+[ROBOT.c5.env5]
+EN: Hospitals
+TH:
+
+[ROBOT.c5.env6]
+EN: Supermarkets
+TH:
+
+[ROBOT.c5.env7]
+EN: Office buildings
+TH:
+
+[ROBOT.c5.env8]
+EN: Hotels
+TH:
+
+
+----------------------------------------------------------------
+8.5  S5 — Industrial robotic sweeper
+----------------------------------------------------------------
+
+[ROBOT.s5.kind]
+EN: Industrial robotic sweeper
+TH:
+
+[ROBOT.s5.tagline]
+EN: Dry debris. Wholesale.
+TH:
+
+[ROBOT.s5.pitch]
+EN: AI-driven industrial sweeper for dry debris — 27,000 ft²/h, and it works in coordinated fleets.
+TH:
+
+[ROBOT.s5.highlight1]
+EN: Handles dust to dropped bolts
+TH:
+
+[ROBOT.s5.highlight2]
+EN: Works in coordinated fleets
+TH:
+
+[ROBOT.s5.highlight3]
+EN: Yields to forklifts and AGVs
+TH:
+
+[ROBOT.s5.bestfor]
+EN: Dry debris
+TH:
+
+[ROBOT.s5.pickif]
+EN: Your mess is dry — dust, packaging film, offcuts, bottle caps — on floors where you do not want water at all.
+TH:
+
+[ROBOT.s5.intro]
+EN: From fine dust to wood chips, packaging film, bottles and screws — the S5 sweeps the dry side of industrial floors at 27,000 ft²/h. TeamClean lets several units carve up a warehouse together, and vehicle recognition keeps them clear of your forklifts.
+TH:
+
+[ROBOT.s5.stat1_label]
+EN: sweep rate
+TH:
+
+[ROBOT.s5.stat2_label]
+EN: debris hopper
+TH:
+
+[ROBOT.s5.stat3_label]
+EN: full charge
+TH:
+
+[ROBOT.s5.stat4_label]
+EN: NVIDIA AI compute
+TH:
+
+--- S5 Feature 1: TeamClean ---
+
+[ROBOT.s5.f1.eyebrow]
+EN: TeamClean
+TH:
+
+[ROBOT.s5.f1.title]
+EN: One floor, many sweepers
+TH:
+
+[ROBOT.s5.f1.body]
+EN: S5 units coordinate as a fleet, dividing the floor between them and adapting when one is charging. Big facilities clean in a fraction of the time.
+TH:
+
+--- S5 Feature 2: Vehicle recognition ---
+
+[ROBOT.s5.f2.eyebrow]
+EN: Vehicle recognition
+TH:
+
+[ROBOT.s5.f2.title]
+EN: Knows a forklift when it sees one
+TH:
+
+[ROBOT.s5.f2.body]
+EN: Purpose-trained recognition for forklifts, AGVs and site vehicles means the S5 yields early and keeps working around live traffic, not just after hours.
+TH:
+
+--- S5 Feature 3: Debris handling ---
+
+[ROBOT.s5.f3.eyebrow]
+EN: Debris handling
+TH:
+
+[ROBOT.s5.f3.title]
+EN: From dust to dropped bolts
+TH:
+
+[ROBOT.s5.f3.body]
+EN: Advanced dust control plus a 50-litre hopper handles fine powder and coarse industrial waste in the same pass — film, cardboard, screws, bottle caps.
+TH:
+
+--- S5 Feature 4: Serviceability ---
+
+[ROBOT.s5.f4.eyebrow]
+EN: Serviceability
+TH:
+
+[ROBOT.s5.f4.title]
+EN: Empty it and go
+TH:
+
+[ROBOT.s5.f4.body]
+EN: The hopper lifts out without tools, filters shake clean in seconds, and every wear part is reachable from the outside — service fits inside a coffee break, not a maintenance window.
+TH:
+
+--- S5 Feature 5: Continuous operation ---
+
+[ROBOT.s5.f5.eyebrow]
+EN: Continuous operation
+TH:
+
+[ROBOT.s5.f5.title]
+EN: Charges in two hours, works around the clock
+TH:
+
+[ROBOT.s5.f5.body]
+EN: A 2-hour fast charge and its own docking station keep the S5 in rotation — it tops up between shifts and returns to its route without being asked.
+TH:
+
+--- S5 Spec table group titles + spec labels ---
+
+[ROBOT.s5.specgroup1_title]
+EN: Performance
+TH:
+
+[ROBOT.s5.spec_sweeprate]
+EN: Sweep rate
+TH:
+
+[ROBOT.s5.spec_sweepingwidth]
+EN: Sweeping width
+TH:
+
+[ROBOT.s5.spec_debrishopper]
+EN: Debris hopper
+TH:
+
+[ROBOT.s5.spec_chargingtime]
+EN: Charging time
+TH:
+
+[ROBOT.s5.specgroup2_title]
+EN: Intelligence
+TH:
+
+[ROBOT.s5.spec_aicompute]
+EN: AI compute
+TH:
+
+[ROBOT.s5.spec_lidar]
+EN: LiDAR
+TH:
+
+[ROBOT.s5.spec_fleetmode]
+EN: Fleet mode
+TH:
+
+[ROBOT.s5.spec_vehiclerecognition]
+EN: Vehicle recognition
+TH:
+
+[ROBOT.s5.spec_vehiclerecognition_value]
+EN: Forklifts, AGVs
+TH:
+
+[ROBOT.s5.specgroup3_title]
+EN: Dimensions
+TH:
+
+[ROBOT.s5.spec_length]
+EN: Length
+TH:
+
+[ROBOT.s5.spec_width]
+EN: Width
+TH:
+
+[ROBOT.s5.spec_height]
+EN: Height
+TH:
+
+[ROBOT.s5.spec_weight]
+EN: Weight
+TH:
+
+--- S5 Environments ---
+
+[ROBOT.s5.env1]
+EN: Warehouses
+TH:
+
+[ROBOT.s5.env2]
+EN: Manufacturing
+TH:
+
+[ROBOT.s5.env3]
+EN: Parking garages
+TH:
+
+[ROBOT.s5.env4]
+EN: Logistics
+TH:
+
+
+================================================================
+9. CONTACT / QUOTE PAGE  (page: /contact)
+================================================================
+
+[CONTACT.meta_title]
+EN: Request a quote
+TH:
+
+[CONTACT.meta_description]
+EN: Tell us about your facility and get a quotation for the AI Robotic autonomous cleaning fleet — usually within one business day.
+TH:
+
+[CONTACT.eyebrow]
+EN: Request a quote
+TH:
+
+[CONTACT.heading_no_robot]
+EN: Let's spec your floor
+TH:
+(Shown when the visitor arrives without a specific robot pre-selected.)
+
+[CONTACT.heading_with_robot]
+EN: Quote for the {model}
+TH:
+(Note: {model} becomes "L3", "C5" etc. — keep the placeholder. Shown when arriving from a specific robot's page.)
+
+[CONTACT.body_no_robot]
+EN: Not sure which machine fits? That's fine — describe the building and we'll do the matching. No pricing games, no obligation.
+TH:
+
+[CONTACT.body_with_robot]
+EN: Good choice — the {model} is {pitch, lowercase first letter}. Fill in your details and we'll quote it for your facility.
+TH:
+(Note: this sentence is built from two pieces in the code — the robot name and its one-line pitch from section 8 above, lowercased at the start. You can translate this as a natural full sentence; it does not need to literally glue two fragments together in Thai.)
+
+--- Three-step process list ---
+
+[CONTACT.step1_title]
+EN: Tell us about the floor
+TH:
+
+[CONTACT.step1_body]
+EN: Square footage, floor type, operating hours — thirty seconds of form.
+TH:
+
+[CONTACT.step2_title]
+EN: Get a recommendation
+TH:
+
+[CONTACT.step2_body]
+EN: We match a machine (or a fleet) to your facility and send a quotation.
+TH:
+
+[CONTACT.step3_title]
+EN: See it on your floor
+TH:
+
+[CONTACT.step3_body]
+EN: We arrange a live demo in your building before you commit to anything.
+TH:
+
+--- Form field labels ---
+
+[CONTACT.form.label_name]
+EN: Name
+TH:
+
+[CONTACT.form.placeholder_name]
+EN: Jane Facility
+TH:
+(This is an example placeholder shown inside the empty field — translate to a plausible Thai example name if you like, or leave as a generic placeholder.)
+
+[CONTACT.form.label_company]
+EN: Company
+TH:
+
+[CONTACT.form.placeholder_company]
+EN: Acme Facilities Group
+TH:
+
+[CONTACT.form.label_email]
+EN: Email
+TH:
+
+[CONTACT.form.placeholder_email]
+EN: jane@company.com
+TH:
+
+[CONTACT.form.label_phone]
+EN: Phone
+TH:
+
+[CONTACT.form.placeholder_phone]
+EN: +1 555 000 0000
+TH:
+(Consider a Thai-format example instead, e.g. +66 8X XXX XXXX)
+
+[CONTACT.form.label_address]
+EN: Address
+TH:
+
+[CONTACT.form.placeholder_address]
+EN: Street, city, country (optional)
+TH:
+
+[CONTACT.form.label_robot]
+EN: Interested robot
+TH:
+
+[CONTACT.form.robot_default_option]
+EN: Not sure yet — recommend one
+TH:
+
+[CONTACT.form.label_facility]
+EN: Facility size
+TH:
+
+[CONTACT.form.placeholder_facility]
+EN: e.g. 120,000 ft² warehouse
+TH:
+
+[CONTACT.form.label_message]
+EN: Anything else
+TH:
+
+[CONTACT.form.placeholder_message]
+EN: Floor types, operating hours, current cleaning setup…
+TH:
+
+[CONTACT.form.submit_button]
+EN: Request my quote
+TH:
+
+[CONTACT.form.submit_button_pending]
+EN: Sending…
+TH:
+(Shown briefly on the button while the form is submitting.)
+
+--- Validation error messages ---
+
+[CONTACT.form.error_name]
+EN: Enter your name.
+TH:
+
+[CONTACT.form.error_email]
+EN: Enter a valid email address.
+TH:
+
+[CONTACT.form.error_phone]
+EN: Enter a phone number we can reach you on.
+TH:
+
+[CONTACT.form.error_generic]
+EN: We couldn't submit your request. Please email us directly at quotes@airoboticsth.com and we'll pick it up straight away.
+TH:
+
+[CONTACT.form.error_unexpected]
+EN: Something went wrong. Please email us directly at quotes@airoboticsth.com.
+TH:
+
+--- Success state (shown after submitting) ---
+
+[CONTACT.form.success_heading]
+EN: Request received
+TH:
+
+[CONTACT.form.success_body]
+EN: Quote request received. We'll come back to you within one business day.
+TH:
+
+
+================================================================
+10. REFERENCE PAGE  (page: /reference)
+================================================================
+
+[REFERENCE.meta_title]
+EN: Reference
+TH:
+
+[REFERENCE.meta_description]
+EN: Operators running AI Robotic machines on live sites — hospitals, resorts and facility management — in their own words.
+TH:
+
+[REFERENCE.eyebrow]
+EN: Reference
+TH:
+
+[REFERENCE.heading]
+EN: Operators, in their own words
+TH:
+
+[REFERENCE.body]
+EN: Facility managers, EVS teams and operations directors running these machines on live floors — hospitals mid-shift, resorts during season, warehouses overnight. Quotes are reproduced as published.
+TH:
+
+--- Media gallery section ---
+
+[REFERENCE.gallery.eyebrow]
+EN: From site
+TH:
+
+[REFERENCE.gallery.heading]
+EN: Deployment footage
+TH:
+
+[REFERENCE.gallery.empty_label]
+EN: Photography and video in progress
+TH:
+
+[REFERENCE.gallery.empty_body]
+EN: Footage from live sites is being collected and will appear here.
+TH:
+
+
+================================================================
+10a. CUSTOMER TESTIMONIALS  (used on both the Home page and the
+     Reference page — see the note about direct quotes at the top
+     of this file before translating)
+================================================================
+
+--- Reference 1: Beacon Hill ---
+
+[REF.beaconhill.quote]
+EN: 600,000 square feet of carpet cleaned automatically. We anticipate saving tons of money.
+TH:
+
+[REF.beaconhill.name]
+EN: Jeff Heugli
+TH:
+(Proper name — do not translate, leave as-is.)
+
+[REF.beaconhill.role]
+EN: Chief Executive Officer
+TH:
+
+[REF.beaconhill.organisation]
+EN: Beacon Hill
+TH:
+(Company name — do not translate.)
+
+[REF.beaconhill.location]
+EN: Detroit, Michigan
+TH:
+
+[REF.beaconhill.sector]
+EN: Facility management
+TH:
+
+[REF.beaconhill.outcome]
+EN: 600,000 ft² cleaned automatically
+TH:
+
+--- Reference 2: Aspirus Hospital ---
+
+[REF.aspirus.quote]
+EN: The bots are making a huge difference in our hospital cleanliness. Our staff now focus on deep scrubbing, stripping and waxing.
+TH:
+
+[REF.aspirus.name]
+EN: Brindy Literski
+TH:
+(Proper name — do not translate.)
+
+[REF.aspirus.role]
+EN: Manager, Environmental Services
+TH:
+
+[REF.aspirus.organisation]
+EN: Aspirus Hospital
+TH:
+(Organisation name — do not translate.)
+
+[REF.aspirus.location]
+EN: Wausau, Wisconsin
+TH:
+
+[REF.aspirus.sector]
+EN: Healthcare
+TH:
+
+[REF.aspirus.outcome]
+EN: Third-shift technician reassigned to specialist work
+TH:
+
+--- Reference 3: Inn of the Mountain Gods ---
+
+[REF.innofthemountaingods.quote]
+EN: It has revolutionized our operations and guest experience.
+TH:
+
+[REF.innofthemountaingods.name]
+EN: Frizzell Frizzell
+TH:
+(Proper name — do not translate.)
+
+[REF.innofthemountaingods.role]
+EN: Chief Operating Officer
+TH:
+
+[REF.innofthemountaingods.organisation]
+EN: Inn of the Mountain Gods
+TH:
+(Organisation name — do not translate.)
+
+[REF.innofthemountaingods.location]
+EN: Albuquerque, New Mexico
+TH:
+
+[REF.innofthemountaingods.sector]
+EN: Hospitality & resort
+TH:
+
+
+================================================================
+11. SITE-WIDE METADATA (browser tab title / search-result description)
+================================================================
+These are not shown on the page itself — they appear in the browser
+tab and in Google search results. Lower priority than everything
+above, but worth doing for Thai-language search visibility.
+
+[META.site_title_default]
+EN: AI Robotic — Autonomous Commercial Cleaning Robots
+TH:
+
+[META.site_title_template]
+EN: {page} · AI Robotic
+TH:
+(This is a pattern, not a full sentence — e.g. becomes "Reference · AI Robotic". Only translate the surrounding format if Thai reads better with a different separator/order; otherwise leave as structure.)
+
+[META.site_description]
+EN: AI Robotic supplies autonomous floor-cleaning robots for hospitals, warehouses, retail and schools. Request a quote for the L3, L4 and L50 scrubbers, the C5 3-in-1 machine or the S5 industrial sweeper.
+TH:
+
+
+================================================================
+12. IMAGE ALT TEXT (not visible on screen — read by screen readers
+    and search engines only; optional, lower priority)
+================================================================
+
+[ALT.home_hero]
+EN: A distribution-centre aisle at night with the AI Robotic fleet at work, its floor freshly scrubbed and reflecting the overhead worklights
+TH:
+
+[ALT.l3.perception]
+EN: L3 detecting a temporary entrance carpet with its perception system in a mall lobby
+TH:
+
+[ALT.l3.app]
+EN: Facility staff dispatching the L3 from the mobile app in a supermarket aisle
+TH:
+
+[ALT.l3.maintenance]
+EN: Underside of the L3 showing the quick-release squeegee and brush assembly
+TH:
+
+[ALT.l3.workstation]
+EN: WS3 workstation for autonomous charging and water exchange
+TH:
+
+[ALT.l4.edge]
+EN: L4 front view with the brush deck highlighted, scrubbing flush against a wall edge
+TH:
+
+[ALT.l4.lidar]
+EN: L4 projecting its 3D LiDAR field onto surrounding surfaces while mapping a space
+TH:
+
+[ALT.l4.app]
+EN: Completed-run report in the AI Robotic app: route map, 97.8% coverage, water use and cleaning time
+TH:
+
+[ALT.l4.workstation]
+EN: L4 docked beside its 4-in-1 workstation for autonomous refill, discharge and charging
+TH:
+
+[ALT.l50.console]
+EN: L50 onboard console showing a full-clean task at 34% with pause, stop and dispatch controls
+TH:
+
+[ALT.l50.safety]
+EN: Top-down view of the L50 sensor head: 150 m detection range, protruding-object and glass detection
+TH:
+
+[ALT.l50.app]
+EN: Completed-run report in the AI Robotic app: route map, coverage, water use and cleaning time
+TH:
+
+[ALT.l50.workstation]
+EN: CWS workstation with docking fiducials for autonomous water refill and discharge
+TH:
+
+[ALT.l50.scene_retail]
+EN: Food-court retail concourse
+TH:
+
+[ALT.l50.scene_hospitals]
+EN: Hospital corridor
+TH:
+
+[ALT.l50.scene_hotels]
+EN: Hotel lobby
+TH:
+
+[ALT.l50.scene_education]
+EN: University hallway
+TH:
+
+[ALT.c5.hero]
+EN: C5 3-in-1 cleaning machine beside its self-cleaning workstation
+TH:
+
+[ALT.c5.workstation]
+EN: C5 workstation, which refills, drains and flushes the robot's sewage tank
+TH:
+
+[ALT.s5.hero]
+EN: S5 industrial sweeper with twin side brushes and amber beacon
+TH:
+
+[ALT.s5.teamclean]
+EN: Several S5 sweepers dividing one warehouse floor as a coordinated fleet
+TH:
+
+[ALT.s5.vehicle]
+EN: S5 recognising and yielding to a forklift crossing its route
+TH:
+
+[ALT.s5.dust]
+EN: S5 sweeping fine dust and coarse debris with sealed dust control
+TH:
+
+[ALT.s5.maintenance]
+EN: S5 debris hopper removed for emptying without tools
+TH:
+
+[ALT.s5.station]
+EN: S5 charging station with docking fiducials in a white corridor
+TH:
+
+
+================================================================
+13. INTERNAL EMAIL (NOT public-facing — sent to the AI Robotic
+    sales team when a customer submits the quote form, not shown
+    to customers). LOWEST PRIORITY — only translate if your sales
+    team reads Thai and would prefer it. Skip this section entirely
+    if the sales team works in English.
+================================================================
+
+[EMAIL.new_lead_label]
+EN: NEW QUOTE REQUEST
+TH:
+
+[EMAIL.interested_in_label]
+EN: Interested in
+TH:
+
+[EMAIL.field_email]
+EN: Email
+TH:
+
+[EMAIL.field_phone]
+EN: Phone
+TH:
+
+[EMAIL.field_company]
+EN: Company
+TH:
+
+[EMAIL.field_address]
+EN: Address
+TH:
+
+[EMAIL.field_facility]
+EN: Facility size
+TH:
+
+[EMAIL.field_message]
+EN: Message
+TH:
+
+[EMAIL.no_robot_selected]
+EN: Not sure yet — asked for a recommendation
+TH:
+
+[EMAIL.reply_button]
+EN: Reply to {firstname}
+TH:
+
+[EMAIL.reply_hint]
+EN: Or just hit reply — this email is addressed back to {email}.
+TH:
+
+[EMAIL.footer]
+EN: Sent by the quote form at airoboticsth.com
+TH:
+
+
+================================================================
+END OF FILE — QUESTIONS FOR YOU BEFORE THIS GOES LIVE
+================================================================
+
+1. Customer quotes (section 10a): translate the quotes themselves,
+   or keep them in English and only translate the surrounding
+   name/role/company text?
+
+2. Should numerals stay as Arabic (0-9, matching the English site's
+   spec tables) or switch to Thai numerals (๐-๙)? Recommend keeping
+   Arabic numerals for the spec tables specifically, since they sit
+   next to units like "mm" and "kg" that are already Latin script —
+   mixing numeral systems there could look inconsistent. Your call.
+
+3. Sections 11-13 (SEO metadata, image alt text, internal email) are
+   invisible to a site visitor. If time is short, these can be done
+   last or skipped for a first pass.
+
+Once translations are back, send the filled file to Claude and it will
+be wired into the site — this does not require the Thai text to be
+formatted as code, plain text in the TH: lines is enough.
