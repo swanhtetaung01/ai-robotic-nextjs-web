@@ -20,7 +20,7 @@ DO NOT TRANSLATE — leave these exactly as-is wherever they appear
   Robot model names:     L3, L4, L50, SP50, S5
   Technology/part names: NVIDIA, LiDAR, TOPS, TeamClean, WS3, WT3, CWS
   Units of measurement:  mm, cm, m, kg, L, gal, in, ft, h, min, kPa,
-                          m²/h, ft²/h, TOPS, dB, kg, Ah, W
+                          m²/h, TOPS, dB, kg, Ah, W
   Numbers and specs themselves (700, 21,674, 96-beam, etc.)
   URLs and email addresses (airoboticsth.com, quotes@airoboticsth.com)
 
@@ -204,7 +204,7 @@ EN: Why autonomous
 TH:
 
 [HOME.proof.heading]
-EN: The math your CFO will do anyway
+EN: The numbers behind the decision
 TH:
 
 [HOME.proof.stat1_label]
@@ -852,6 +852,10 @@ TH:
 EN: Height
 TH:
 
+[ROBOT.l3.spec_weight]
+EN: Weight
+TH: 
+
 [ROBOT.l3.specgroup4_title]
 EN: WT3 mobile tank (optional)
 TH:
@@ -1147,6 +1151,10 @@ TH:
 EN: Height
 TH:
 
+[ROBOT.l4.spec_weight]
+EN: Weight
+TH: 
+
 --- L4 Environments ---
 
 [ROBOT.l4.env1]
@@ -1175,15 +1183,15 @@ EN: High-capacity industrial scrubber
 TH:
 
 [ROBOT.l50.tagline]
-EN: Sixty thousand square feet. One charge.
+EN: 5,600 square metres. One charge.
 TH:
 
 [ROBOT.l50.pitch]
-EN: The warehouse workhorse — 55 L tank, 6-hour runtime, and 40–60,000 ft² covered without a refill.
+EN: The warehouse workhorse — 55 L tank, 6-hour runtime, and 3,700–5,600 m² covered without a refill.
 TH:
 
 [ROBOT.l50.highlight1]
-EN: 40–60,000 ft² on one charge
+EN: 3,700–5,600 m² on one charge
 TH:
 
 [ROBOT.l50.highlight2]
@@ -1203,7 +1211,7 @@ EN: You have large open floors where the machine spends more time going back for
 TH:
 
 [ROBOT.l50.intro]
-EN: Built for warehouses, logistics hubs and big-box floors: a 55-litre solution tank, 25 kg of brush pressure for epoxy floors, and a battery that runs a full shift. It covers 40–60,000 square feet on a single charge without asking for anything.
+EN: Built for warehouses, logistics hubs and big-box floors: a 55-litre solution tank, 25 kg of brush pressure for epoxy floors, and a battery that runs a full shift. It covers 3,700–5,600 square metres on a single charge without asking for anything.
 TH:
 
 [ROBOT.l50.stat1_label]
@@ -1233,7 +1241,7 @@ EN: A full shift without a refill
 TH:
 
 [ROBOT.l50.f1.body]
-EN: The 120 Ah battery and 55-litre tank are sized so one dispatch covers 40–60,000 square feet — a full night's floor in most facilities — before it needs water or power.
+EN: The 120 Ah battery and 55-litre tank are sized so one dispatch covers 3,700–5,600 square metres — a full night's floor in most facilities — before it needs water or power.
 TH:
 
 [ROBOT.l50.f1.bullet1]
@@ -1382,6 +1390,10 @@ TH:
 EN: Squeegee width
 TH:
 
+[ROBOT.l50.spec_weight]
+EN: Weight
+TH: 
+
 --- L50 Environments ---
 
 [ROBOT.l50.env1]
@@ -1432,7 +1444,7 @@ EN: Finds the mess. Skips the rest.
 TH: 
 
 [ROBOT.sp50.pitch]
-EN: Patrols for spills and litter instead of scrubbing everything — covering up to 167,379 ft²/h because it only stops where there is something to clean.
+EN: Patrols for spills and litter instead of scrubbing everything — covering up to 15,550 m²/h because it only stops where there is something to clean.
 TH: 
 
 [ROBOT.sp50.bestfor]
@@ -1444,7 +1456,7 @@ EN: Your floors are broadly clean but constantly picking up scattered mess — d
 TH: 
 
 [ROBOT.sp50.intro]
-EN: Full-coverage cleaning spends most of its effort on floor that was already clean. The SP50 patrols instead: a 10-billion-parameter model recognises debris with 99% accuracy, and 25 kPa of suction goes exactly where it is needed. The result is up to 167,379 square feet an hour — roughly eight times what the same machine manages scrubbing every inch.
+EN: Full-coverage cleaning spends most of its effort on floor that was already clean. The SP50 patrols instead: a 10-billion-parameter model recognises debris with 99% accuracy, and 25 kPa of suction goes exactly where it is needed. The result is up to 15,550 square metres an hour — roughly eight times what the same machine manages scrubbing every inch.
 TH: 
 
 [ROBOT.sp50.highlight1]
@@ -1488,7 +1500,7 @@ EN: Because it cleans only where its AI sees dirt, the SP50 patrols roughly eigh
 TH: 
 
 [ROBOT.sp50.f1.bullet1]
-EN: 167,379 ft²/h patrolling versus 21,388 ft²/h full coverage
+EN: 15,550 m²/h patrolling versus 1,987 m²/h full coverage
 TH: 
 
 [ROBOT.sp50.f1.bullet2]
@@ -1599,8 +1611,12 @@ TH:
 EN: Suction
 TH: 
 
-[ROBOT.sp50.spec_maxruntime]
-EN: Max runtime
+[ROBOT.sp50.spec_runtimespotcleaning]
+EN: Runtime, spot cleaning
+TH: 
+
+[ROBOT.sp50.spec_runtimefullcoverage]
+EN: Runtime, full coverage
 TH: 
 
 [ROBOT.sp50.spec_sweepingwidth]
@@ -1681,6 +1697,10 @@ TH:
 
 [ROBOT.sp50.spec_height]
 EN: Height
+TH: 
+
+[ROBOT.sp50.spec_grossvehicleweight]
+EN: Gross vehicle weight
 TH: 
 
 [ROBOT.sp50.env1]
@@ -2034,7 +2054,7 @@ EN: Dry debris. Wholesale.
 TH:
 
 [ROBOT.s5.pitch]
-EN: AI-driven industrial sweeper for dry debris — 27,000 ft²/h, and it works in coordinated fleets.
+EN: AI-driven industrial sweeper for dry debris — 2,500 m²/h, and it works in coordinated fleets.
 TH:
 
 [ROBOT.s5.highlight1]
@@ -2058,7 +2078,7 @@ EN: Your mess is dry — dust, packaging film, offcuts, bottle caps — on floor
 TH:
 
 [ROBOT.s5.intro]
-EN: From fine dust to wood chips, packaging film, bottles and screws — the S5 sweeps the dry side of industrial floors at 27,000 ft²/h. TeamClean lets several units carve up a warehouse together, and vehicle recognition keeps them clear of your forklifts.
+EN: From fine dust to wood chips, packaging film, bottles and screws — the S5 sweeps the dry side of industrial floors at 2,500 m²/h. TeamClean lets several units carve up a warehouse together, and vehicle recognition keeps them clear of your forklifts.
 TH:
 
 [ROBOT.s5.stat1_label]
@@ -2355,7 +2375,7 @@ EN: Facility size
 TH:
 
 [CONTACT.form.placeholder_facility]
-EN: e.g. 120,000 ft² warehouse
+EN: e.g. 11,100 m² warehouse
 TH:
 
 [CONTACT.form.label_message]

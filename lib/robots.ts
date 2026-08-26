@@ -70,7 +70,7 @@ export const robots: Robot[] = [
       "The L3 carries a 100 TOPS NVIDIA AI platform and a 96-beam 3D LiDAR in a body narrow enough for a hospital corridor at visiting hours. It plans its own routes, avoids what people leave in them, and answers to plain voice commands.",
     heroStats: [
       { value: "700", unit: "mm", label: "passage width" },
-      { value: "21,674", unit: "ft²/h", label: "max productivity" },
+      { value: "1,944", unit: "m²/h", label: "max productivity" },
       { value: "100", unit: "TOPS", label: "NVIDIA AI compute" },
       { value: "96", unit: "beams", label: "3D LiDAR" },
     ],
@@ -134,7 +134,7 @@ export const robots: Robot[] = [
       {
         title: "Performance",
         specs: [
-          { label: "Max productivity", metric: "2,016 m²/h", imperial: "21,674 ft²/h" },
+          { label: "Max productivity", metric: "1,944 m²/h" },
           { label: "Cleaning width", metric: "400 mm", imperial: "15.7 in" },
           { label: "Brush pressure", metric: "18 kg", imperial: "39.7 lbs" },
           { label: "Solution tank", metric: "25 L", imperial: "6.6 gal" },
@@ -153,9 +153,10 @@ export const robots: Robot[] = [
         title: "Dimensions",
         specs: [
           { label: "Passage width", metric: "700 mm", imperial: "27.6 in" },
-          { label: "Length", metric: "765 mm", imperial: "30.1 in" },
+          { label: "Length", metric: "763 mm", imperial: "30 in" },
           { label: "Width", metric: "572 mm", imperial: "22.5 in" },
           { label: "Height", metric: "1,000 mm", imperial: "39.4 in" },
+          { label: "Weight", metric: "132 kg", imperial: "291 lbs" },
         ],
       },
       {
@@ -188,7 +189,7 @@ export const robots: Robot[] = [
       "At 810 mm passage width the L4 goes through a standard door frame, then cleans to within 3 cm of the skirting board. Stain-perception AI adjusts water, pressure and speed to what it actually sees on the floor.",
     heroStats: [
       { value: "810", unit: "mm", label: "passage width" },
-      { value: "20,925", unit: "ft²/h", label: "max productivity" },
+      { value: "1,944", unit: "m²/h", label: "max productivity" },
       { value: "<3", unit: "cm", label: "edge distance" },
       { value: "150", unit: "m", label: "LiDAR range" },
     ],
@@ -252,7 +253,7 @@ export const robots: Robot[] = [
       {
         title: "Performance",
         specs: [
-          { label: "Max productivity", metric: "1,944 m²/h", imperial: "20,925 ft²/h" },
+          { label: "Max productivity", metric: "1,944 m²/h" },
           { label: "Cleaning width", metric: "450 mm", imperial: "17.7 in" },
           { label: "Brush pressure", metric: "20 kg", imperial: "44 lbs" },
           { label: "Solution tank", metric: "38 L", imperial: "10 gal" },
@@ -273,9 +274,10 @@ export const robots: Robot[] = [
         specs: [
           { label: "Passage width", metric: "810 mm", imperial: "31.9 in" },
           { label: "Turning width", metric: "1,100 mm", imperial: "43.3 in" },
-          { label: "Length", metric: "820 mm", imperial: "32.3 in" },
+          { label: "Length", metric: "810 mm", imperial: "31.9 in" },
           { label: "Width", metric: "615 mm", imperial: "24.2 in" },
           { label: "Height", metric: "1,075 mm", imperial: "42.3 in" },
+          { label: "Weight", metric: "150 kg", imperial: "331 lbs" },
         ],
       },
     ],
@@ -286,11 +288,11 @@ export const robots: Robot[] = [
     slug: "l50",
     model: "L50",
     kind: "High-capacity industrial scrubber",
-    tagline: "Sixty thousand square feet. One charge.",
+    tagline: "5,600 square metres. One charge.",
     pitch:
-      "The warehouse workhorse — 55 L tank, 6-hour runtime, and 40–60,000 ft² covered without a refill.",
+      "The warehouse workhorse — 55 L tank, 6-hour runtime, and 3,700–5,600 m² covered without a refill.",
     highlights: [
-      "40–60,000 ft² on one charge",
+      "3,700–5,600 m² on one charge",
       "Six-hour runtime",
       "Sees 150 m down the aisle",
     ],
@@ -298,9 +300,9 @@ export const robots: Robot[] = [
     pickIf:
       "You have large open floors where the machine spends more time going back for water than cleaning — distribution centres, big-box retail, industrial units.",
     intro:
-      "Built for warehouses, logistics hubs and big-box floors: a 55-litre solution tank, 25 kg of brush pressure for epoxy floors, and a battery that runs a full shift. It covers 40–60,000 square feet on a single charge without asking for anything.",
+      "Built for warehouses, logistics hubs and big-box floors: a 55-litre solution tank, 25 kg of brush pressure for epoxy floors, and a battery that runs a full shift. It covers 3,700–5,600 square metres on a single charge without asking for anything.",
     heroStats: [
-      { value: "23,713", unit: "ft²/h", label: "hourly coverage" },
+      { value: "2,203", unit: "m²/h", label: "hourly coverage" },
       { value: "55", unit: "L", label: "solution tank" },
       { value: "6", unit: "h", label: "max runtime" },
       { value: "25", unit: "kg", label: "brush pressure" },
@@ -309,7 +311,7 @@ export const robots: Robot[] = [
       {
         eyebrow: "Capacity",
         title: "A full shift without a refill",
-        body: "The 120 Ah battery and 55-litre tank are sized so one dispatch covers 40–60,000 square feet — a full night's floor in most facilities — before it needs water or power.",
+        body: "The 120 Ah battery and 55-litre tank are sized so one dispatch covers 3,700–5,600 square metres — a full night's floor in most facilities — before it needs water or power.",
         bullets: [
           "Up to 6 hours on one charge",
           "55 L solution tank, 25 kg brush pressure",
@@ -345,7 +347,7 @@ export const robots: Robot[] = [
       {
         title: "Performance",
         specs: [
-          { label: "Hourly coverage", metric: "2,203 m²/h", imperial: "23,713 ft²/h" },
+          { label: "Hourly coverage", metric: "2,203 m²/h" },
           { label: "Cleaning width", metric: "510 mm", imperial: "20 in" },
           { label: "Brush pressure", metric: "25 kg", imperial: "55.1 lbs" },
           { label: "Solution tank", metric: "55 L", imperial: "14.5 gal" },
@@ -365,10 +367,11 @@ export const robots: Robot[] = [
       {
         title: "Dimensions",
         specs: [
-          { label: "Length", metric: "1,055 mm", imperial: "41.5 in" },
+          { label: "Length", metric: "1,030 mm", imperial: "40.6 in" },
           { label: "Width", metric: "580 mm", imperial: "22.8 in" },
           { label: "Height", metric: "1,045 mm", imperial: "41.1 in" },
           { label: "Squeegee width", metric: "740 mm", imperial: "29 in" },
+          { label: "Weight", metric: "220 kg", imperial: "485 lbs" },
         ],
       },
     ],
@@ -381,7 +384,7 @@ export const robots: Robot[] = [
     kind: "AI spot-cleaning robot",
     tagline: "Finds the mess. Skips the rest.",
     pitch:
-      "Patrols for spills and litter instead of scrubbing everything — covering up to 167,379 ft²/h because it only stops where there is something to clean.",
+      "Patrols for spills and litter instead of scrubbing everything — covering up to 15,550 m²/h because it only stops where there is something to clean.",
     highlights: [
       "Cleans only where the mess is",
       "99% recognition accuracy",
@@ -391,9 +394,9 @@ export const robots: Robot[] = [
     pickIf:
       "Your floors are broadly clean but constantly picking up scattered mess — dropped food, spills, litter — across an area far too large to keep scrubbing end to end.",
     intro:
-      "Full-coverage cleaning spends most of its effort on floor that was already clean. The SP50 patrols instead: a 10-billion-parameter model recognises debris with 99% accuracy, and 25 kPa of suction goes exactly where it is needed. The result is up to 167,379 square feet an hour — roughly eight times what the same machine manages scrubbing every inch.",
+      "Full-coverage cleaning spends most of its effort on floor that was already clean. The SP50 patrols instead: a 10-billion-parameter model recognises debris with 99% accuracy, and 25 kPa of suction goes exactly where it is needed. The result is up to 15,550 square metres an hour — roughly eight times what the same machine manages scrubbing every inch.",
     heroStats: [
-      { value: "167,379", unit: "ft²/h", label: "spot-clean patrol" },
+      { value: "15,550", unit: "m²/h", label: "spot-clean patrol" },
       { value: "99", unit: "%", label: "recognition accuracy" },
       { value: "25", unit: "kPa", label: "suction" },
       { value: "13", unit: "h", label: "max runtime" },
@@ -404,7 +407,7 @@ export const robots: Robot[] = [
         title: "Eight times the ground, same shift",
         body: "Because it cleans only where its AI sees dirt, the SP50 patrols roughly eight times the area of a full-coverage machine — the right shape for food courts, terminals and lobbies where mess is constant but scattered.",
         bullets: [
-          "167,379 ft²/h patrolling versus 21,388 ft²/h full coverage",
+          "15,550 m²/h patrolling versus 1,987 m²/h full coverage",
           "Cleans on detection, not on a fixed route",
           "Automatic map updates when the floor plan changes",
         ],
@@ -451,10 +454,11 @@ export const robots: Robot[] = [
       {
         title: "Performance",
         specs: [
-          { label: "Spot-clean patrol", metric: "15,550 m²/h", imperial: "167,379 ft²/h" },
-          { label: "Full coverage", metric: "1,987 m²/h", imperial: "21,388 ft²/h" },
+          { label: "Spot-clean patrol", metric: "15,550 m²/h" },
+          { label: "Full coverage", metric: "1,987 m²/h" },
           { label: "Suction", metric: "25 kPa" },
-          { label: "Max runtime", metric: "13 h" },
+          { label: "Runtime, spot cleaning", metric: "13 h" },
+          { label: "Runtime, full coverage", metric: "8 h" },
           { label: "Sweeping width", metric: "720 mm", imperial: "28.3 in" },
           { label: "Roller brush", metric: "460 mm", imperial: "18.1 in" },
         ],
@@ -484,6 +488,7 @@ export const robots: Robot[] = [
           { label: "Length", metric: "855 mm", imperial: "33.7 in" },
           { label: "Width", metric: "600 mm", imperial: "23.6 in" },
           { label: "Height", metric: "1,050 mm", imperial: "41.3 in" },
+          { label: "Gross vehicle weight", metric: "132 kg", imperial: "291 lbs" },
         ],
       },
     ],
@@ -571,7 +576,7 @@ export const robots: Robot[] = [
       {
         title: "Performance",
         specs: [
-          { label: "Max cleaning rate", metric: "1,980 m²/h", imperial: "21,313 ft²/h" },
+          { label: "Max cleaning rate", metric: "1,980 m²/h" },
           { label: "Cleaning width", metric: "550 mm", imperial: "21.7 in" },
           { label: "Scrubbing pressure", metric: "25 kg", imperial: "55.1 lbs" },
           { label: "Water tank", metric: "90 L", imperial: "23.8 gal" },
@@ -625,7 +630,7 @@ export const robots: Robot[] = [
     kind: "Industrial robotic sweeper",
     tagline: "Dry debris. Wholesale.",
     pitch:
-      "AI-driven industrial sweeper for dry debris — 27,000 ft²/h, and it works in coordinated fleets.",
+      "AI-driven industrial sweeper for dry debris — 2,500 m²/h, and it works in coordinated fleets.",
     highlights: [
       "Handles dust to dropped bolts",
       "Works in coordinated fleets",
@@ -635,9 +640,9 @@ export const robots: Robot[] = [
     pickIf:
       "Your mess is dry — dust, packaging film, offcuts, bottle caps — on floors where you do not want water at all.",
     intro:
-      "From fine dust to wood chips, packaging film, bottles and screws — the S5 sweeps the dry side of industrial floors at 27,000 ft²/h. TeamClean lets several units carve up a warehouse together, and vehicle recognition keeps them clear of your forklifts.",
+      "From fine dust to wood chips, packaging film, bottles and screws — the S5 sweeps the dry side of industrial floors at 2,500 m²/h. TeamClean lets several units carve up a warehouse together, and vehicle recognition keeps them clear of your forklifts.",
     heroStats: [
-      { value: "27,000", unit: "ft²/h", label: "sweep rate" },
+      { value: "2,500", unit: "m²/h", label: "sweep rate" },
       { value: "50", unit: "L", label: "debris hopper" },
       { value: "2", unit: "h", label: "full charge" },
       { value: "100", unit: "TOPS", label: "NVIDIA AI compute" },
@@ -678,10 +683,10 @@ export const robots: Robot[] = [
       {
         title: "Performance",
         specs: [
-          { label: "Sweep rate", metric: "~2,500 m²/h", imperial: "27,000 ft²/h" },
+          { label: "Sweep rate", metric: "2,500 m²/h" },
           { label: "Sweeping width", metric: "820 mm", imperial: "32.3 in" },
           { label: "Debris hopper", metric: "50 L", imperial: "13.2 gal" },
-          { label: "Charging time", metric: "2 h" },
+          { label: "Charging time", metric: "2–2.5 h" },
         ],
       },
       {

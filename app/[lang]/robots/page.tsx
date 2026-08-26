@@ -42,21 +42,15 @@ function buildCompareRows(t: T, units: "metric" | "imperial"): CompareRow[] {
   },
   {
     label: t("FLEET.table.row_productivity"),
-    values: imperial
-      ? {
-          l3: "21,674 ft²/h",
-          l4: "20,925 ft²/h",
-          l50: "23,713 ft²/h",
-          sp50: `167,379 ft²/h ${t("FLEET.table.productivity_spot")}`,
-          s5: "27,000 ft²/h",
-        }
-      : {
-          l3: "2,016 m²/h",
-          l4: "1,944 m²/h",
-          l50: "2,203 m²/h",
-          sp50: `15,550 m²/h ${t("FLEET.table.productivity_spot")}`,
-          s5: "~2,500 m²/h",
-        },
+    // Metric in both locales: m²/h is the figure the manufacturer
+    // publishes first, and the market this sells into works in it.
+    values: {
+      l3: "1,944 m²/h",
+      l4: "1,944 m²/h",
+      l50: "2,203 m²/h",
+      sp50: `15,550 m²/h ${t("FLEET.table.productivity_spot")}`,
+      s5: "2,500 m²/h",
+    },
   },
   {
     label: t("FLEET.table.row_passage"),

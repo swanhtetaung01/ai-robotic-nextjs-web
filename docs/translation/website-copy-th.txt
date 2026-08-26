@@ -20,7 +20,7 @@ DO NOT TRANSLATE — leave these exactly as-is wherever they appear
   Robot model names:     L3, L4, L50, SP50, S5
   Technology/part names: NVIDIA, LiDAR, TOPS, TeamClean, WS3, WT3, CWS
   Units of measurement:  mm, cm, m, kg, L, gal, in, ft, h, min, kPa,
-                          m²/h, ft²/h, TOPS, dB, kg, Ah, W
+                          m²/h, TOPS, dB, kg, Ah, W
   Numbers and specs themselves (700, 21,674, 96-beam, etc.)
   URLs and email addresses (airoboticsth.com, quotes@airoboticsth.com)
 
@@ -204,8 +204,8 @@ EN: Why autonomous
 TH: ทำไมต้องใช้หุ่นยนต์อัตโนมัติ
 
 [HOME.proof.heading]
-EN: The math your CFO will do anyway
-TH: ตัวเลขที่ CFO ของคุณต้องคำนวณอยู่ดี
+EN: The numbers behind the decision
+TH: ตัวเลขเบื้องหลังการตัดสินใจ
 
 [HOME.proof.stat1_label]
 EN: cleaning cost — 5–7× below manual labor
@@ -808,6 +808,10 @@ TH: ความกว้าง
 EN: Height
 TH: ความสูง
 
+[ROBOT.l3.spec_weight]
+EN: Weight
+TH: น้ำหนัก
+
 [ROBOT.l3.specgroup4_title]
 EN: WT3 mobile tank (optional)
 TH: WT3 mobile tank (อุปกรณ์เสริม)
@@ -1103,6 +1107,10 @@ TH: ความกว้าง
 EN: Height
 TH: ความสูง
 
+[ROBOT.l4.spec_weight]
+EN: Weight
+TH: น้ำหนัก
+
 --- L4 Environments ---
 
 [ROBOT.l4.env1]
@@ -1131,15 +1139,15 @@ EN: High-capacity industrial scrubber
 TH: หุ่นยนต์ขัดพื้นอุตสาหกรรมสำหรับพื้นที่ขนาดใหญ่
 
 [ROBOT.l50.tagline]
-EN: Sixty thousand square feet. One charge.
+EN: 5,600 square metres. One charge.
 TH: ประมาณ 5,600 ตร.ม. ต่อการชาร์จหนึ่งครั้ง
 
 [ROBOT.l50.pitch]
-EN: The warehouse workhorse — 55 L tank, 6-hour runtime, and 40–60,000 ft² covered without a refill.
+EN: The warehouse workhorse — 55 L tank, 6-hour runtime, and 3,700–5,600 m² covered without a refill.
 TH: รุ่นประสิทธิภาพสูงสำหรับงานคลังสินค้า — ถังน้ำ 55 L, ทำงานได้นาน 6 h และครอบคลุมพื้นที่ ประมาณ 3,700–5,600 ตร.ม. โดยไม่ต้องเติมน้ำ
 
 [ROBOT.l50.highlight1]
-EN: 40–60,000 ft² on one charge
+EN: 3,700–5,600 m² on one charge
 TH: ประมาณ 3,700–5,600 ตร.ม. ต่อการชาร์จหนึ่งครั้ง
 
 [ROBOT.l50.highlight2]
@@ -1159,7 +1167,7 @@ EN: You have large open floors where the machine spends more time going back for
 TH: เหมาะเมื่อคุณมีพื้นที่เปิดขนาดใหญ่ที่เครื่องทั่วไปเสียเวลาเดินกลับไปเติมน้ำบ่อย เช่น ศูนย์กระจายสินค้า ร้านค้าขนาดใหญ่ หรือพื้นที่อุตสาหกรรม
 
 [ROBOT.l50.intro]
-EN: Built for warehouses, logistics hubs and big-box floors: a 55-litre solution tank, 25 kg of brush pressure for epoxy floors, and a battery that runs a full shift. It covers 40–60,000 square feet on a single charge without asking for anything.
+EN: Built for warehouses, logistics hubs and big-box floors: a 55-litre solution tank, 25 kg of brush pressure for epoxy floors, and a battery that runs a full shift. It covers 3,700–5,600 square metres on a single charge without asking for anything.
 TH: ออกแบบสำหรับคลังสินค้า ศูนย์โลจิสติกส์ และพื้นที่ค้าปลีกขนาดใหญ่ มาพร้อมถังน้ำสะอาด 55 L แรงกดแปรง 25 kg สำหรับพื้น Epoxy และแบตเตอรี่ที่รองรับการทำงานได้ตลอดหนึ่งกะ สามารถครอบคลุมพื้นที่ ประมาณ 3,700–5,600 ตร.ม. ต่อการชาร์จหนึ่งครั้ง
 
 [ROBOT.l50.stat1_label]
@@ -1189,7 +1197,7 @@ EN: A full shift without a refill
 TH: ทำงานเต็มกะโดยไม่ต้องเติมน้ำ
 
 [ROBOT.l50.f1.body]
-EN: The 120 Ah battery and 55-litre tank are sized so one dispatch covers 40–60,000 square feet — a full night's floor in most facilities — before it needs water or power.
+EN: The 120 Ah battery and 55-litre tank are sized so one dispatch covers 3,700–5,600 square metres — a full night's floor in most facilities — before it needs water or power.
 TH: แบตเตอรี่ 120 Ah และถังน้ำขนาด 55 L รองรับการทำงานหนึ่งรอบได้ ประมาณ 3,700–5,600 ตร.ม. ซึ่งเพียงพอสำหรับพื้นที่ตลอดคืนในหลายสถานที่ ก่อนต้องเติมน้ำหรือชาร์จไฟ
 
 [ROBOT.l50.f1.bullet1]
@@ -1338,6 +1346,10 @@ TH: ความสูง
 EN: Squeegee width
 TH: ความกว้างยางรีดน้ำ
 
+[ROBOT.l50.spec_weight]
+EN: Weight
+TH: น้ำหนัก
+
 --- L50 Environments ---
 
 [ROBOT.l50.env1]
@@ -1388,7 +1400,7 @@ EN: Finds the mess. Skips the rest.
 TH: เจอตรงไหน สะอาดตรงนั้น
 
 [ROBOT.sp50.pitch]
-EN: Patrols for spills and litter instead of scrubbing everything — covering up to 167,379 ft²/h because it only stops where there is something to clean.
+EN: Patrols for spills and litter instead of scrubbing everything — covering up to 15,550 m²/h because it only stops where there is something to clean.
 TH: ตรวจตราหาคราบหกและเศษขยะ แทนการขัดพื้นใหม่ทั้งหมด ครอบคลุมได้ถึง 15,550 ตร.ม./ชม. เพราะหยุดทำความสะอาดเฉพาะจุดที่มีสิ่งสกปรกจริง
 
 [ROBOT.sp50.bestfor]
@@ -1400,7 +1412,7 @@ EN: Your floors are broadly clean but constantly picking up scattered mess — d
 TH: พื้นโดยรวมสะอาดอยู่แล้ว แต่มีสิ่งสกปรกกระจายตัวเกิดขึ้นตลอดเวลา ทั้งเศษอาหารตกหล่น คราบหก และเศษขยะ บนพื้นที่ที่กว้างเกินกว่าจะขัดใหม่ทั้งหมดได้ตลอด
 
 [ROBOT.sp50.intro]
-EN: Full-coverage cleaning spends most of its effort on floor that was already clean. The SP50 patrols instead: a 10-billion-parameter model recognises debris with 99% accuracy, and 25 kPa of suction goes exactly where it is needed. The result is up to 167,379 square feet an hour — roughly eight times what the same machine manages scrubbing every inch.
+EN: Full-coverage cleaning spends most of its effort on floor that was already clean. The SP50 patrols instead: a 10-billion-parameter model recognises debris with 99% accuracy, and 25 kPa of suction goes exactly where it is needed. The result is up to 15,550 square metres an hour — roughly eight times what the same machine manages scrubbing every inch.
 TH: การทำความสะอาดทั้งพื้นที่ใช้เวลาส่วนใหญ่ไปกับพื้นที่ที่สะอาดอยู่แล้ว SP50 เลือกใช้วิธีตรวจตราแทน โมเดลขนาด 1 หมื่นล้านพารามิเตอร์ระบุเศษขยะได้แม่นยำ 99% และแรงดูด 25 kPa ถูกใช้เฉพาะจุดที่จำเป็น ผลลัพธ์คือครอบคลุมได้ถึง 15,550 ตร.ม. ต่อชั่วโมง หรือราวแปดเท่าของการขัดพื้นทุกตารางนิ้วด้วยเครื่องเดียวกัน
 
 [ROBOT.sp50.highlight1]
@@ -1444,7 +1456,7 @@ EN: Because it cleans only where its AI sees dirt, the SP50 patrols roughly eigh
 TH: เพราะทำความสะอาดเฉพาะจุดที่ AI ตรวจพบสิ่งสกปรก SP50 จึงตรวจตราพื้นที่ได้ราวแปดเท่าของเครื่องที่ทำความสะอาดทั้งพื้นที่ เหมาะกับศูนย์อาหาร อาคารผู้โดยสาร และล็อบบี้ ที่มีสิ่งสกปรกเกิดขึ้นตลอดเวลาแต่กระจายตัว
 
 [ROBOT.sp50.f1.bullet1]
-EN: 167,379 ft²/h patrolling versus 21,388 ft²/h full coverage
+EN: 15,550 m²/h patrolling versus 1,987 m²/h full coverage
 TH: ตรวจตรา 15,550 ตร.ม./ชม. เทียบกับ 1,987 ตร.ม./ชม. เมื่อทำความสะอาดทั้งพื้นที่
 
 [ROBOT.sp50.f1.bullet2]
@@ -1555,9 +1567,13 @@ TH: ทำความสะอาดทั้งพื้นที่
 EN: Suction
 TH: แรงดูด
 
-[ROBOT.sp50.spec_maxruntime]
-EN: Max runtime
-TH: ระยะเวลาทำงานสูงสุด
+[ROBOT.sp50.spec_runtimespotcleaning]
+EN: Runtime, spot cleaning
+TH: ระยะเวลาทำงาน (เฉพาะจุด)
+
+[ROBOT.sp50.spec_runtimefullcoverage]
+EN: Runtime, full coverage
+TH: ระยะเวลาทำงาน (ทั้งพื้นที่)
 
 [ROBOT.sp50.spec_sweepingwidth]
 EN: Sweeping width
@@ -1638,6 +1654,10 @@ TH: ความกว้าง
 [ROBOT.sp50.spec_height]
 EN: Height
 TH: ความสูง
+
+[ROBOT.sp50.spec_grossvehicleweight]
+EN: Gross vehicle weight
+TH: น้ำหนักรวม (GVW)
 
 [ROBOT.sp50.env1]
 EN: Hotels
@@ -1990,8 +2010,8 @@ EN: Dry debris. Wholesale.
 TH: จัดการเศษแห้งในพื้นที่ขนาดใหญ่
 
 [ROBOT.s5.pitch]
-EN: AI-driven industrial sweeper for dry debris — 27,000 ft²/h, and it works in coordinated fleets.
-TH: หุ่นยนต์กวาดพื้นอุตสาหกรรมอัจฉริยะ ขับเคลื่อนด้วย AI สำหรับเศษแห้ง — ประมาณ 2,500 ตร.ม./h และรองรับการทำงานแบบ Multi-robot Fleet
+EN: AI-driven industrial sweeper for dry debris — 2,500 m²/h, and it works in coordinated fleets.
+TH: หุ่นยนต์กวาดพื้นอุตสาหกรรมอัจฉริยะ ขับเคลื่อนด้วย AI สำหรับเศษแห้ง — 2,500 ตร.ม./h และรองรับการทำงานแบบ Multi-robot Fleet
 
 [ROBOT.s5.highlight1]
 EN: Handles dust to dropped bolts
@@ -2014,8 +2034,8 @@ EN: Your mess is dry — dust, packaging film, offcuts, bottle caps — on floor
 TH: เหมาะเมื่อสิ่งสกปรกเป็นแบบแห้ง เช่น ฝุ่น ฟิล์มบรรจุภัณฑ์ เศษวัสดุ หรือฝาขวด และเป็นพื้นที่ที่ไม่ต้องการใช้น้ำ
 
 [ROBOT.s5.intro]
-EN: From fine dust to wood chips, packaging film, bottles and screws — the S5 sweeps the dry side of industrial floors at 27,000 ft²/h. TeamClean lets several units carve up a warehouse together, and vehicle recognition keeps them clear of your forklifts.
-TH: ตั้งแต่ฝุ่นละเอียด เศษไม้ ฟิล์มบรรจุภัณฑ์ ขวด ไปจนถึงสกรู S5 กวาดทำความสะอาดพื้นอุตสาหกรรมแบบแห้งได้ที่ ประมาณ 2,500 ตร.ม./h TeamClean ช่วยให้หลายเครื่องแบ่งพื้นที่คลังสินค้าทำงานร่วมกัน และระบบตรวจจับยานพาหนะช่วยให้เว้นระยะจากรถโฟล์คลิฟต์
+EN: From fine dust to wood chips, packaging film, bottles and screws — the S5 sweeps the dry side of industrial floors at 2,500 m²/h. TeamClean lets several units carve up a warehouse together, and vehicle recognition keeps them clear of your forklifts.
+TH: ตั้งแต่ฝุ่นละเอียด เศษไม้ ฟิล์มบรรจุภัณฑ์ ขวด ไปจนถึงสกรู S5 กวาดทำความสะอาดพื้นอุตสาหกรรมแบบแห้งได้ที่ 2,500 ตร.ม./h TeamClean ช่วยให้หลายเครื่องแบ่งพื้นที่คลังสินค้าทำงานร่วมกัน และระบบตรวจจับยานพาหนะช่วยให้เว้นระยะจากรถโฟล์คลิฟต์
 
 [ROBOT.s5.stat1_label]
 EN: sweep rate
@@ -2311,7 +2331,7 @@ EN: Facility size
 TH: ขนาดพื้นที่ทำความสะอาด
 
 [CONTACT.form.placeholder_facility]
-EN: e.g. 120,000 ft² warehouse
+EN: e.g. 11,100 m² warehouse
 TH: เช่น คลังสินค้า ประมาณ 11,100 ตร.ม.
 
 [CONTACT.form.label_message]

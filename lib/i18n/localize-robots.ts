@@ -67,7 +67,7 @@ export function localizeRobots(dict: Dictionary, locale: Locale): Robot[] {
       highlights: robot.highlights.map((h, i) => pick(`highlight${i + 1}`, h)),
 
       heroStats: robot.heroStats.map((stat, i) => ({
-        ...statForUnits(stat, units),
+        ...stat,
         label: pick(`stat${i + 1}_label`, stat.label),
       })),
 
@@ -92,28 +92,4 @@ export function localizeRobots(dict: Dictionary, locale: Locale): Robot[] {
       environments: robot.environments.map((e, i) => pick(`env${i + 1}`, e)),
     };
   });
-}
-
-/* ── Units ────────────────────────────────────────────────────────────────
- * Headline stats are authored in whichever unit reads best in English, which
- * left a mix: most are imperial (ft²/h) but the C5's are already metric. Thai
- * copy converts everything to metric, so a Thai page showing "27,000 ft²/h"
- * beside prose saying "2,500 ตร.ม./h" would contradict itself. This maps the
- * imperial headline figures onto their metric equivalents, taken from the
- * same spec tables in lib/robots.ts rather than recomputed here. */
-const METRIC_HEROSTATS: Record<string, { value: string; unit: string }> = {
-  "21,674|ft²/h": { value: "2,016", unit: "m²/h" },
-  "20,925|ft²/h": { value: "1,944", unit: "m²/h" },
-  "23,713|ft²/h": { value: "2,203", unit: "m²/h" },
-  "27,000|ft²/h": { value: "~2,500", unit: "m²/h" },
-  "167,379|ft²/h": { value: "15,550", unit: "m²/h" },
-};
-
-function statForUnits(
-  stat: { value: string; unit: string; label: string },
-  units: "metric" | "imperial"
-) {
-  if (units !== "metric") return stat;
-  const swap = METRIC_HEROSTATS[`${stat.value}|${stat.unit}`];
-  return swap ? { ...stat, ...swap } : stat;
 }

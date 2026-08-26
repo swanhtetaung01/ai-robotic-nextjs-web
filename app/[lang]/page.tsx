@@ -16,7 +16,7 @@ import { isLocale, localePath, type Locale } from "@/lib/i18n/config";
 /* The four headline proof figures. Values are locale-independent; only the
    labels are translated, so they live here rather than in the dictionary. */
 const proof = [
-  { value: "$0.008", unit: "/ft²", key: "HOME.proof.stat1_label" },
+  { value: "$0.086", unit: "/m²", key: "HOME.proof.stat1_label" },
   { value: "50", unit: "%", key: "HOME.proof.stat2_label" },
   { value: "9–12", unit: "mo", key: "HOME.proof.stat3_label" },
   { value: "62", unit: "dB", key: "HOME.proof.stat4_label" },
