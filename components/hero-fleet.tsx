@@ -103,9 +103,19 @@ export function HeroFleet({
               sizes="14vw"
             />
 
-            {/* Spec card — hidden until the machine is hovered or focused */}
+            {/* Spec card — hidden until the machine is hovered or focused.
+                It opens upward, which needs about 290px of clear space above
+                the machine. The fleet is anchored to the bottom of the hero,
+                so on a short viewport the machines sit high and that space
+                isn't there: the card ran past the top of the section, where
+                `overflow-hidden` clipped it and the sticky header (z-50, in
+                an outer stacking context this one can't escape) covered what
+                was left. Below 820svh it opens downward instead, where the
+                290px the fleet is held off the floor is exactly the room it
+                needs. It crosses the hero copy while open, which is a fair
+                trade for a state that only exists under the pointer. */}
             <span
-              className={`invisible absolute bottom-full mb-5 block w-72 translate-y-2 border border-line bg-surface/95 p-5 opacity-0 shadow-2xl backdrop-blur-md transition-[opacity,transform,visibility] duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:visible group-focus-visible:translate-y-0 group-focus-visible:opacity-100 ${cardAlign(
+              className={`invisible absolute bottom-full mb-5 block w-72 translate-y-2 border border-line bg-surface/95 p-5 opacity-0 shadow-2xl backdrop-blur-md transition-[opacity,transform,visibility] duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:visible group-focus-visible:translate-y-0 group-focus-visible:opacity-100 [@media(max-height:820px)]:bottom-auto [@media(max-height:820px)]:top-full [@media(max-height:820px)]:mb-0 [@media(max-height:820px)]:mt-3 ${cardAlign(
                 i,
                 fleet.length
               )}`}
