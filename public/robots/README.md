@@ -42,7 +42,7 @@ warehouse, transportation).
 
 ## `brand/` folder
 
-- `logo.svg` — AI Robotic logo, vector preferred. If you only have raster, supply the
+- `logo.svg` — AI Robotics logo, vector preferred. If you only have raster, supply the
   largest PNG with transparency.
 - `logo-mark.svg` — icon-only version for the favicon and mobile header, if one exists.
 

@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* ── AI Robotic design tokens ─────────────────────────────────────────
+/* ── AI Robotics design tokens ─────────────────────────────────────────
    Industrial Graphite + Safety Amber. Amber is the machine's beacon:
    reserved for action and key data. Red is for errors only. */
 @theme {

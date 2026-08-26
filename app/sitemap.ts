@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/robots", priority: 0.9, freq: "monthly" },
     { path: "/reference", priority: 0.7, freq: "monthly" },
     { path: "/contact", priority: 0.8, freq: "yearly" },
+    { path: "/quote", priority: 0.8, freq: "yearly" },
     ...fleet.map((r) => ({
       path: `/robots/${r.slug}`,
       priority: 0.8,

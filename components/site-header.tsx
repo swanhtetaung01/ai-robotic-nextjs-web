@@ -64,7 +64,7 @@ export function SiteHeader({
           <LocaleSwitcher locale={locale} pathname={pathname} />
 
           <Link
-            href={localePath(locale, "/contact")}
+            href={localePath(locale, "/quote")}
             className="stencil rounded-sm bg-amber px-4 py-2.5 text-ink transition-colors hover:bg-amber-hot"
           >
             {nav.quote}
@@ -108,7 +108,7 @@ export function SiteHeader({
             <LocaleSwitcher locale={locale} pathname={pathname} />
           </div>
           <Link
-            href={localePath(locale, "/contact")}
+            href={localePath(locale, "/quote")}
             className="stencil mt-5 block rounded-sm bg-amber px-4 py-3.5 text-center text-ink"
           >
             {nav.quote}

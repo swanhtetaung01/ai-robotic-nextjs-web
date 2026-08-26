@@ -1,4 +1,4 @@
-# AI Robotic — project docs
+# AI Robotics — project docs
 
 Context for anyone (human or agent) picking this project up. Written so a new session
 can get productive **without re-reading the whole codebase or redoing the research**.

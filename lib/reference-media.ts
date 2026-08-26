@@ -63,7 +63,7 @@ export const media: MediaItem[] = [
     ...cloudinaryVideo(
       "https://res.cloudinary.com/ddb7pxqfd/video/upload/v1787586675/Aspirus_Hospital_qkjfoy.mov"
     ),
-    alt: "AI Robotic deployment footage from Aspirus Hospital, Wausau, Wisconsin",
+    alt: "AI Robotics deployment footage from Aspirus Hospital, Wausau, Wisconsin",
     caption: "Aspirus Hospital — Wausau, Wisconsin",
   },
   {
@@ -73,7 +73,7 @@ export const media: MediaItem[] = [
     ...cloudinaryVideo(
       "https://res.cloudinary.com/ddb7pxqfd/video/upload/v1787586695/Beacon_Hill_ifegdw.mp4"
     ),
-    alt: "AI Robotic deployment footage from Beacon Hill, Detroit, Michigan",
+    alt: "AI Robotics deployment footage from Beacon Hill, Detroit, Michigan",
     caption: "Beacon Hill — Detroit, Michigan",
   },
   {
@@ -82,7 +82,7 @@ export const media: MediaItem[] = [
     ...cloudinaryVideo(
       "https://res.cloudinary.com/ddb7pxqfd/video/upload/v1787586675/IMG_l9bhes.mp4"
     ),
-    alt: "AI Robotic deployment footage from Inn of the Mountain Gods, Albuquerque, New Mexico",
+    alt: "AI Robotics deployment footage from Inn of the Mountain Gods, Albuquerque, New Mexico",
     caption: "Inn of the Mountain Gods — Albuquerque, New Mexico",
   },
 ];

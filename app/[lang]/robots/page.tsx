@@ -214,7 +214,7 @@ export default async function FleetPage({
                   {robots.map((r) => (
                     <td key={r.slug} className="px-4 py-5 align-top">
                       <Link
-                        href={localePath(locale, `/contact?robot=${r.slug}`)}
+                        href={localePath(locale, `/quote?robot=${r.slug}`)}
                         className="stencil text-amber hover:text-amber-hot"
                       >
                         {t("FLEET.table.cta")}

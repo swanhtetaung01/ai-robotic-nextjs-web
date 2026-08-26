@@ -20,6 +20,23 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+
+  async redirects() {
+    return [
+      /* /contact used to be the quote form and is now the contact details,
+         so links carrying a machine — sent in emails, or bookmarked from a
+         robot page — would land somewhere that ignores the parameter. Only
+         requests that actually carry ?robot= are moved on; a plain /contact
+         is a real page and stays put. Temporary, because the destination is
+         a redirect target rather than the canonical home of those links. */
+      {
+        source: "/:lang(en|th)/contact",
+        has: [{ type: "query", key: "robot", value: "(?<robot>.*)" }],
+        destination: "/:lang/quote?robot=:robot",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

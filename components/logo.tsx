@@ -7,7 +7,7 @@ export function Wordmark({ className = "h-7 w-auto" }: { className?: string }) {
   return (
     <Image
       src={wordmarkWhite}
-      alt="AI Robotic"
+      alt="AI Robotics"
       preload
       sizes="200px"
       className={className}

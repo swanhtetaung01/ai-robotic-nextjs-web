@@ -118,7 +118,7 @@ export default async function RobotPage({
             <p className="mt-6 leading-relaxed text-cloud">{robot.intro}</p>
             <div className="mt-9 flex flex-wrap gap-4">
               <Link
-                href={localePath(locale, `/contact?robot=${robot.slug}`)}
+                href={localePath(locale, `/quote?robot=${robot.slug}`)}
                 className="stencil rounded-sm bg-amber px-7 py-4 text-ink transition-colors hover:bg-amber-hot"
               >
                 {t("ROBOTDETAIL.cta_quote")}

@@ -104,7 +104,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
                 {t("HOME.hero.cta_primary")}
               </Link>
               <Link
-                href={localePath(locale, "/contact")}
+                href={localePath(locale, "/quote")}
                 className="stencil rounded-sm border border-snow/40 px-7 py-4 text-snow transition-colors hover:border-snow hover:bg-snow/10"
               >
                 {t("HOME.hero.cta_secondary")}

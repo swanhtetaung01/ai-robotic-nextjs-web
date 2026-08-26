@@ -65,7 +65,7 @@ stat band), `heroForeground` (transparent cutout composited over a background-on
 banner, for the S5), and `scenes` (in-situ gallery replacing text chips, L50 only).
 
 SP50 excised throughout ([D-002](decisions.md#d-002)). Copy rebranded to sell as
-AI Robotic ([D-001](decisions.md#d-001)).
+AI Robotics ([D-001](decisions.md#d-001)).
 
 *Flagged, unresolved:* `l50-console.jpg` shows CenoBots branding on the robot's
 touchscreen UI.

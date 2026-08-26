@@ -1,7 +1,7 @@
-# AI Robotic — Research Brief
+# AI Robotics — Research Brief
 
 Research date: 2026-08-16. Source: cenobots.com, reseller listings, competitor sites.
-Purpose: ground the design/build of the AI Robotic marketing site.
+Purpose: ground the design/build of the AI Robotics marketing site.
 
 ---
 
@@ -149,7 +149,7 @@ These are the numbers that close B2B deals. Cenobots buries them; we should lead
 | University Health System — David Harris, EVS Manager | Austin, TX | Healthcare | "game-changer" for high-traffic areas; "invaluable investment" |
 | Inn of the Mountain Gods — Frizzell Frizzell, COO | Albuquerque, NM | Hospitality/resort | "revolutionized our operations and guest experience" |
 
-Note: these are Cenobots' customers, not AI Robotic's. Using them verbatim implies they
+Note: these are Cenobots' customers, not AI Robotics's. Using them verbatim implies they
 are ours. Recommend attributing clearly ("Cenobots deployments worldwide") or replacing
 with our own once we have them. **Confirm with CEO before publishing.**
 
@@ -269,7 +269,7 @@ innovative, futuristic — and fits an AI robotics brand precisely.
 /solutions               Industry verticals hub
 /solutions/[industry]    Retail · Healthcare · Hospitality · Education · Warehouse · Transport
 /technology              AI, 3D LiDAR, NVIDIA compute, navigation, safety systems
-/about                   AI Robotic — who we are, why buy from us
+/about                   AI Robotics — who we are, why buy from us
 /contact                 Quote request form (primary conversion page)
 ```
 
@@ -357,12 +357,12 @@ warning. Verify amber-on-graphite and any amber-on-white text hits 4.5:1 — amb
 frequently fails on white, so use it for fills and large display type there, not body text.
 
 ### ✅ DECIDED — Brand relationship: Authorized distributor / reseller
-AI Robotic sells Cenobots robots under its own storefront. Implications:
+AI Robotics sells Cenobots robots under its own storefront. Implications:
 - Keep Cenobots model names: **L3, L4, L50, SP50, S5**.
 - Display "Authorized Cenobots Partner" trust signaling.
 - Look **visually independent** from cenobots.com (hence: no blue) while borrowing their
   engineering credibility and the NVIDIA/LiDAR technology story.
-- Testimonials must be attributed as Cenobots deployments, not AI Robotic customers.
+- Testimonials must be attributed as Cenobots deployments, not AI Robotics customers.
 
 ### ✅ DECIDED — Pricing: no prices, quote only
 No sticker prices or monthly figures on the site. Every CTA drives to the quote form.

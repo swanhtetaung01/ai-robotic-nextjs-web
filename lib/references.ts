@@ -10,7 +10,7 @@ export type Reference = {
   outcome?: string;
 };
 
-/* Sourced from the AI Robotic reference page and the manufacturer's published
+/* Sourced from the AI Robotics reference page and the manufacturer's published
    customer statements. Quotes are reproduced as published — do not paraphrase,
    tighten or "improve" them. If wording needs to change, it changes at the
    source, with the customer's agreement. */

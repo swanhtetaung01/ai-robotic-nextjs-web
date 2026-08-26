@@ -1,4 +1,4 @@
-AI ROBOTIC WEBSITE — ENGLISH SOURCE TEXT FOR THAI TRANSLATION
+AI ROBOTICS WEBSITE — ENGLISH SOURCE TEXT FOR THAI TRANSLATION
 ================================================================
 Generated 2026-08-21. Covers every visible word on airoboticsth.com.
 
@@ -16,7 +16,7 @@ brochure voice. Sentences are often short on purpose.
 
 DO NOT TRANSLATE — leave these exactly as-is wherever they appear
 -------------------------------------------------------------------
-  Brand and company:     AI Robotic
+  Brand and company:     AI Robotics
   Robot model names:     L3, L4, L50, SP50, S5
   Technology/part names: NVIDIA, LiDAR, TOPS, TeamClean, WS3, WT3, CWS
   Units of measurement:  mm, cm, m, kg, L, gal, in, ft, h, min, kPa,
@@ -79,8 +79,8 @@ TH: ปิดเมนู
 ================================================================
 
 [FOOTER.tagline]
-EN: Autonomous cleaning robots for facilities that can't afford a missed night. Every machine is configured, delivered and supported by AI Robotic.
-TH: หุ่นยนต์ทำความสะอาดอัตโนมัติ สำหรับสถานที่ที่งานทำความสะอาดหยุดไม่ได้แม้แต่คืนเดียว ทุกเครื่องได้รับการตั้งค่า ส่งมอบ และดูแลโดยทีม AI Robotic
+EN: Autonomous cleaning robots for facilities that can't afford a missed night. Every machine is configured, delivered and supported by AI Robotics.
+TH: หุ่นยนต์ทำความสะอาดอัตโนมัติ สำหรับสถานที่ที่งานทำความสะอาดหยุดไม่ได้แม้แต่คืนเดียว ทุกเครื่องได้รับการตั้งค่า ส่งมอบ และดูแลโดยทีม AI Robotics
 
 [FOOTER.col_fleet_heading]
 EN: The fleet
@@ -119,8 +119,8 @@ EN: Get a quote
 TH: ขอใบเสนอราคา
 
 [FOOTER.copyright]
-EN: © {year} AI Robotic. All robot specifications are manufacturer figures.
-TH: © {year} AI Robotic ข้อมูลสเปกหุ่นยนต์ทั้งหมดอ้างอิงจากผู้ผลิต
+EN: © {year} AI Robotics. All robot specifications are manufacturer figures.
+TH: © {year} AI Robotics ข้อมูลสเปกหุ่นยนต์ทั้งหมดอ้างอิงจากผู้ผลิต
 (Note: {year} is generated automatically, e.g. "2026" — leave the placeholder pattern if you can, or just translate the surrounding sentence.)
 
 
@@ -174,8 +174,8 @@ TH: ดูหุ่นยนต์ทั้งหมด
 --- Hero ---
 
 [HOME.hero.eyebrow]
-EN: AI Robotic · Autonomous cleaning fleet
-TH: AI Robotic · หุ่นยนต์ทำความสะอาดอัตโนมัติ
+EN: AI Robotics · Autonomous cleaning fleet
+TH: AI Robotics · หุ่นยนต์ทำความสะอาดอัตโนมัติ
 
 [HOME.hero.h1]
 EN: The night shift that never calls in sick
@@ -383,8 +383,8 @@ EN: The fleet
 TH: กลุ่มหุ่นยนต์
 
 [FLEET.meta_description]
-EN: Compare the AI Robotic fleet: L3 and L4 autonomous scrubbers, the L50 industrial workhorse, the SP50 AI spot cleaner and the S5 industrial sweeper.
-TH: เปรียบเทียบหุ่นยนต์ AI Robotic ทั้ง 5 รุ่น: L3 และ L4 หุ่นยนต์ขัดพื้นอัตโนมัติ, L50 สำหรับพื้นที่อุตสาหกรรมขนาดใหญ่, SP50 หุ่นยนต์ทำความสะอาดเฉพาะจุดด้วย AI และ S5 หุ่นยนต์กวาดพื้นอุตสาหกรรม
+EN: Compare the AI Robotics fleet: L3 and L4 autonomous scrubbers, the L50 industrial workhorse, the SP50 AI spot cleaner and the S5 industrial sweeper.
+TH: เปรียบเทียบหุ่นยนต์ AI Robotics ทั้ง 5 รุ่น: L3 และ L4 หุ่นยนต์ขัดพื้นอัตโนมัติ, L50 สำหรับพื้นที่อุตสาหกรรมขนาดใหญ่, SP50 หุ่นยนต์ทำความสะอาดเฉพาะจุดด้วย AI และ S5 หุ่นยนต์กวาดพื้นอุตสาหกรรม
 
 [FLEET.hero.eyebrow]
 EN: The fleet
@@ -2297,13 +2297,90 @@ TH: โลจิสติกส์
 9. CONTACT / QUOTE PAGE  (page: /contact)
 ================================================================
 
+[CONTACTPAGE.meta_title]
+EN: Contact
+TH: ติดต่อเรา
+
+[CONTACTPAGE.meta_description]
+EN: Reach AI Robotics by phone, email or LINE. We reply within 24 hours, hold spare parts, and carry out maintenance ourselves.
+TH: ติดต่อ AI Robotics ได้ทางโทรศัพท์ อีเมล หรือ LINE เราตอบกลับภายใน 24 ชั่วโมง มีอะไหล่พร้อมจำหน่าย และดูแลบำรุงรักษาด้วยทีมงานของเราเอง
+
+[CONTACTPAGE.eyebrow]
+EN: Contact
+TH: ติดต่อเรา
+
+[CONTACTPAGE.heading]
+EN: Talk to a person
+TH: ติดต่อทีมงานของเรา
+
+[CONTACTPAGE.body]
+EN: Call, email or add us on LINE — whichever suits you. If you would rather we came back to you with a recommendation and a quotation, use the form instead.
+TH: โทรศัพท์ อีเมล หรือเพิ่มเราเป็นเพื่อนใน LINE ตามช่องทางที่สะดวก หากต้องการให้เราแนะนำรุ่นที่เหมาะสมพร้อมใบเสนอราคา สามารถกรอกแบบฟอร์มแทนได้
+
+[CONTACTPAGE.label_phone]
+EN: Phone
+TH: โทรศัพท์
+
+[CONTACTPAGE.label_email]
+EN: Email
+TH: อีเมล
+
+[CONTACTPAGE.label_address]
+EN: Address
+TH: ที่อยู่
+
+[CONTACTPAGE.response]
+EN: We reply within 24 hours. Spare parts are held locally and maintenance is carried out by our own team.
+TH: เราตอบกลับภายใน 24 ชั่วโมง มีอะไหล่พร้อมจำหน่ายในประเทศ และงานบำรุงรักษาดำเนินการโดยทีมงานของเราเอง
+
+[CONTACTPAGE.label_line]
+EN: LINE
+TH: LINE
+
+[CONTACTPAGE.line_body]
+EN: Scan the code with the LINE app, or copy the ID below and search for it.
+TH: สแกนคิวอาร์โค้ดด้วยแอป LINE หรือคัดลอกไอดีด้านล่างไปค้นหา
+
+[CONTACTPAGE.line_qr_alt]
+EN: LINE QR code for AI Robotics, ID @raaspal
+TH: คิวอาร์โค้ด LINE ของ AI Robotics ไอดี @raaspal
+
+[CONTACTPAGE.line_open]
+EN: Open in LINE
+TH: เปิดใน LINE
+
+[CONTACTPAGE.copy]
+EN: Tap to copy
+TH: แตะเพื่อคัดลอก
+
+[CONTACTPAGE.copied]
+EN: Copied
+TH: คัดลอกแล้ว
+
+[CONTACTPAGE.copy_aria]
+EN: Copy LINE ID {id}
+TH: คัดลอกไอดี LINE {id}
+(Note: {id} is replaced with the LINE ID — keep the placeholder. This is read aloud by screen readers, not shown on screen.)
+
+[CONTACTPAGE.quote_heading]
+EN: Want a recommendation instead?
+TH: ต้องการให้เราแนะนำรุ่นที่เหมาะสมหรือไม่
+
+[CONTACTPAGE.quote_body]
+EN: Describe the building and we will match a machine to it and send a quotation.
+TH: แจ้งรายละเอียดพื้นที่ของคุณ แล้วเราจะแนะนำรุ่นที่เหมาะสมพร้อมจัดทำใบเสนอราคา
+
+[CONTACTPAGE.quote_cta]
+EN: Request a quote
+TH: ขอใบเสนอราคา
+
 [CONTACT.meta_title]
 EN: Request a quote
 TH: ขอใบเสนอราคา
 
 [CONTACT.meta_description]
-EN: Tell us about your facility and get a quotation for the AI Robotic autonomous cleaning fleet — usually within one business day.
-TH: บอกข้อมูลสถานที่ของคุณเพื่อรับใบเสนอราคาสำหรับกลุ่มหุ่นยนต์ทำความสะอาดอัตโนมัติ AI Robotic โดยปกติภายใน 1 วันทำการ
+EN: Tell us about your facility and get a quotation for the AI Robotics autonomous cleaning fleet — usually within one business day.
+TH: บอกข้อมูลสถานที่ของคุณเพื่อรับใบเสนอราคาสำหรับกลุ่มหุ่นยนต์ทำความสะอาดอัตโนมัติ AI Robotics โดยปกติภายใน 1 วันทำการ
 
 [CONTACT.eyebrow]
 EN: Request a quote
@@ -2386,7 +2463,7 @@ EN: Phone
 TH: โทรศัพท์
 
 [CONTACT.form.placeholder_phone]
-EN: +1 555 000 0000
+EN: +66 8X XXX XXXX
 TH: +66 8X XXX XXXX
 (Consider a Thai-format example instead, e.g. +66 8X XXX XXXX)
 
@@ -2407,8 +2484,8 @@ EN: Not sure yet — recommend one
 TH: ยังไม่แน่ใจ — ช่วยแนะนำให้
 
 [CONTACT.form.label_facility]
-EN: Facility size
-TH: ขนาดพื้นที่ทำความสะอาด
+EN: Facility type and size
+TH: ประเภทและขนาดพื้นที่ทำความสะอาด
 
 [CONTACT.form.placeholder_facility]
 EN: e.g. 11,100 m² warehouse
@@ -2473,8 +2550,8 @@ EN: Reference
 TH: ลูกค้าของเรา
 
 [REFERENCE.meta_description]
-EN: Operators running AI Robotic machines on live sites — hospitals, resorts and facility management — in their own words.
-TH: ประสบการณ์จากผู้ใช้งาน AI Robotic ในสถานที่จริง ทั้งโรงพยาบาล รีสอร์ต และงาน Facility Management ถ่ายทอดจากผู้ใช้งานโดยตรง
+EN: Operators running AI Robotics machines on live sites — hospitals, resorts and facility management — in their own words.
+TH: ประสบการณ์จากผู้ใช้งาน AI Robotics ในสถานที่จริง ทั้งโรงพยาบาล รีสอร์ต และงาน Facility Management ถ่ายทอดจากผู้ใช้งานโดยตรง
 
 [REFERENCE.eyebrow]
 EN: Reference
@@ -2614,17 +2691,17 @@ tab and in Google search results. Lower priority than everything
 above, but worth doing for Thai-language search visibility.
 
 [META.site_title_default]
-EN: AI Robotic — Autonomous Commercial Cleaning Robots
-TH: AI Robotic — หุ่นยนต์ทำความสะอาดอัตโนมัติสำหรับธุรกิจและอุตสาหกรรม
+EN: AI Robotics — Autonomous Commercial Cleaning Robots
+TH: AI Robotics — หุ่นยนต์ทำความสะอาดอัตโนมัติสำหรับธุรกิจและอุตสาหกรรม
 
 [META.site_title_template]
-EN: {page} · AI Robotic
-TH: {page} · AI Robotic
-(This is a pattern, not a full sentence — e.g. becomes "Reference · AI Robotic". Only translate the surrounding format if Thai reads better with a different separator/order; otherwise leave as structure.)
+EN: {page} · AI Robotics
+TH: {page} · AI Robotics
+(This is a pattern, not a full sentence — e.g. becomes "Reference · AI Robotics". Only translate the surrounding format if Thai reads better with a different separator/order; otherwise leave as structure.)
 
 [META.site_description]
-EN: AI Robotic supplies autonomous floor-cleaning robots for hospitals, warehouses, retail and schools. Request a quote for the L3, L4 and L50 scrubbers, the SP50 AI spot cleaner or the S5 industrial sweeper.
-TH: AI Robotic ผู้ให้บริการหุ่นยนต์ทำความสะอาดพื้นอัตโนมัติสำหรับโรงพยาบาล คลังสินค้า โรงงาน พื้นที่ค้าปลีก และสถานศึกษา พบกับหุ่นยนต์ขัดพื้น L3, L4 และ L50 หุ่นยนต์ทำความสะอาดเฉพาะจุดด้วย AI รุ่น SP50 และหุ่นยนต์กวาดพื้นอุตสาหกรรม S5 พร้อมบริการให้คำปรึกษาและใบเสนอราคา
+EN: AI Robotics supplies autonomous floor-cleaning robots for hospitals, warehouses, retail and schools. Request a quote for the L3, L4 and L50 scrubbers, the SP50 AI spot cleaner or the S5 industrial sweeper.
+TH: AI Robotics ผู้ให้บริการหุ่นยนต์ทำความสะอาดพื้นอัตโนมัติสำหรับโรงพยาบาล คลังสินค้า โรงงาน พื้นที่ค้าปลีก และสถานศึกษา พบกับหุ่นยนต์ขัดพื้น L3, L4 และ L50 หุ่นยนต์ทำความสะอาดเฉพาะจุดด้วย AI รุ่น SP50 และหุ่นยนต์กวาดพื้นอุตสาหกรรม S5 พร้อมบริการให้คำปรึกษาและใบเสนอราคา
 
 
 ================================================================
@@ -2633,8 +2710,8 @@ TH: AI Robotic ผู้ให้บริการหุ่นยนต์ท�
 ================================================================
 
 [ALT.home_hero]
-EN: A distribution-centre aisle at night with the AI Robotic fleet at work, its floor freshly scrubbed and reflecting the overhead worklights
-TH: ทางเดินในศูนย์กระจายสินค้าช่วงกลางคืน ขณะที่กลุ่มหุ่นยนต์ AI Robotic กำลังทำงาน พื้นที่เพิ่งขัดเสร็จและสะท้อนแสงจากโคมด้านบน
+EN: A distribution-centre aisle at night with the AI Robotics fleet at work, its floor freshly scrubbed and reflecting the overhead worklights
+TH: ทางเดินในศูนย์กระจายสินค้าช่วงกลางคืน ขณะที่กลุ่มหุ่นยนต์ AI Robotics กำลังทำงาน พื้นที่เพิ่งขัดเสร็จและสะท้อนแสงจากโคมด้านบน
 
 [ALT.l3.perception]
 EN: L3 detecting a temporary entrance carpet with its perception system in a mall lobby
@@ -2661,8 +2738,8 @@ EN: L4 projecting its 3D LiDAR field onto surrounding surfaces while mapping a s
 TH: L4 กำลังฉายพื้นที่ตรวจจับของ 3D LiDAR ไปยังพื้นผิวรอบข้างระหว่างสร้างแผนที่พื้นที่
 
 [ALT.l4.app]
-EN: Completed-run report in the AI Robotic app: route map, 97.8% coverage, water use and cleaning time
-TH: รายงานหลังจบงานในแอป AI Robotic: แผนที่เส้นทาง พื้นที่ครอบคลุม 97.8% ปริมาณน้ำที่ใช้ และเวลาทำความสะอาด
+EN: Completed-run report in the AI Robotics app: route map, 97.8% coverage, water use and cleaning time
+TH: รายงานหลังจบงานในแอป AI Robotics: แผนที่เส้นทาง พื้นที่ครอบคลุม 97.8% ปริมาณน้ำที่ใช้ และเวลาทำความสะอาด
 
 [ALT.l4.workstation]
 EN: L4 docked beside its 4-in-1 workstation for autonomous refill, discharge and charging
@@ -2677,8 +2754,8 @@ EN: Top-down view of the L50 sensor head: 150 m detection range, protruding-obje
 TH: มุมมองจากด้านบนของชุดเซ็นเซอร์ L50: ระยะตรวจจับ 150 m พร้อมตรวจจับวัตถุยื่นออกมาและกระจก
 
 [ALT.l50.app]
-EN: Completed-run report in the AI Robotic app: route map, coverage, water use and cleaning time
-TH: รายงานหลังจบงานในแอป AI Robotic: แผนที่เส้นทาง พื้นที่ครอบคลุม ปริมาณน้ำที่ใช้ และเวลาทำความสะอาด
+EN: Completed-run report in the AI Robotics app: route map, coverage, water use and cleaning time
+TH: รายงานหลังจบงานในแอป AI Robotics: แผนที่เส้นทาง พื้นที่ครอบคลุม ปริมาณน้ำที่ใช้ และเวลาทำความสะอาด
 
 [ALT.l50.workstation]
 EN: CWS workstation with docking fiducials for autonomous water refill and discharge
@@ -2734,7 +2811,7 @@ TH: แท่นชาร์จ S5 พร้อมจุดอ้างอิง
 
 
 ================================================================
-13. INTERNAL EMAIL (NOT public-facing — sent to the AI Robotic
+13. INTERNAL EMAIL (NOT public-facing — sent to the AI Robotics
     sales team when a customer submits the quote form, not shown
     to customers). LOWEST PRIORITY — only translate if your sales
     team reads Thai and would prefer it. Skip this section entirely

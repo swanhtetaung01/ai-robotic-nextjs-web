@@ -6,11 +6,11 @@
 
 ## 1. What this is
 
-A B2B marketing site for **AI Robotic**, which sells autonomous commercial cleaning
+A B2B marketing site for **AI Robotics**, which sells autonomous commercial cleaning
 robots. The buyer is a facility manager, EVS manager, COO or procurement lead — not a
 consumer. The site's single job is to **produce qualified quote requests**.
 
-Domain not yet registered. Site name is "AI Robotic" throughout.
+Domain not yet registered. Site name is "AI Robotics" throughout.
 
 ### The fleet — 5 machines
 
@@ -24,7 +24,7 @@ Domain not yet registered. Site name is "AI Robotic" throughout.
 
 **SP50 was dropped** — not sold. Do not re-add it.
 
-All machines are branded and sold **as AI Robotic**. Manufacturer names belong in these
+All machines are branded and sold **as AI Robotics**. Manufacturer names belong in these
 docs, not in customer-facing copy.
 
 ---
@@ -268,12 +268,12 @@ Trimmed derivatives generated with sharp:
 |---|---|
 | Target territory / market? | Default units (metric vs imperial), currency, phone format |
 | Where should leads go — inbox, CRM, database? | Contact form is writing to a local file |
-| Permission to use the named customer testimonials? | They are the manufacturer's customers, not AI Robotic's |
+| Permission to use the named customer testimonials? | They are the manufacturer's customers, not AI Robotics's |
 | C5 physical dimensions, speed, passage width? | Those spec rows show `—`; Agibot doesn't publish them |
 | Domain registration | Deployment, metadata `metadataBase`, sitemap |
 
 ### Known wart
 
 `public/robots/l50/l50-console.jpg` shows **CenoBots branding on the robot's touchscreen
-UI**. The machine's shell is AI Robotic-branded but the software isn't. Flagged to the
+UI**. The machine's shell is AI Robotics-branded but the software isn't. Flagged to the
 user; awaiting a replacement photo.

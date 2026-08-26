@@ -1,4 +1,4 @@
-AI ROBOTIC WEBSITE — ENGLISH SOURCE TEXT FOR THAI TRANSLATION
+AI ROBOTICS WEBSITE — ENGLISH SOURCE TEXT FOR THAI TRANSLATION
 ================================================================
 Generated 2026-08-21. Covers every visible word on airoboticsth.com.
 
@@ -16,7 +16,7 @@ brochure voice. Sentences are often short on purpose.
 
 DO NOT TRANSLATE — leave these exactly as-is wherever they appear
 -------------------------------------------------------------------
-  Brand and company:     AI Robotic
+  Brand and company:     AI Robotics
   Robot model names:     L3, L4, L50, SP50, S5
   Technology/part names: NVIDIA, LiDAR, TOPS, TeamClean, WS3, WT3, CWS
   Units of measurement:  mm, cm, m, kg, L, gal, in, ft, h, min, kPa,
@@ -79,7 +79,7 @@ TH:
 ================================================================
 
 [FOOTER.tagline]
-EN: Autonomous cleaning robots for facilities that can't afford a missed night. Every machine is configured, delivered and supported by AI Robotic.
+EN: Autonomous cleaning robots for facilities that can't afford a missed night. Every machine is configured, delivered and supported by AI Robotics.
 TH:
 
 [FOOTER.col_fleet_heading]
@@ -119,7 +119,7 @@ EN: Get a quote
 TH:
 
 [FOOTER.copyright]
-EN: © {year} AI Robotic. All robot specifications are manufacturer figures.
+EN: © {year} AI Robotics. All robot specifications are manufacturer figures.
 TH:
 (Note: {year} is generated automatically, e.g. "2026" — leave the placeholder pattern if you can, or just translate the surrounding sentence.)
 
@@ -174,7 +174,7 @@ TH:
 --- Hero ---
 
 [HOME.hero.eyebrow]
-EN: AI Robotic · Autonomous cleaning fleet
+EN: AI Robotics · Autonomous cleaning fleet
 TH:
 
 [HOME.hero.h1]
@@ -427,7 +427,7 @@ EN: The fleet
 TH:
 
 [FLEET.meta_description]
-EN: Compare the AI Robotic fleet: L3 and L4 autonomous scrubbers, the L50 industrial workhorse, the SP50 AI spot cleaner and the S5 industrial sweeper.
+EN: Compare the AI Robotics fleet: L3 and L4 autonomous scrubbers, the L50 industrial workhorse, the SP50 AI spot cleaner and the S5 industrial sweeper.
 TH:
 
 [FLEET.hero.eyebrow]
@@ -439,7 +439,7 @@ EN: Wet or dry. Tight or vast. Covered.
 TH:
 
 [FLEET.hero.body]
-EN: Two compact scrubbers for occupied buildings, an industrial workhorse for warehouse floors, a 3-in-1 machine that sweeps, scrubs and mops in one pass, and a fleet-capable dry sweeper — all reporting to the same AI Robotic app.
+EN: Two compact scrubbers for occupied buildings, an industrial workhorse for warehouse floors, a 3-in-1 machine that sweeps, scrubs and mops in one pass, and a fleet-capable dry sweeper — all reporting to the same AI Robotics app.
 TH:
 
 --- Comparison table ---
@@ -2341,12 +2341,89 @@ TH:
 9. CONTACT / QUOTE PAGE  (page: /contact)
 ================================================================
 
+[CONTACTPAGE.meta_title]
+EN: Contact
+TH: 
+
+[CONTACTPAGE.meta_description]
+EN: Reach AI Robotics by phone, email or LINE. We reply within 24 hours, hold spare parts, and carry out maintenance ourselves.
+TH: 
+
+[CONTACTPAGE.eyebrow]
+EN: Contact
+TH: 
+
+[CONTACTPAGE.heading]
+EN: Talk to a person
+TH: 
+
+[CONTACTPAGE.body]
+EN: Call, email or add us on LINE — whichever suits you. If you would rather we came back to you with a recommendation and a quotation, use the form instead.
+TH: 
+
+[CONTACTPAGE.label_phone]
+EN: Phone
+TH: 
+
+[CONTACTPAGE.label_email]
+EN: Email
+TH: 
+
+[CONTACTPAGE.label_address]
+EN: Address
+TH: 
+
+[CONTACTPAGE.response]
+EN: We reply within 24 hours. Spare parts are held locally and maintenance is carried out by our own team.
+TH: 
+
+[CONTACTPAGE.label_line]
+EN: LINE
+TH: 
+
+[CONTACTPAGE.line_body]
+EN: Scan the code with the LINE app, or copy the ID below and search for it.
+TH: 
+
+[CONTACTPAGE.line_qr_alt]
+EN: LINE QR code for AI Robotics, ID @raaspal
+TH: 
+
+[CONTACTPAGE.line_open]
+EN: Open in LINE
+TH: 
+
+[CONTACTPAGE.copy]
+EN: Tap to copy
+TH: 
+
+[CONTACTPAGE.copied]
+EN: Copied
+TH: 
+
+[CONTACTPAGE.copy_aria]
+EN: Copy LINE ID {id}
+TH: 
+(Note: {id} is replaced with the LINE ID — keep the placeholder. This is read aloud by screen readers, not shown on screen.)
+
+[CONTACTPAGE.quote_heading]
+EN: Want a recommendation instead?
+TH: 
+
+[CONTACTPAGE.quote_body]
+EN: Describe the building and we will match a machine to it and send a quotation.
+TH: 
+
+[CONTACTPAGE.quote_cta]
+EN: Request a quote
+TH: 
+
 [CONTACT.meta_title]
 EN: Request a quote
 TH:
 
 [CONTACT.meta_description]
-EN: Tell us about your facility and get a quotation for the AI Robotic autonomous cleaning fleet — usually within one business day.
+EN: Tell us about your facility and get a quotation for the AI Robotics autonomous cleaning fleet — usually within one business day.
 TH:
 
 [CONTACT.eyebrow]
@@ -2430,7 +2507,7 @@ EN: Phone
 TH:
 
 [CONTACT.form.placeholder_phone]
-EN: +1 555 000 0000
+EN: +66 8X XXX XXXX
 TH:
 (Consider a Thai-format example instead, e.g. +66 8X XXX XXXX)
 
@@ -2451,7 +2528,7 @@ EN: Not sure yet — recommend one
 TH:
 
 [CONTACT.form.label_facility]
-EN: Facility size
+EN: Facility type and size
 TH:
 
 [CONTACT.form.placeholder_facility]
@@ -2517,7 +2594,7 @@ EN: Reference
 TH:
 
 [REFERENCE.meta_description]
-EN: Operators running AI Robotic machines on live sites — hospitals, resorts and facility management — in their own words.
+EN: Operators running AI Robotics machines on live sites — hospitals, resorts and facility management — in their own words.
 TH:
 
 [REFERENCE.eyebrow]
@@ -2658,16 +2735,16 @@ tab and in Google search results. Lower priority than everything
 above, but worth doing for Thai-language search visibility.
 
 [META.site_title_default]
-EN: AI Robotic — Autonomous Commercial Cleaning Robots
+EN: AI Robotics — Autonomous Commercial Cleaning Robots
 TH:
 
 [META.site_title_template]
-EN: {page} · AI Robotic
+EN: {page} · AI Robotics
 TH:
-(This is a pattern, not a full sentence — e.g. becomes "Reference · AI Robotic". Only translate the surrounding format if Thai reads better with a different separator/order; otherwise leave as structure.)
+(This is a pattern, not a full sentence — e.g. becomes "Reference · AI Robotics". Only translate the surrounding format if Thai reads better with a different separator/order; otherwise leave as structure.)
 
 [META.site_description]
-EN: AI Robotic supplies autonomous floor-cleaning robots for hospitals, warehouses, retail and schools. Request a quote for the L3, L4 and L50 scrubbers, the SP50 AI spot cleaner or the S5 industrial sweeper.
+EN: AI Robotics supplies autonomous floor-cleaning robots for hospitals, warehouses, retail and schools. Request a quote for the L3, L4 and L50 scrubbers, the SP50 AI spot cleaner or the S5 industrial sweeper.
 TH:
 
 
@@ -2677,7 +2754,7 @@ TH:
 ================================================================
 
 [ALT.home_hero]
-EN: A distribution-centre aisle at night with the AI Robotic fleet at work, its floor freshly scrubbed and reflecting the overhead worklights
+EN: A distribution-centre aisle at night with the AI Robotics fleet at work, its floor freshly scrubbed and reflecting the overhead worklights
 TH:
 
 [ALT.l3.perception]
@@ -2705,7 +2782,7 @@ EN: L4 projecting its 3D LiDAR field onto surrounding surfaces while mapping a s
 TH:
 
 [ALT.l4.app]
-EN: Completed-run report in the AI Robotic app: route map, 97.8% coverage, water use and cleaning time
+EN: Completed-run report in the AI Robotics app: route map, 97.8% coverage, water use and cleaning time
 TH:
 
 [ALT.l4.workstation]
@@ -2721,7 +2798,7 @@ EN: Top-down view of the L50 sensor head: 150 m detection range, protruding-obje
 TH:
 
 [ALT.l50.app]
-EN: Completed-run report in the AI Robotic app: route map, coverage, water use and cleaning time
+EN: Completed-run report in the AI Robotics app: route map, coverage, water use and cleaning time
 TH:
 
 [ALT.l50.workstation]
@@ -2778,7 +2855,7 @@ TH:
 
 
 ================================================================
-13. INTERNAL EMAIL (NOT public-facing — sent to the AI Robotic
+13. INTERNAL EMAIL (NOT public-facing — sent to the AI Robotics
     sales team when a customer submits the quote form, not shown
     to customers). LOWEST PRIORITY — only translate if your sales
     team reads Thai and would prefer it. Skip this section entirely

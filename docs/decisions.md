@@ -9,10 +9,10 @@ Status: **Locked** = confirmed by the user, don't change without asking ·
 
 ## Commercial
 
-### D-001 · Sell everything as AI Robotic {#d-001}
+### D-001 · Sell everything as AI Robotics {#d-001}
 **Locked · 2026-08-19** (revised from an earlier distributor framing)
 
-Machines are branded, sold and supported as AI Robotic. Manufacturer names (Cenobots,
+Machines are branded, sold and supported as AI Robotics. Manufacturer names (Cenobots,
 Agibot) stay in internal docs and out of customer-facing copy.
 
 Earlier the site carried "Authorized Cenobots partner" in the hero eyebrow and footer;
@@ -21,7 +21,7 @@ that was removed. Model names (L3, L4, L50, C5, S5) are kept as-is.
 **Consequence:** the testimonials section is headed "From the field, worldwide" with the
 neutral subtitle "operator reports from live deployments of our robot platform" — the
 quotes keep their real names and organizations, so nothing is fabricated, but they are
-not claimed as AI Robotic's own customers.
+not claimed as AI Robotics's own customers.
 
 ---
 

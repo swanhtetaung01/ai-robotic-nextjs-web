@@ -59,7 +59,7 @@ export async function SiteFooter({ locale }: { locale: Locale }) {
               </Link>
             </li>
             <li>
-              <Link href={localePath(locale, "/contact")} className="text-fog transition-colors hover:text-snow">
+              <Link href={localePath(locale, "/quote")} className="text-fog transition-colors hover:text-snow">
                 {t("FOOTER.link_quote")}
               </Link>
             </li>
@@ -74,7 +74,7 @@ export async function SiteFooter({ locale }: { locale: Locale }) {
             {t("FOOTER.contact_body")}
           </p>
           <Link
-            href={localePath(locale, "/contact")}
+            href={localePath(locale, "/quote")}
             className="stencil mt-5 inline-block rounded-sm border border-amber px-4 py-2.5 text-amber transition-colors hover:bg-amber hover:text-ink"
           >
             {t("FOOTER.contact_cta")}

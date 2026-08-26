@@ -15,7 +15,7 @@ export async function QuoteBand({
   const t = translator(await getDictionary(locale));
   const href = localePath(
     locale,
-    robotSlug ? `/contact?robot=${robotSlug}` : "/contact"
+    robotSlug ? `/quote?robot=${robotSlug}` : "/quote"
   );
   return (
     <section className="border-t border-line bg-surface">

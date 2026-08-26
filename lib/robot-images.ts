@@ -100,7 +100,7 @@ export const robotImages: Record<string, RobotImages> = {
       },
       app: {
         src: l4App,
-        alt: "Completed-run report in the AI Robotic app: route map, 97.8% coverage, water use and cleaning time",
+        alt: "Completed-run report in the AI Robotics app: route map, 97.8% coverage, water use and cleaning time",
       },
       workstation: {
         src: l4WorkstationPair,
@@ -124,7 +124,7 @@ export const robotImages: Record<string, RobotImages> = {
       },
       app: {
         src: l50App,
-        alt: "Completed-run report in the AI Robotic app: route map, coverage, water use and cleaning time",
+        alt: "Completed-run report in the AI Robotics app: route map, coverage, water use and cleaning time",
       },
       workstation: {
         src: l50Cws,

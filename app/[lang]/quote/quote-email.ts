@@ -30,7 +30,7 @@ function detailRows(lead: Lead) {
     ["Phone", lead.phone],
     ["Company", lead.company],
     ["Address", lead.address],
-    ["Facility size", lead.facility],
+    ["Facility type and size", lead.facility],
   ].filter(([, v]) => v) as [string, string][];
 }
 
@@ -121,7 +121,7 @@ export function quoteHtml(lead: Lead) {
 
         <tr>
           <td style="background:#12141a;padding:18px 28px">
-            <span style="color:#ffffff;font-size:15px;font-weight:700;letter-spacing:2px">AI ROBOTIC</span>
+            <span style="color:#ffffff;font-size:15px;font-weight:700;letter-spacing:2px">AI ROBOTICS</span>
           </td>
         </tr>
         <tr><td style="height:4px;background:#ff9a1f;font-size:0;line-height:0">&nbsp;</td></tr>

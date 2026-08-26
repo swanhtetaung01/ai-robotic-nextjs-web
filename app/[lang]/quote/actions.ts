@@ -33,7 +33,7 @@ async function writeDevSink(lead: Lead) {
 async function sendQuoteEmail(lead: Lead) {
   const apiKey = process.env.RESEND_API_KEY!;
   const from =
-    process.env.QUOTE_FROM_EMAIL ?? "AI Robotic <quotes@airoboticsth.com>";
+    process.env.QUOTE_FROM_EMAIL ?? "AI Robotics <quotes@airoboticsth.com>";
   const to = process.env.QUOTE_TO_EMAIL;
   if (!to) throw new Error("QUOTE_TO_EMAIL is not set");
 
