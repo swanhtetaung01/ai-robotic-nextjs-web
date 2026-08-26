@@ -1675,6 +1675,18 @@ TH:
 EN: Docking fiducials for unattended return
 TH: 
 
+[ROBOT.sp50.f6.eyebrow]
+EN: On site
+TH: 
+
+[ROBOT.sp50.f6.title]
+EN: A floor that is still in use
+TH: 
+
+[ROBOT.sp50.f6.body]
+EN: A live retail concourse — glass frontage, seating, foot traffic that never quite stops. This is the floor the SP50 is built for: it patrols for what has actually been dropped, rather than working a fixed route across every square metre of it.
+TH: 
+
 [ROBOT.sp50.specgroup1_title]
 EN: Performance
 TH: 

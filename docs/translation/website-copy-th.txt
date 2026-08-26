@@ -1631,6 +1631,18 @@ TH: ถุงกรองฝุ่น 18 ลิตร ถาดขยะ 5 ล�
 EN: Docking fiducials for unattended return
 TH: จุดอ้างอิงสำหรับเข้าจอดเองโดยไม่ต้องมีผู้ดูแล
 
+[ROBOT.sp50.f6.eyebrow]
+EN: On site
+TH: หน้างานจริง
+
+[ROBOT.sp50.f6.title]
+EN: A floor that is still in use
+TH: พื้นที่ที่ยังเปิดใช้งานอยู่
+
+[ROBOT.sp50.f6.body]
+EN: A live retail concourse — glass frontage, seating, foot traffic that never quite stops. This is the floor the SP50 is built for: it patrols for what has actually been dropped, rather than working a fixed route across every square metre of it.
+TH: พื้นที่ค้าปลีกที่เปิดให้บริการจริง ทั้งผนังกระจก ที่นั่ง และผู้คนที่สัญจรตลอดเวลา นี่คือลักษณะพื้นที่ที่ SP50 ออกแบบมาเพื่อรองรับ โดยตรวจตราหาสิ่งที่ตกหล่นจริง แทนการเดินตามเส้นทางตายตัวทั่วทั้งพื้นที่
+
 [ROBOT.sp50.specgroup1_title]
 EN: Performance
 TH: ประสิทธิภาพ

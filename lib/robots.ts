@@ -208,7 +208,6 @@ export const robots: Robot[] = [
         eyebrow: "Edge cleaning",
         title: "Through the doorway, along the edge",
         body: "Most rivals in this class can't pass a standard door frame. The L4 does — then hugs walls and shelving to under 3 cm, where the dirt actually collects.",
-        imageKey: "edge",
         bullets: [
           "810 mm passage width clears standard doorways",
           "Edge distance under 3 cm along walls and racking",
@@ -448,6 +447,12 @@ export const robots: Robot[] = [
           "18 L dust filter bag, 5 L trash tray",
           "Docking fiducials for unattended return",
         ],
+      },
+      {
+        eyebrow: "On site",
+        title: "A floor that is still in use",
+        body: "A live retail concourse — glass frontage, seating, foot traffic that never quite stops. This is the floor the SP50 is built for: it patrols for what has actually been dropped, rather than working a fixed route across every square metre of it.",
+        imageKey: "insitu",
       },
     ],
     specGroups: [

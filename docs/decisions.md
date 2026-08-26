@@ -126,7 +126,8 @@ match — don't introduce `Math.random()` there.
 ### D-009 · Favicon uses the triangle mark, not the full lockup {#d-009}
 **Working · 2026-08-19**
 
-The client asked for `AI-ROBOTIC-QUAD.png` (the stacked lockup) in the browser bar. Its
+The client asked for the stacked lockup (then `AI-ROBOTIC-QUAD.png`, now
+`AI-ROBOTICS-02.png`) in the browser bar. Its
 internals measure: mark 2260×2002, wordmark only 405 px tall. Scaled to a 32 px tab, that
 wordmark renders **3.7 pixels tall** — an unreadable smear that also shrinks the mark to
 nothing.

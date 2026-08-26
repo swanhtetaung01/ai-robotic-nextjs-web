@@ -9,9 +9,8 @@ import l3Perception from "@/public/robots/l3/l3-perception.webp";
 import l3Maintenance from "@/public/robots/l3/l3-maintenance.webp";
 import l3Workstation from "@/public/robots/l3/l3-workstation-ws3.png";
 
-import l4Hero from "@/public/robots/l4/l4-hero-arches.jpg";
+import l4Hero from "@/public/robots/l4/l4-night.jpg";
 import l4Product from "@/public/robots/l4/l4-product.png";
-import l4Edge from "@/public/robots/l4/l4-edge-cleaning.png";
 import l4Lidar from "@/public/robots/l4/l4-lidar.jpg";
 import l4App from "@/public/robots/l4/l4-app-report.jpg";
 import l4WorkstationPair from "@/public/robots/l4/l4-workstation-pair.jpg";
@@ -31,14 +30,15 @@ import c5Pair from "@/public/robots/C5/c5-hero-pair.png";
 import c5Product from "@/public/robots/C5/c5-product.png";
 import c5Workstation from "@/public/robots/C5/c5-workstation.png";
 
-import sp50Hero from "@/public/robots/sp50/sp50-hero-robot.png";
+import sp50Hero from "@/public/robots/sp50/mall-concourse-night-cinematic-2560x1440-final.png";
+import sp50Banner from "@/public/robots/sp50/product-sp50-banner-robot-m.png";
 import sp50Product from "@/public/robots/sp50/sp50-product.png";
+import sp50InSitu from "@/public/robots/sp50/product-sp50-performance.png";
 import sp50Workstation from "@/public/robots/sp50/sp50-workstation.png";
 import sp50Console from "@/public/robots/sp50/sp50-console.jpg";
 
 import s5Warehouse from "@/public/robots/s5/s5-hero-warehouse.webp";
-import s5HeroRobot from "@/public/robots/s5/s5-hero-robot.webp";
-import s5Product from "@/public/robots/s5/s5-product.webp";
+import s5HeroRobot from "@/public/robots/s5/s5-hero-robot.png";
 import s5TeamClean from "@/public/robots/s5/s5-teamclean.webp";
 import s5Vehicle from "@/public/robots/s5/s5-vehicle-recognition.webp";
 import s5Dust from "@/public/robots/s5/s5-dust-control.webp";
@@ -90,10 +90,6 @@ export const robotImages: Record<string, RobotImages> = {
     hero: l4Hero,
     product: l4Product,
     features: {
-      edge: {
-        src: l4Edge,
-        alt: "L4 front view with the brush deck highlighted, scrubbing flush against a wall edge",
-      },
       lidar: {
         src: l4Lidar,
         alt: "L4 projecting its 3D LiDAR field onto surrounding surfaces while mapping a space",
@@ -157,13 +153,23 @@ export const robotImages: Record<string, RobotImages> = {
   },
 
   sp50: {
-    // no wide banner shot — the cutout carries the hero against the graphite
+    hero: sp50Hero,
+    // Only bites on narrow viewports, where object-cover crops width: pulls
+    // the frame off the lit shopfronts so the headline keeps a dark ground.
+    // On desktop the container is wider than 16:9 and the whole frame shows.
+    heroClass: "object-[38%_center]",
+    // The 3/4 render reads better at hero size than the flat front view,
+    // which stays on the cards.
     heroForeground: {
-      src: sp50Hero,
-      alt: "SP50 AI spot-cleaning robot with its twin side brushes extended",
+      src: sp50Banner,
+      alt: "SP50 AI spot-cleaning robot, three-quarter view with its twin side brushes extended",
     },
+    // Pinned to the right edge of the 6xl content column rather than the
+    // viewport. Every other machine has a photo behind it, so a cutout hard
+    // against the window edge reads as part of the scene; the SP50 has none,
+    // and out there it just looked stranded in the corner.
     heroForegroundClass:
-      "pointer-events-none absolute bottom-0 right-2 z-0 hidden w-[34%] max-w-sm sm:block lg:right-12 lg:max-w-md",
+      "pointer-events-none absolute bottom-0 right-4 z-0 hidden w-[38%] max-w-sm sm:block lg:right-[max(1.5rem,calc(50%-36rem))] lg:max-w-md",
     product: sp50Product,
     features: {
       console: {
@@ -173,6 +179,10 @@ export const robotImages: Record<string, RobotImages> = {
       workstation: {
         src: sp50Workstation,
         alt: "CCS-02 workstation with docking fiducials, where the SP50 charges and empties",
+      },
+      insitu: {
+        src: sp50InSitu,
+        alt: "SP50 sweeping a retail concourse, glass shopfronts and seating behind it",
       },
     },
   },
@@ -184,7 +194,9 @@ export const robotImages: Record<string, RobotImages> = {
       src: s5HeroRobot,
       alt: "S5 industrial sweeper with twin side brushes and amber beacon",
     },
-    product: s5Product,
+    // Same three-quarter render on the cards: the S5 has no separate product
+    // cut-out, and this one reads clearly at card size.
+    product: s5HeroRobot,
     features: {
       teamclean: {
         src: s5TeamClean,

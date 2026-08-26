@@ -11,11 +11,11 @@
  */
 import sharp from "sharp";
 
-const FILES = [
-  "sp50-product.png",
-  "sp50-hero-robot.png",
-  "sp50-workstation.png",
-];
+const FILES = process.argv.slice(2);
+if (FILES.length === 0) {
+  console.error("usage: node scripts/strip-checkerboard.mjs <file.png> [more.png ...]");
+  process.exit(1);
+}
 
 /** Checker background: light, and near-neutral in hue. */
 function isBackground(r, g, b) {
@@ -24,8 +24,8 @@ function isBackground(r, g, b) {
   return min > 212 && max - min < 14;
 }
 
-for (const name of FILES) {
-  const path = `public/robots/sp50/${name}`;
+for (const path of FILES) {
+  const name = path.split("/").pop();
   const { data, info } = await sharp(path)
     .ensureAlpha()
     .raw()
