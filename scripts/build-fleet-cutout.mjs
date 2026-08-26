@@ -15,9 +15,12 @@
 import sharp from "sharp";
 import { existsSync, readFileSync, renameSync } from "node:fs";
 
-const [slug, source] = process.argv.slice(2);
+/* Third argument overrides the destination, for cutouts that are not the
+ * fleet line — a hero foreground has the same requirement, that the image
+ * edge be the machine edge, so the layout can size it predictably. */
+const [slug, source, dest] = process.argv.slice(2);
 if (!slug || !source) {
-  console.error("usage: node scripts/build-fleet-cutout.mjs <slug> <source.png>");
+  console.error("usage: node scripts/build-fleet-cutout.mjs <slug> <source.png> [dest]");
   process.exit(1);
 }
 if (!existsSync(source)) {
@@ -50,7 +53,7 @@ if (x1 < 0) {
   process.exit(1);
 }
 
-const out = `public/robots/fleet/${slug}.webp`;
+const out = dest ?? `public/robots/fleet/${slug}.webp`;
 const before = existsSync(out) ? await sharp(readFileSync(out)).metadata() : null;
 
 // Never upscale: these renders are the only resolution we have.
@@ -59,7 +62,7 @@ const before = existsSync(out) ? await sharp(readFileSync(out)).metadata() : nul
 const tmp = `${out}.tmp`;
 await sharp(source)
   .extract({ left: x0, top: y0, width: x1 - x0 + 1, height: y1 - y0 + 1 })
-  .webp({ quality: 92 })
+  [out.endsWith(".png") ? "png" : "webp"]({ quality: 92, compressionLevel: 9 })
   .toFile(tmp);
 renameSync(tmp, out);
 

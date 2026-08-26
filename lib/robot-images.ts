@@ -9,14 +9,16 @@ import l3Perception from "@/public/robots/l3/l3-perception.webp";
 import l3Maintenance from "@/public/robots/l3/l3-maintenance.webp";
 import l3Workstation from "@/public/robots/l3/l3-workstation-ws3.png";
 
-import l4Hero from "@/public/robots/l4/l4-night.jpg";
+import l4Hero from "@/public/robots/l4/l4-hero-corridor.png";
+import l4HeroRobot from "@/public/robots/l4/l4-hero-robot.png";
 import l4Product from "@/public/robots/l4/l4-product.png";
 import l4Lidar from "@/public/robots/l4/l4-lidar.jpg";
 import l4App from "@/public/robots/l4/l4-app-report.jpg";
 import l4WorkstationPair from "@/public/robots/l4/l4-workstation-pair.jpg";
 
-import l50Hero from "@/public/robots/l50/l50-hero-dome.jpg";
+import l50Hero from "@/public/robots/l50/distribution-centre-aisle-night-2560x1440.png";
 import l50Product from "@/public/robots/l50/l50-product.png";
+import l50Front from "@/public/robots/l50/l50-front.png";
 import l50Console from "@/public/robots/l50/l50-console.jpg";
 import l50Safety from "@/public/robots/l50/l50-safety.jpg";
 import l50App from "@/public/robots/l50/l50-app-report.jpg";
@@ -88,6 +90,20 @@ export const robotImages: Record<string, RobotImages> = {
 
   l4: {
     hero: l4Hero,
+    // Only bites on narrow viewports, where object-cover crops width: keeps
+    // the frame off the brightest stretch of wall so the headline holds a
+    // dark ground. On desktop the container is wider than 16:9 and the whole
+    // frame shows.
+    heroClass: "object-[42%_center]",
+    // Trimmed from l4-product.png, whose canvas is two-thirds empty — see
+    // scripts/build-fleet-cutout.mjs. Trimmed, the slot width is the machine
+    // width, so this sizes and sits predictably.
+    heroForeground: {
+      src: l4HeroRobot,
+      alt: "L4 edge-cleaning floor scrubber",
+    },
+    heroForegroundClass:
+      "pointer-events-none absolute bottom-7 right-4 z-0 hidden w-[30%] max-w-[16rem] sm:block lg:right-[max(1.5rem,calc(50%-36rem))] lg:max-w-xs",
     product: l4Product,
     features: {
       lidar: {
@@ -107,7 +123,21 @@ export const robotImages: Record<string, RobotImages> = {
 
   l50: {
     hero: l50Hero,
-    heroClass: "object-[65%_30%]",
+    // Only bites on narrow viewports, where object-cover crops width: holds
+    // the frame on the dark end of the aisle so the headline keeps a ground,
+    // while still showing where the racking begins. On desktop the container
+    // is wider than 16:9 and the whole frame shows.
+    heroClass: "object-[40%_center]",
+    // Front render in the hero; the 3/4 view stays on the cards. Its canvas
+    // carries a wide transparent margin — 43px of it below the wheels — so
+    // the slot is a size up to land the machine at a comparable width, and
+    // the negative bottom offset cancels that margin so it meets the floor.
+    heroForeground: {
+      src: l50Front,
+      alt: "L50 high-capacity industrial scrubber, seen head-on",
+    },
+    heroForegroundClass:
+      "pointer-events-none absolute -bottom-9 right-4 z-0 hidden w-[36%] max-w-sm sm:block lg:right-[max(1.5rem,calc(50%-36rem))] lg:max-w-[26rem]",
     product: l50Product,
     features: {
       console: {
@@ -169,7 +199,12 @@ export const robotImages: Record<string, RobotImages> = {
     // against the window edge reads as part of the scene; the SP50 has none,
     // and out there it just looked stranded in the corner.
     heroForegroundClass:
-      "pointer-events-none absolute bottom-0 right-4 z-0 hidden w-[38%] max-w-sm sm:block lg:right-[max(1.5rem,calc(50%-36rem))] lg:max-w-md",
+      // The canvas carries 208px of empty space below the brushes — 78px of
+      // it at the lg slot — which read as the machine hovering. The negative
+      // offsets cancel most of that, leaving a little floor under the wheels
+      // rather than dropping it onto the hazard stripe. Two values because
+      // the margin scales with the slot.
+      "pointer-events-none absolute -bottom-12 right-4 z-0 hidden w-[38%] max-w-sm sm:block lg:right-[max(1.5rem,calc(50%-36rem))] lg:-bottom-14 lg:max-w-md",
     product: sp50Product,
     features: {
       console: {
