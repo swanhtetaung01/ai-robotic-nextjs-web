@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Saira, IBM_Plex_Sans, IBM_Plex_Mono, Noto_Sans_Thai } from "next/font/google";
+import { IBM_Plex_Sans, IBM_Plex_Mono, IBM_Plex_Sans_Thai } from "next/font/google";
 import "../globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { SITE_URL } from "@/lib/site";
 import { locales, isLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary, translator } from "@/lib/i18n/dictionary";
-
-const saira = Saira({
-  variable: "--font-saira",
-  subsets: ["latin"],
-  axes: ["wdth"],
-});
 
 const plexSans = IBM_Plex_Sans({
   variable: "--font-plex",
@@ -26,10 +20,10 @@ const plexMono = IBM_Plex_Mono({
   weight: ["400", "500", "600"],
 });
 
-/* Saira and IBM Plex Sans carry no Thai glyphs, so Thai text would fall back
- * to whatever the OS supplies and look unrelated to the rest of the design.
- * Noto Sans Thai is loaded alongside and placed first in the Thai stack. */
-const notoThai = Noto_Sans_Thai({
+/* IBM Plex Sans carries no Thai glyphs. Plex Sans Thai is the same family
+ * drawn for the Thai script, so /th reads as the same design as /en rather
+ * than as a different site — which is what a generic Thai fallback gave us. */
+const plexThai = IBM_Plex_Sans_Thai({
   variable: "--font-thai",
   subsets: ["thai"],
   weight: ["400", "500", "600", "700"],
@@ -58,7 +52,7 @@ export async function generateMetadata({
       languages: {
         en: "/en",
         th: "/th",
-        "x-default": "/en",
+        "x-default": "/th",
       },
     },
   };
@@ -79,7 +73,7 @@ export default async function RootLayout({
       lang={locale}
       data-scroll-behavior="smooth"
       data-locale={locale}
-      className={`${saira.variable} ${plexSans.variable} ${plexMono.variable} ${notoThai.variable} h-full antialiased`}
+      className={`${plexSans.variable} ${plexMono.variable} ${plexThai.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <SiteHeader

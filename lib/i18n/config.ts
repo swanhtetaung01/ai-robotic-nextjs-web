@@ -3,6 +3,15 @@ export type Locale = (typeof locales)[number];
 
 export const defaultLocale: Locale = "en";
 
+/** Where a visitor with no saved preference lands.
+ *
+ *  Deliberately separate from `defaultLocale`, which is the dictionary&apos;s
+ *  fallback layer: English stays the base every other locale layers over, so
+ *  a key added between translation rounds renders readable English rather
+ *  than a gap. Changing that would flip the fallback direction. This constant
+ *  only decides which language the site opens in. */
+export const landingLocale: Locale = "th";
+
 /** Shown in the language switcher, in the language itself. */
 export const localeNames: Record<Locale, string> = {
   en: "English",

@@ -342,6 +342,86 @@ TH:
 6. FLEET / COMPARE PAGE  (page: /robots)
 ================================================================
 
+[HOME.faq.eyebrow]
+EN: FAQ
+TH: 
+
+[HOME.faq.heading]
+EN: Questions we get asked
+TH: 
+
+[HOME.faq.tops_q]
+EN: What does "100 TOPS AI compute" mean?
+TH: 
+
+[HOME.faq.tops_a]
+EN: TOPS stands for trillion operations per second — a measure of how much AI processing the robot's onboard chip can do. On a cleaning machine that capacity goes on reading the LiDAR and cameras many times a second: spotting obstacles, planning a route, and recognising what is on the floor. More TOPS means the machine can run heavier perception models and react faster in a busy space. The L3 and S5 carry 100 TOPS of NVIDIA compute; the L4 carries 32 TOPS.
+TH: 
+
+[HOME.faq.which_q]
+EN: Which of the five machines do we need?
+TH: 
+
+[HOME.faq.which_a]
+EN: It depends on the floor rather than the building. The L3 passes through 700 mm gaps, for tight retail, hospitals and schools. The L4 clears a standard doorway at 810 mm and scrubs to within 3 cm of the wall. The L50 is built for warehouse-scale open floor. The S5 sweeps dry debris in industrial settings. The SP50 patrols for scattered mess instead of scrubbing everything. Tell us the size, floor type and operating hours and we will recommend one.
+TH: 
+
+[HOME.faq.staff_q]
+EN: Does this replace our cleaning staff?
+TH: 
+
+[HOME.faq.staff_a]
+EN: In practice it changes what they spend their time on. Aspirus Hospital reported that their team moved onto deep scrubbing, stripping and waxing once the robots took over routine floor coverage — the work that needs judgement, rather than the work that needs repetition.
+TH: 
+
+[HOME.faq.operate_q]
+EN: Does someone need to operate it?
+TH: 
+
+[HOME.faq.operate_a]
+EN: No. Routes are mapped once at deployment, after which the machine runs to schedule and docks itself when it finishes. Anyone on shift can start it, stop it or return it to the dock from the onboard touchscreen, without specialist training.
+TH: 
+
+[HOME.faq.layout_q]
+EN: What happens when we move shelving or change the layout?
+TH: 
+
+[HOME.faq.layout_a]
+EN: The L3 and SP50 update their floor maps automatically, so a changed layout does not need a new survey.
+TH: 
+
+[HOME.faq.runtime_q]
+EN: How long does it run before charging?
+TH: 
+
+[HOME.faq.runtime_a]
+EN: Between three and six hours of continuous work depending on the model, recharging in one and a half to four hours. The SP50 patrols for up to 13 hours. Several models dock and recharge themselves between runs.
+TH: 
+
+[HOME.faq.safety_q]
+EN: Is it safe around staff, customers and vehicles?
+TH: 
+
+[HOME.faq.safety_a]
+EN: The machines detect obstacles at up to 150 m, including protruding objects and the floor-to-ceiling glass that defeats simpler sensors. The S5 additionally recognises forklifts and AGVs and keeps clear of them.
+TH: 
+
+[HOME.faq.support_q]
+EN: Do you service and support these in Thailand?
+TH: 
+
+[HOME.faq.support_a]
+EN: Yes. We respond within 24 hours, hold spare parts, and carry out the maintenance ourselves.
+TH: 
+
+[HOME.faq.demo_q]
+EN: Can we see one working first?
+TH: 
+
+[HOME.faq.demo_a]
+EN: Yes. We run demonstrations — get in touch and we will arrange one.
+TH: 
+
 [FLEET.meta_title]
 EN: The fleet
 TH:

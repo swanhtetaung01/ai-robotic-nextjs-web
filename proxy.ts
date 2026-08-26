@@ -1,11 +1,16 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { defaultLocale, locales } from "@/lib/i18n/config";
+import { landingLocale, locales } from "@/lib/i18n/config";
 
 /* Next 16 renamed Middleware to Proxy; the behaviour is unchanged.
  *
  * Every page lives under /[lang], so a request for /robots has to be sent
- * somewhere. We honour an explicit choice first (the cookie the switcher
- * sets), then the browser's Accept-Language, then fall back to English. */
+ * somewhere. We honour an explicit choice first (the year-long cookie the
+ * switcher sets) and otherwise open in Thai.
+ *
+ * Accept-Language is deliberately not consulted. Plenty of Thai buyers run
+ * their phone or laptop in English, so matching on it sent a large part of
+ * the target market to the wrong language. Anyone who wants English is one
+ * click away in the header, and that choice sticks. */
 
 const COOKIE = "locale";
 
@@ -15,16 +20,7 @@ function preferredLocale(request: NextRequest) {
     return chosen;
   }
 
-  // Accept-Language: "th,en-US;q=0.9" — first supported tag wins.
-  const header = request.headers.get("accept-language") ?? "";
-  for (const part of header.split(",")) {
-    const tag = part.split(";")[0].trim().toLowerCase();
-    const base = tag.split("-")[0];
-    const hit = locales.find((l) => l === tag || l === base);
-    if (hit) return hit;
-  }
-
-  return defaultLocale;
+  return landingLocale;
 }
 
 export function proxy(request: NextRequest) {

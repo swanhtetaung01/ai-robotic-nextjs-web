@@ -12,6 +12,8 @@ import { getDictionary, translator } from "@/lib/i18n/dictionary";
 import { localizeRobots } from "@/lib/i18n/localize-robots";
 import { localizeReferences } from "@/lib/i18n/localize-references";
 import { isLocale, localePath, type Locale } from "@/lib/i18n/config";
+import { Faq, FaqJsonLd } from "@/components/faq";
+import { faqIds } from "@/lib/faq";
 
 /* The four headline proof figures. Values are locale-independent; only the
    labels are translated, so they live here rather than in the dictionary. */
@@ -39,6 +41,10 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
   const dict = await getDictionary(locale);
   const t = translator(dict);
   const robots = localizeRobots(dict, locale);
+  const faqItems = faqIds.map((id) => ({
+    q: t(`HOME.faq.${id}_q`),
+    a: t(`HOME.faq.${id}_a`),
+  }));
   const references = localizeReferences(dict);
 
   const cardStrings = {
@@ -251,6 +257,13 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
           </div>
         </div>
       </section>
+
+      <Faq
+        eyebrow={t("HOME.faq.eyebrow")}
+        heading={t("HOME.faq.heading")}
+        items={faqItems}
+      />
+      <FaqJsonLd items={faqItems} />
 
       <QuoteBand locale={locale} />
     </>

@@ -29,10 +29,10 @@
   /* status */
   --color-danger: #e5484d;
 
-  /* type — Latin faces first, Noto Sans Thai behind them. Saira and IBM
-     Plex carry no Thai glyphs, so without this Thai text falls back to a
-     system font and stops looking like the rest of the design. */
-  --font-display: var(--font-saira), var(--font-thai), "Arial Narrow", sans-serif;
+  /* type — one family across three roles. Plex Sans carries no Thai glyphs,
+     so Plex Sans Thai sits behind each Latin face: same design, right script,
+     rather than whatever the OS would otherwise supply. */
+  --font-display: var(--font-plex), var(--font-thai), system-ui, sans-serif;
   --font-sans: var(--font-plex), var(--font-thai), system-ui, sans-serif;
   --font-mono: var(--font-plex-mono), var(--font-thai), ui-monospace, monospace;
 
@@ -51,15 +51,15 @@ body {
   color: var(--color-ink);
 }
 
-/* Display type: expanded Saira — squared terminals, signage-drawn,
-   for a machine-badge voice rather than a neutral one. */
+/* Display type: IBM Plex Sans in caps at semibold. Plex has no width axis,
+   so presence comes from size and case rather than a stretched face — the
+   125%/800 setting this replaces is what read as motorsport, not the face. */
 .display {
   font-family: var(--font-display);
-  font-stretch: 125%;
-  font-weight: 800;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: -0.01em;
-  line-height: 0.98;
+  letter-spacing: 0.005em;
+  line-height: 1.08;
   text-wrap: balance;
 }
 
@@ -68,9 +68,8 @@ body {
    that sit above and below the baseline. Relax both for Thai only. */
 :root[lang="th"] .display {
   text-transform: none;
-  font-stretch: 100%;
   letter-spacing: 0;
-  line-height: 1.3;
+  line-height: 1.45;
 }
 :root[lang="th"] .stencil {
   text-transform: none;

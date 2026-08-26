@@ -81,6 +81,16 @@ for (const ref of references) {
   if (ref.outcome) expected.push(`${p}.outcome`);
 }
 
+/* The FAQ derives its keys from an id list too, and translator() falls back to
+ * the raw key — so a typo here doesn't render English, it renders
+ * "HOME.faq.tops_q" on the home page. */
+import { faqIds } from "../lib/faq.ts";
+
+for (const id of faqIds) {
+  expected.push(`HOME.faq.${id}_q`, `HOME.faq.${id}_a`);
+}
+expected.push("HOME.faq.eyebrow", "HOME.faq.heading");
+
 const absent = [...new Set(expected)].filter((k) => !en[k]);
 if (absent.length) {
   console.error(`\n${absent.length} key(s) the overlays need are absent from en.json:`);
