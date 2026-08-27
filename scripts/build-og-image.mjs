@@ -42,30 +42,43 @@ for (let y = 0; y < H; y++) {
   }
 }
 
+/* Composition is built around the centre square, not the full width.
+ * Facebook, Slack and X show the whole 1.91:1 frame, but LINE renders a
+ * compact card with a SQUARE thumbnail — it centre-crops to 630x630. A
+ * wordmark on the left and a machine on the right, which reads well wide,
+ * loses both halves in that crop. So the lockup is grouped inside
+ * x 300..910 and everything outside it is just atmosphere. */
+const SAFE_L = 300;
+const SAFE_R = 910;
+
 const wordmark = await sharp("public/brand/wordmark-white.png")
-  .resize({ width: 460 })
+  .resize({ width: 268 })
   .toBuffer();
 const wm = await sharp(wordmark).metadata();
 
-/* The machine, right of centre, standing on the aisle floor. */
-const robot = await sharp("public/robots/l50/l50-front.png")
-  .resize({ height: 470 })
+/* The trimmed fleet cutout, so the image edge is the machine edge and the
+ * placement below is exact. */
+const robot = await sharp("public/robots/fleet/l50.webp")
+  .resize({ height: 404 })
+  .png()
   .toBuffer();
 const rb = await sharp(robot).metadata();
 
-/* Safety-amber rule under the wordmark — the site's one accent, and the
- * detail that makes the card read as ours rather than a stock photo. */
+/* Safety amber under the wordmark — the site's one accent, and what makes
+ * the card read as ours rather than a stock photo. */
 const rule = await sharp({
-  create: { width: 96, height: 5, channels: 4, background: { r: 255, g: 154, b: 31, alpha: 1 } },
+  create: { width: 84, height: 5, channels: 4, background: { r: 255, g: 154, b: 31, alpha: 1 } },
 }).png().toBuffer();
+
+const wmTop = Math.round(H / 2 - wm.height / 2 - 14);
 
 await sharp(plate)
   .composite([
     { input: scrim, raw: { width: W, height: H, channels: 4 } },
-    { input: wordmark, left: 80, top: Math.round(H / 2 - wm.height / 2 - 40) },
-    { input: rule, left: 80, top: Math.round(H / 2 - wm.height / 2 + wm.height + 4) },
-    // Sits on the bottom edge: the render's own base is the machine's base.
-    { input: robot, left: W - rb.width - 90, top: H - rb.height },
+    { input: wordmark, left: SAFE_L, top: wmTop },
+    { input: rule, left: SAFE_L, top: wmTop + wm.height + 18 },
+    // Sits on the bottom edge: the cutout is trimmed, so its base is the wheels.
+    { input: robot, left: SAFE_R - rb.width, top: H - rb.height },
   ])
   .png({ compressionLevel: 9 })
   .toFile("public/og-card.png");
