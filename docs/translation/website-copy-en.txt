@@ -2767,6 +2767,10 @@ EN: {page} · AI Robotics
 TH:
 (This is a pattern, not a full sentence — e.g. becomes "Reference · AI Robotics". Only translate the surrounding format if Thai reads better with a different separator/order; otherwise leave as structure.)
 
+[META.og_image_alt]
+EN: An AI Robotics autonomous scrubber in an empty warehouse aisle at night
+TH: 
+
 [META.site_description]
 EN: AI Robotics supplies autonomous floor-cleaning robots for hospitals, warehouses, retail and schools. Request a quote for the L3, L4 and L50 scrubbers, the SP50 AI spot cleaner or the S5 industrial sweeper.
 TH:

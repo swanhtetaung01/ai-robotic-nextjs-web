@@ -55,6 +55,37 @@ export async function generateMetadata({
         "x-default": "/th",
       },
     },
+    /* Share previews — what LINE, Facebook and Slack render when someone
+     * pastes a link. Set here for every route rather than through the
+     * app/opengraph-image file convention: the root layout lives under
+     * app/[lang], so that convention emitted /-/opengraph-image.png with the
+     * dynamic segment unresolved, and a URL the crawler cannot fetch means no
+     * picture at all. public/og-card.png has one fixed URL. Rebuild it with
+     * scripts/build-og-image.mjs. */
+    openGraph: {
+      type: "website",
+      siteName: "AI Robotics",
+      locale: lang === "th" ? "th_TH" : "en_US",
+      url: `/${lang}`,
+      title: t("META.site_title_default"),
+      description: t("META.site_description"),
+      images: [
+        {
+          url: "/og-card.png",
+          width: 1200,
+          height: 630,
+          alt: t("META.og_image_alt"),
+        },
+      ],
+    },
+    twitter: {
+      // Without this the card renders as a small thumbnail beside the text
+      // rather than a full-width banner.
+      card: "summary_large_image",
+      title: t("META.site_title_default"),
+      description: t("META.site_description"),
+      images: ["/og-card.png"],
+    },
   };
 }
 

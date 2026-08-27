@@ -2723,6 +2723,10 @@ EN: {page} · AI Robotics
 TH: {page} · AI Robotics
 (This is a pattern, not a full sentence — e.g. becomes "Reference · AI Robotics". Only translate the surrounding format if Thai reads better with a different separator/order; otherwise leave as structure.)
 
+[META.og_image_alt]
+EN: An AI Robotics autonomous scrubber in an empty warehouse aisle at night
+TH: หุ่นยนต์ขัดพื้นอัตโนมัติของ AI Robotics ในทางเดินคลังสินค้าช่วงกลางคืน
+
 [META.site_description]
 EN: AI Robotics supplies autonomous floor-cleaning robots for hospitals, warehouses, retail and schools. Request a quote for the L3, L4 and L50 scrubbers, the SP50 AI spot cleaner or the S5 industrial sweeper.
 TH: AI Robotics ผู้ให้บริการหุ่นยนต์ทำความสะอาดพื้นอัตโนมัติสำหรับโรงพยาบาล คลังสินค้า โรงงาน พื้นที่ค้าปลีก และสถานศึกษา พบกับหุ่นยนต์ขัดพื้น L3, L4 และ L50 หุ่นยนต์ทำความสะอาดเฉพาะจุดด้วย AI รุ่น SP50 และหุ่นยนต์กวาดพื้นอุตสาหกรรม S5 พร้อมบริการให้คำปรึกษาและใบเสนอราคา
