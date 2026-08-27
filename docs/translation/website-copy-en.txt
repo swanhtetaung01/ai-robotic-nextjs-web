@@ -1454,6 +1454,10 @@ TH:
 EN: Dimensions
 TH:
 
+[ROBOT.l50.spec_passagewidth]
+EN: Passage width
+TH: 
+
 [ROBOT.l50.spec_length]
 EN: Length
 TH:
@@ -1777,6 +1781,10 @@ TH:
 
 [ROBOT.sp50.specgroup4_title]
 EN: Dimensions
+TH: 
+
+[ROBOT.sp50.spec_passagewidth]
+EN: Passage width
 TH: 
 
 [ROBOT.sp50.spec_length]
@@ -2313,6 +2321,10 @@ TH:
 [ROBOT.s5.specgroup3_title]
 EN: Dimensions
 TH:
+
+[ROBOT.s5.spec_passagewidth]
+EN: Passage width
+TH: 
 
 [ROBOT.s5.spec_length]
 EN: Length

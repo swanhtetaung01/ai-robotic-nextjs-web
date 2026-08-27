@@ -1410,6 +1410,10 @@ TH: ตรวจจับได้
 EN: Dimensions
 TH: ขนาด
 
+[ROBOT.l50.spec_passagewidth]
+EN: Passage width
+TH: ความกว้างทางผ่าน
+
 [ROBOT.l50.spec_length]
 EN: Length
 TH: ความยาว
@@ -1734,6 +1738,10 @@ TH: ถาดขยะ
 [ROBOT.sp50.specgroup4_title]
 EN: Dimensions
 TH: ขนาด
+
+[ROBOT.sp50.spec_passagewidth]
+EN: Passage width
+TH: ความกว้างทางผ่าน
 
 [ROBOT.sp50.spec_length]
 EN: Length
@@ -2269,6 +2277,10 @@ TH: Forklift, AGV
 [ROBOT.s5.specgroup3_title]
 EN: Dimensions
 TH: ขนาด
+
+[ROBOT.s5.spec_passagewidth]
+EN: Passage width
+TH: ความกว้างทางผ่าน
 
 [ROBOT.s5.spec_length]
 EN: Length

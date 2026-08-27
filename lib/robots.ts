@@ -70,7 +70,7 @@ export const robots: Robot[] = [
       "The L3 carries a 100 TOPS NVIDIA AI platform and a 96-beam 3D LiDAR in a body narrow enough for a hospital corridor at visiting hours. It plans its own routes, avoids what people leave in them, and answers to plain voice commands.",
     heroStats: [
       { value: "700", unit: "mm", label: "passage width" },
-      { value: "1,944", unit: "m²/h", label: "max productivity" },
+      { value: "2,016", unit: "m²/h", label: "max productivity" },
       { value: "100", unit: "TOPS", label: "NVIDIA AI compute" },
       { value: "96", unit: "beams", label: "3D LiDAR" },
     ],
@@ -134,7 +134,7 @@ export const robots: Robot[] = [
       {
         title: "Performance",
         specs: [
-          { label: "Max productivity", metric: "1,944 m²/h" },
+          { label: "Max productivity", metric: "2,016 m²/h" },
           { label: "Cleaning width", metric: "400 mm", imperial: "15.7 in" },
           { label: "Brush pressure", metric: "18 kg", imperial: "39.7 lbs" },
           { label: "Solution tank", metric: "25 L", imperial: "6.6 gal" },
@@ -366,6 +366,7 @@ export const robots: Robot[] = [
       {
         title: "Dimensions",
         specs: [
+          { label: "Passage width", metric: "920 mm", imperial: "36.2 in" },
           { label: "Length", metric: "1,030 mm", imperial: "40.6 in" },
           { label: "Width", metric: "580 mm", imperial: "22.8 in" },
           { label: "Height", metric: "1,045 mm", imperial: "41.1 in" },
@@ -490,6 +491,7 @@ export const robots: Robot[] = [
       {
         title: "Dimensions",
         specs: [
+          { label: "Passage width", metric: "800 mm", imperial: "31.5 in" },
           { label: "Length", metric: "855 mm", imperial: "33.7 in" },
           { label: "Width", metric: "600 mm", imperial: "23.6 in" },
           { label: "Height", metric: "1,050 mm", imperial: "41.3 in" },
@@ -706,6 +708,7 @@ export const robots: Robot[] = [
       {
         title: "Dimensions",
         specs: [
+          { label: "Passage width", metric: "810 mm", imperial: "31.9 in" },
           { label: "Length", metric: "1,030 mm", imperial: "40.6 in" },
           { label: "Width", metric: "720 mm", imperial: "28.3 in" },
           { label: "Height", metric: "990 mm", imperial: "39 in" },

@@ -45,7 +45,7 @@ function buildCompareRows(t: T, units: "metric" | "imperial"): CompareRow[] {
     // Metric in both locales: m²/h is the figure the manufacturer
     // publishes first, and the market this sells into works in it.
     values: {
-      l3: "1,944 m²/h",
+      l3: "2,016 m²/h",
       l4: "1,944 m²/h",
       l50: "2,203 m²/h",
       sp50: `15,550 m²/h ${t("FLEET.table.productivity_spot")}`,
@@ -55,8 +55,14 @@ function buildCompareRows(t: T, units: "metric" | "imperial"): CompareRow[] {
   {
     label: t("FLEET.table.row_passage"),
     values: imperial
-      ? { l3: "700 mm / 27.6 in", l4: "810 mm / 31.9 in", l50: "—", sp50: "—", s5: "—" }
-      : { l3: "700 mm", l4: "810 mm", l50: "—", sp50: "—", s5: "—" },
+      ? {
+          l3: "700 mm / 27.6 in",
+          l4: "810 mm / 31.9 in",
+          l50: "920 mm / 36.2 in",
+          sp50: "800 mm / 31.5 in",
+          s5: "810 mm / 31.9 in",
+        }
+      : { l3: "700 mm", l4: "810 mm", l50: "920 mm", sp50: "800 mm", s5: "810 mm" },
   },
   {
     label: t("FLEET.table.row_tank"),
