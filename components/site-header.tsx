@@ -129,7 +129,10 @@ function LocaleSwitcher({
   pathname: string;
 }) {
   return (
-    <div className="flex items-center gap-px border border-line" role="group" aria-label="Language">
+    // inline-flex, not flex: in the mobile menu this sits in a block wrapper,
+      // where a block-level flex box stretches the border the full width while
+      // the two buttons stay content-sized.
+      <div className="inline-flex items-center gap-px border border-line" role="group" aria-label="Language">
       {locales.map((l) => (
         <Link
           key={l}
